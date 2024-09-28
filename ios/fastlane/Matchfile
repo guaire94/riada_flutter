@@ -1,0 +1,4 @@
+storage_mode("git")
+git_url("git@github.com:EquiRace/template_certificates.git")
+app_identifier("com.template.user.app")
+username("template.application@gmail.com")

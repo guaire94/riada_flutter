@@ -1,0 +1,114 @@
+version: 2.1
+
+orbs:
+  flutter: circleci/flutter@2.0.4
+  ruby: circleci/ruby@2.1.3
+
+parameters:
+  run_workflow_release:
+    default: false
+    type: boolean
+
+  run_workflow_staging:
+    default: false
+    type: boolean
+
+  xcode_version:
+    default: 15.3.0
+    type: string
+
+  flutter_version:
+    default: 3.22.2
+    type: string
+
+  ruby_version:
+    default: 3.2.0
+    type: string
+
+jobs:
+
+  deploy_ios_store:
+    macos:
+      xcode: << pipeline.parameters.xcode_version >>
+    resource_class: macos.m1.medium.gen1
+    environment:
+      FL_OUTPUT_DIR: output
+    steps:
+      - checkout
+      - run:
+          name: Set GEM_HOME and GEM_PATH
+          command: |
+            echo 'export GEM_HOME=$HOME/.gem' >> $BASH_ENV
+            echo 'export GEM_PATH=$HOME/.gem' >> $BASH_ENV
+            source $BASH_ENV
+      - run:
+          name: Install gnupg and gnupg2
+          command: brew install gnupg gnupg2
+      - ruby/install:
+          version: << pipeline.parameters.ruby_version >>
+      - run:
+          name: Install cocoapods
+          command: gem install cocoapods
+      - flutter/install_sdk_and_pub:
+          version: << pipeline.parameters.flutter_version >>
+      - flutter/install_ios_pod
+      - flutter/install_ios_gem
+      - run:
+          name: iOS - Deploy Prod
+          command: bundle exec fastlane prod
+          working_directory: ios
+      - store_artifacts:
+          path: output
+
+  deploy_ios_staging:
+    macos:
+      xcode: << pipeline.parameters.xcode_version >>
+    resource_class: macos.m1.medium.gen1
+    steps:
+      - checkout
+      - run:
+          name: Set GEM_HOME and GEM_PATH
+          command: |
+            echo 'export GEM_HOME=$HOME/.gem' >> $BASH_ENV
+            echo 'export GEM_PATH=$HOME/.gem' >> $BASH_ENV
+            source $BASH_ENV
+      - run:
+          name: Install gnupg and gnupg2
+          command: brew install gnupg gnupg2
+      - ruby/install:
+          version: << pipeline.parameters.ruby_version >>
+      - run:
+          name: Install cocoapods
+          command: gem install cocoapods
+      - flutter/install_sdk_and_pub:
+          version: << pipeline.parameters.flutter_version >>
+      - flutter/install_ios_pod
+      - flutter/install_ios_gem
+      - run:
+          name: iOS - Deploy Staging
+          command: bundle exec fastlane staging
+          working_directory: ios
+
+workflows:
+  deploy_release:
+    jobs:
+      - deploy_ios_store:
+          filters:
+            branches:
+              only:
+                - master
+  deploy_release_manually:
+    when: << pipeline.parameters.run_workflow_release >>
+    jobs:
+      - deploy_ios_store
+
+  deploy_staging:
+    jobs:
+      - deploy_ios_staging:
+          filters:
+            branches:
+              only: develop
+  deploy_staging_manually:
+    when: << pipeline.parameters.run_workflow_staging >>
+    jobs:
+      - deploy_ios_staging

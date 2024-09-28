@@ -1,0 +1,4 @@
+enum AdvertisingType {
+  card,
+  carousel,
+}

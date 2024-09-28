@@ -1,0 +1,5 @@
+analyzer:
+  exclude: [build/**, app_localizations.dart, app_localizations_fr.dart, app_localizations_en.dart, lib/**.g.dart]
+  errors:
+    invalid_use_of_visible_for_testing_member: ignore
+    argument_type_not_assignable: ignore

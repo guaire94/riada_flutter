@@ -1,0 +1,5 @@
+app_identifier("com.template.user.app")
+apple_id("template.application@gmail.com")
+
+itc_team_id("126762082")
+team_id("3HS83447A2")

@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "868155141197",
+    "project_id": "template-5c016",
+    "storage_bucket": "template-5c016.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:868155141197:android:6ba132d924851acaf998e1",
+        "android_client_info": {
+          "package_name": "com.equi.finder.admin.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "868155141197-aagf4t6sh281auiu1tgv42l7jh0111bx.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVEp6ehuI38lIiXh1JA8b4VChOZxLgRYx"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "868155141197-aagf4t6sh281auiu1tgv42l7jh0111bx.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "868155141197-6go9eh9nistr1ljijq7jp0rstiv2h82c.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.equi.finder.admin.app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:868155141197:android:7f20f2265d61b5d7f998e1",
+        "android_client_info": {
+          "package_name": "com.template.user.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "868155141197-aagf4t6sh281auiu1tgv42l7jh0111bx.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVEp6ehuI38lIiXh1JA8b4VChOZxLgRYx"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "868155141197-aagf4t6sh281auiu1tgv42l7jh0111bx.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "868155141197-6go9eh9nistr1ljijq7jp0rstiv2h82c.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.equi.finder.admin.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
