@@ -1,4 +1,4 @@
-import 'package:template_flutter_app/src/features/user/entity/user_status.dart';
+import 'package:riada/src/features/user/entity/user_status.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 class UserStatusJsonConverter extends JsonConverter<UserStatus, String> {

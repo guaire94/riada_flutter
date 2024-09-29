@@ -1,20 +1,20 @@
 import 'dart:io';
 
 import 'package:auto_route/auto_route.dart';
-import 'package:template_flutter_app/src/design_system/ds_image_picker_controller.dart';
-import 'package:template_flutter_app/src/design_system/ds_text_field.dart';
-import 'package:template_flutter_app/src/design_system/v2/component/appBar/ds_app_bar_v2.dart';
-import 'package:template_flutter_app/src/design_system/v2/component/buttons/ds_button_elevated_v2.dart';
-import 'package:template_flutter_app/src/design_system/v2/component/buttons/ds_button_text_v2.dart';
-import 'package:template_flutter_app/src/design_system/v2/component/image/ds_image_picker_v2.dart';
-import 'package:template_flutter_app/src/design_system/v2/component/image/ds_image_type_v2.dart';
-import 'package:template_flutter_app/src/design_system/v2/graphical_chart/ds_spacing_v2.dart';
-import 'package:template_flutter_app/src/factory/di.dart';
-import 'package:template_flutter_app/src/features/common/entity/google_place/place.dart';
-import 'package:template_flutter_app/src/features/common/presentation/base/base_state.dart';
-import 'package:template_flutter_app/src/features/common/presentation/common/cities_autocomplete_field/cities_autocomplete_field_factory.dart';
-import 'package:template_flutter_app/src/features/user/presentation/update_additional_profile_information/bloc/update_additional_profile_information_bloc.dart';
-import 'package:template_flutter_app/src/utils/build_context_extension.dart';
+import 'package:riada/src/design_system/ds_image_picker_controller.dart';
+import 'package:riada/src/design_system/ds_text_field.dart';
+import 'package:riada/src/design_system/v2/component/appBar/ds_app_bar_v2.dart';
+import 'package:riada/src/design_system/v2/component/buttons/ds_button_elevated_v2.dart';
+import 'package:riada/src/design_system/v2/component/buttons/ds_button_text_v2.dart';
+import 'package:riada/src/design_system/v2/component/image/ds_image_picker_v2.dart';
+import 'package:riada/src/design_system/v2/component/image/ds_image_type_v2.dart';
+import 'package:riada/src/design_system/v2/graphical_chart/ds_spacing_v2.dart';
+import 'package:riada/src/factory/di.dart';
+import 'package:riada/src/features/common/entity/google_place/place.dart';
+import 'package:riada/src/features/common/presentation/base/base_state.dart';
+import 'package:riada/src/features/common/presentation/common/cities_autocomplete_field/cities_autocomplete_field_factory.dart';
+import 'package:riada/src/features/user/presentation/update_additional_profile_information/bloc/update_additional_profile_information_bloc.dart';
+import 'package:riada/src/utils/build_context_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

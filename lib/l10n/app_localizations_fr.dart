@@ -1,5 +1,7 @@
 import 'app_localizations.dart';
 
+// ignore_for_file: type=lint
+
 /// The translations for French (`fr`).
 class AppLocalizationsFr extends AppLocalizations {
   AppLocalizationsFr([String locale = 'fr']) : super(locale);
@@ -106,6 +108,9 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get common_error_message => 'Nous nous excusons, mais votre demande ne peut pas être traitée pour le moment en raison d\'une erreur technique. Notre équipe a été informée du problème et travaille à le résoudre dès que possible. Veuillez réessayer plus tard ou contacter notre équipe de support pour obtenir de l\'aide. Merci pour votre patience et votre compréhension.';
+
+  @override
+  String get common_empty_message => 'There is no data to display';
 
   @override
   String get signup_title => 'Profil';

@@ -1,5 +1,7 @@
 import 'app_localizations.dart';
 
+// ignore_for_file: type=lint
+
 /// The translations for English (`en`).
 class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
@@ -106,6 +108,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get common_error_message => 'We apologize, but your request cannot be processed at this time due to a technical error. Our team has been notified of the issue and is working to resolve it as soon as possible. Please try again later or contact our support team for assistance. Thank you for your patience and understanding.';
+
+  @override
+  String get common_empty_message => 'There is no data to display';
 
   @override
   String get signup_title => 'Profile';

@@ -1,15 +1,15 @@
 import 'dart:io';
 
-import 'package:template_flutter_app/gen/assets.gen.dart';
-import 'package:template_flutter_app/src/design_system/ds_icon_button.dart';
-import 'package:template_flutter_app/src/design_system/ds_phone_number_field.dart';
-import 'package:template_flutter_app/src/design_system/v2/component/appBar/ds_app_bar_v2.dart';
-import 'package:template_flutter_app/src/design_system/v2/component/buttons/ds_button_elevated_v2.dart';
-import 'package:template_flutter_app/src/design_system/v2/graphical_chart/ds_color_v2.dart';
-import 'package:template_flutter_app/src/design_system/v2/graphical_chart/ds_spacing_v2.dart';
-import 'package:template_flutter_app/src/features/user/presentation/sign_up/bloc/sign_up_bloc.dart';
-import 'package:template_flutter_app/src/utils/build_context_extension.dart';
-import 'package:template_flutter_app/src/utils/constants.dart';
+import 'package:riada/gen/assets.gen.dart';
+import 'package:riada/src/design_system/ds_icon_button.dart';
+import 'package:riada/src/design_system/ds_phone_number_field.dart';
+import 'package:riada/src/design_system/v2/component/appBar/ds_app_bar_v2.dart';
+import 'package:riada/src/design_system/v2/component/buttons/ds_button_elevated_v2.dart';
+import 'package:riada/src/design_system/v2/graphical_chart/ds_color_v2.dart';
+import 'package:riada/src/design_system/v2/graphical_chart/ds_spacing_v2.dart';
+import 'package:riada/src/features/user/presentation/sign_up/bloc/sign_up_bloc.dart';
+import 'package:riada/src/utils/build_context_extension.dart';
+import 'package:riada/src/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class SignUpIdleWidget extends StatelessWidget {

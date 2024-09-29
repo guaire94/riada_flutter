@@ -1,4 +1,4 @@
-import 'package:template_flutter_app/src/design_system/ds_border_radius.dart';
+import 'package:riada/src/design_system/ds_border_radius.dart';
 import 'package:flutter/cupertino.dart';
 
 enum DSImageType { fullScreen, post, medium, small, avatar }

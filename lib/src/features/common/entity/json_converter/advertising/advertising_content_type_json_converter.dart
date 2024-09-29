@@ -1,4 +1,4 @@
-import 'package:template_flutter_app/src/features/common/entity/advertising/advertising_content_type.dart';
+import 'package:riada/src/features/common/entity/advertising/advertising_content_type.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 class AdvertisingContentTypeJsonConverter

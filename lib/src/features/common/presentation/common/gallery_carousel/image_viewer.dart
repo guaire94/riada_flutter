@@ -1,11 +1,11 @@
-import 'package:template_flutter_app/src/design_system/ds_image.dart';
-import 'package:template_flutter_app/src/design_system/ds_image_type.dart';
-import 'package:template_flutter_app/src/design_system/v2/component/image/ds_image_type_v2.dart';
-import 'package:template_flutter_app/src/design_system/v2/component/image/ds_image_v2.dart';
-import 'package:template_flutter_app/src/design_system/v2/graphical_chart/ds_border_radius_v2.dart';
-import 'package:template_flutter_app/src/design_system/v2/graphical_chart/ds_color_v2.dart';
-import 'package:template_flutter_app/src/features/common/event_bus/exit_full_screen_event.dart';
-import 'package:template_flutter_app/src/utils/app_event_bus.dart';
+import 'package:riada/src/design_system/ds_image.dart';
+import 'package:riada/src/design_system/ds_image_type.dart';
+import 'package:riada/src/design_system/v2/component/image/ds_image_type_v2.dart';
+import 'package:riada/src/design_system/v2/component/image/ds_image_v2.dart';
+import 'package:riada/src/design_system/v2/graphical_chart/ds_border_radius_v2.dart';
+import 'package:riada/src/design_system/v2/graphical_chart/ds_color_v2.dart';
+import 'package:riada/src/features/common/event_bus/exit_full_screen_event.dart';
+import 'package:riada/src/utils/app_event_bus.dart';
 import 'package:flutter/material.dart';
 
 class ImageViewer extends StatefulWidget {

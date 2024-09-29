@@ -1,10 +1,9 @@
-import 'package:template_flutter_app/src/features/common/datasource/base_data_source.dart';
-import 'package:template_flutter_app/src/features/user/datasource/exceptions/login_failed_exception.dart';
+import 'package:riada/src/features/user/datasource/exceptions/login_failed_exception.dart';
 import 'package:firebase_auth/firebase_auth.dart' as Auth;
 import 'package:injectable/injectable.dart';
 
 @injectable
-class AuthDataSource extends BaseDataSource {
+class AuthDataSource {
   // MARK: - Public
   Auth.User? getUser() {
     return Auth.FirebaseAuth.instance.currentUser;

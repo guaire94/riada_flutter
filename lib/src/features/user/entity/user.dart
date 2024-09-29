@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:template_flutter_app/src/features/common/entity/json_converter/firestore_timestamp_json_converter.dart';
-import 'package:template_flutter_app/src/features/common/entity/json_converter/user_status_json_converter.dart';
-import 'package:template_flutter_app/src/features/user/entity/user_status.dart';
-import 'package:template_flutter_app/src/utils/constants.dart';
+import 'package:riada/src/features/common/entity/json_converter/firestore_timestamp_json_converter.dart';
+import 'package:riada/src/features/common/entity/json_converter/user_status_json_converter.dart';
+import 'package:riada/src/features/user/entity/user_status.dart';
+import 'package:riada/src/utils/constants.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'user.g.dart';

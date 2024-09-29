@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:template_flutter_app/src/design_system/v2/component/image/ds_image_type_v2.dart';
-import 'package:template_flutter_app/src/features/common/presentation/common/gallery_carousel/image_viewer.dart';
-import 'package:template_flutter_app/src/features/common/presentation/common/gallery_carousel/video_player_widget.dart';
+import 'package:riada/src/design_system/v2/component/image/ds_image_type_v2.dart';
+import 'package:riada/src/features/common/presentation/common/gallery_carousel/image_viewer.dart';
+import 'package:riada/src/features/common/presentation/common/gallery_carousel/video_player_widget.dart';
 import 'package:flutter/widgets.dart';
 
 class GalleryCarousel extends StatelessWidget {

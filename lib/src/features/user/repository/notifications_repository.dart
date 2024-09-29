@@ -1,6 +1,6 @@
-import 'package:template_flutter_app/src/features/user/datasource/notifications_data_source.dart';
-import 'package:template_flutter_app/src/features/user/entity/notification.dart';
-import 'package:template_flutter_app/src/features/user/entity/notification_data.dart';
+import 'package:riada/src/features/user/datasource/notifications_data_source.dart';
+import 'package:riada/src/features/user/entity/notification.dart';
+import 'package:riada/src/features/user/entity/notification_data.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable

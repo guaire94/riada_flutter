@@ -1,6 +1,6 @@
-import 'package:template_flutter_app/src/design_system/v2/component/dsList/ds_list_view_type.dart';
-import 'package:template_flutter_app/src/design_system/v2/component/dsList/shimmer/ds_list_view_shimmer.dart';
-import 'package:template_flutter_app/src/features/marketplace/presentation/carousel/item/marketplace_carousel_type.dart';
+import 'package:riada/src/design_system/v2/component/dsList/ds_list_view_type.dart';
+import 'package:riada/src/design_system/v2/component/dsList/shimmer/ds_list_view_shimmer.dart';
+import 'package:riada/src/features/marketplace/presentation/carousel/item/marketplace_carousel_type.dart';
 import 'package:flutter/material.dart';
 
 class MarketplaceCarouselLoadingWidget extends StatelessWidget {

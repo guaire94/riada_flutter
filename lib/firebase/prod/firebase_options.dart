@@ -19,7 +19,7 @@ class DefaultFirebaseOptions {
     if (kIsWeb) {
       throw UnsupportedError(
         'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
+            'you can reconfigure this by running the FlutterFire CLI again.',
       );
     }
     switch (defaultTargetPlatform) {
@@ -30,17 +30,17 @@ class DefaultFirebaseOptions {
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
+              'you can reconfigure this by running the FlutterFire CLI again.',
         );
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
+              'you can reconfigure this by running the FlutterFire CLI again.',
         );
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
+              'you can reconfigure this by running the FlutterFire CLI again.',
         );
       default:
         throw UnsupportedError(
@@ -50,21 +50,21 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCVEp6ehuI38lIiXh1JA8b4VChOZxLgRYX',
-    appId: '1:868155141197:android:3dda37a648245b95f998e1',
-    messagingSenderId: '868155141197',
-    projectId: 'template-5c016',
-    storageBucket: 'template-5c016.appspot.com',
+    apiKey: 'AIzaSyDygrjZKRGBouKyQxibaQxSblS1HT3LqE4',
+    appId: '1:889872739996:android:73400e2be8c7dc6f2ac759',
+    messagingSenderId: '889872739996',
+    projectId: 'social-sport-c41f3',
+    storageBucket: 'social-sport-c41f3.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyD8m8QEdrYNl7wi_zI7kyCjMOtsQpUv1c9',
-    appId: '1:868155141197:ios:20e69f044568339af998e1',
-    messagingSenderId: '868155141197',
-    projectId: 'template-5c016',
-    storageBucket: 'template-5c016.appspot.com',
+    apiKey: 'AIzaSyCF1yJw2lJ_pXhWvv29R-AUbYRxOK13lYs',
+    appId: '1:889872739996:ios:3560f88bfc256ab22ac759',
+    messagingSenderId: '889872739996',
+    projectId: 'social-sport-c41f3',
+    storageBucket: 'social-sport-c41f3.appspot.com',
     iosClientId:
-        '868155141197-lmcpm89mrenh25l5bik6l3jom6q3ir7a.apps.googleusercontent.com',
-    iosBundleId: 'com.template.user.app',
+    '889872739996-9t8a4i2pfal1em6bqv80divt29vd9r0i.apps.googleusercontent.com',
+    iosBundleId: 'com.riada.app.riada',
   );
 }

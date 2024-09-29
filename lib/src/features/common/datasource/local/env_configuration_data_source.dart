@@ -12,6 +12,18 @@ class EnvConfigurationDataSource {
   EnvConfiguration get configuration => _configuration;
 }
 
+extension FirebaseRootPathExtension on EnvConfigurationDataSource {
+  String get firebaseRootPath {
+    switch (_configuration) {
+      case EnvConfiguration.staging:
+        return 'Staging';
+      case EnvConfiguration.prod:
+        return 'Release';
+    }
+  }
+}
+
+
 extension APIKeysExtensions on EnvConfigurationDataSource {
   String get googleMapsApiKey {
     switch (_configuration) {

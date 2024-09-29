@@ -1,18 +1,17 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:template_flutter_app/gen/assets.gen.dart';
-import 'package:template_flutter_app/src/design_system/ds_home_app_bar.dart';
-import 'package:template_flutter_app/src/design_system/v2/graphical_chart/ds_color_v2.dart';
-import 'package:template_flutter_app/src/factory/di.dart';
-import 'package:template_flutter_app/src/features/common/presentation/base/base_state.dart';
-import 'package:template_flutter_app/src/features/drawer/presentation/bloc/drawer_bloc.dart'
+import 'package:riada/src/design_system/ds_home_app_bar.dart';
+import 'package:riada/src/design_system/v2/graphical_chart/ds_color_v2.dart';
+import 'package:riada/src/factory/di.dart';
+import 'package:riada/src/features/common/presentation/base/base_state.dart';
+import 'package:riada/src/features/drawer/presentation/bloc/drawer_bloc.dart'
     as DrawerBloc;
-import 'package:template_flutter_app/src/features/drawer/presentation/screen/drawer_screen.dart';
-import 'package:template_flutter_app/src/features/home/presentation/bloc/home_bloc.dart';
-import 'package:template_flutter_app/src/features/marketplace/event_bus/marketplace_scrolled_event.dart';
-import 'package:template_flutter_app/src/router/routes.gr.dart';
-import 'package:template_flutter_app/src/utils/app_event_bus.dart';
-import 'package:template_flutter_app/src/utils/constants.dart';
-import 'package:template_flutter_app/src/utils/deeplink_helper.dart';
+import 'package:riada/src/features/drawer/presentation/screen/drawer_screen.dart';
+import 'package:riada/src/features/home/presentation/bloc/home_bloc.dart';
+import 'package:riada/src/features/marketplace/event_bus/marketplace_scrolled_event.dart';
+import 'package:riada/src/router/routes.gr.dart';
+import 'package:riada/src/utils/app_event_bus.dart';
+import 'package:riada/src/utils/constants.dart';
+import 'package:riada/src/utils/deeplink_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -37,7 +36,6 @@ class HomeScreen extends StatefulWidget implements AutoRouteWrapper {
 class _HomeScreenState extends BaseState<HomeScreen, HomeBloc> {
   // MARK: - Properties
   Color _marketplaceAppBarColor = DSColorV2.neutral10;
-  static const _logoWidth = 200.0;
 
   // MARK: - LifeCycle
   @override

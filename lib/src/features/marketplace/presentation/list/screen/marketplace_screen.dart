@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:template_flutter_app/src/factory/di.dart';
-import 'package:template_flutter_app/src/features/common/presentation/base/base_state.dart';
-import 'package:template_flutter_app/src/features/marketplace/presentation/list/bloc/marketplace_bloc.dart';
-import 'package:template_flutter_app/src/features/marketplace/presentation/list/screen/marketplace_idle_widget.dart';
+import 'package:riada/src/factory/di.dart';
+import 'package:riada/src/features/common/presentation/base/base_state.dart';
+import 'package:riada/src/features/marketplace/presentation/list/bloc/marketplace_bloc.dart';
+import 'package:riada/src/features/marketplace/presentation/list/screen/marketplace_idle_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

@@ -1,5 +1,5 @@
-import 'package:template_flutter_app/src/design_system/ds_border_radius.dart';
-import 'package:template_flutter_app/src/design_system/ds_color.dart';
+import 'package:riada/src/design_system/ds_border_radius.dart';
+import 'package:riada/src/design_system/ds_color.dart';
 import 'package:flutter/material.dart';
 
 class DSButtonOutline extends StatelessWidget {

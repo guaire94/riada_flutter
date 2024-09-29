@@ -3,21 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>868155141197-e3o3ucvh81hu5mlve5m2v4qskt38rnv1.apps.googleusercontent.com</string>
+	<string>889872739996-9t8a4i2pfal1em6bqv80divt29vd9r0i.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.868155141197-e3o3ucvh81hu5mlve5m2v4qskt38rnv1</string>
+	<string>com.googleusercontent.apps.889872739996-9t8a4i2pfal1em6bqv80divt29vd9r0i</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>889872739996-hknjpqjnec0qmps67s9i89hlolu7s0l7.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
-	<string>AIzaSyD8m8QEdrYNl7wi_zI7kyCjMOtsQpUv1c1</string>
+	<string>AIzaSyCF1yJw2lJ_pXhWvv29R-AUbYRxOK13lYs</string>
 	<key>GCM_SENDER_ID</key>
-	<string>868155141197</string>
+	<string>889872739996</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.template.user.app</string>
+	<string>com.riada.app.riada</string>
 	<key>PROJECT_ID</key>
-	<string>template-5c016</string>
+	<string>social-sport-c41f3</string>
 	<key>STORAGE_BUCKET</key>
-	<string>template-5c016.appspot.com</string>
+	<string>social-sport-c41f3.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:868155141197:ios:20e69f044568339af998e1</string>
+	<string>1:889872739996:ios:3560f88bfc256ab22ac759</string>
 </dict>
 </plist>

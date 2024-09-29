@@ -1,11 +1,11 @@
-import 'package:template_flutter_app/src/design_system/v2/component/dsList/ds_list_item.dart';
-import 'package:template_flutter_app/src/design_system/v2/component/dsList/ds_list_view_type.dart';
-import 'package:template_flutter_app/src/design_system/v2/component/image/ds_image_type_v2.dart';
-import 'package:template_flutter_app/src/design_system/v2/component/image/ds_image_v2.dart';
-import 'package:template_flutter_app/src/design_system/v2/graphical_chart/ds_color_v2.dart';
-import 'package:template_flutter_app/src/design_system/v2/graphical_chart/ds_spacing_v2.dart';
-import 'package:template_flutter_app/src/utils/build_context_extension.dart';
-import 'package:template_flutter_app/src/utils/strings_extension.dart';
+import 'package:riada/src/design_system/v2/component/dsList/ds_list_item.dart';
+import 'package:riada/src/design_system/v2/component/dsList/ds_list_view_type.dart';
+import 'package:riada/src/design_system/v2/component/image/ds_image_type_v2.dart';
+import 'package:riada/src/design_system/v2/component/image/ds_image_v2.dart';
+import 'package:riada/src/design_system/v2/graphical_chart/ds_color_v2.dart';
+import 'package:riada/src/design_system/v2/graphical_chart/ds_spacing_v2.dart';
+import 'package:riada/src/utils/build_context_extension.dart';
+import 'package:riada/src/utils/strings_extension.dart';
 import 'package:flutter/material.dart';
 
 class DSListViewItem extends StatelessWidget {

@@ -1,6 +1,6 @@
-import 'package:template_flutter_app/src/features/marketplace/presentation/carousel/item/marketplace_carousel_item.dart';
-import 'package:template_flutter_app/src/features/marketplace/presentation/carousel/item/marketplace_carousel_type.dart';
-import 'package:template_flutter_app/src/features/marketplace/repository/marketplace_carousel_repository.dart';
+import 'package:riada/src/features/marketplace/presentation/carousel/item/marketplace_carousel_item.dart';
+import 'package:riada/src/features/marketplace/presentation/carousel/item/marketplace_carousel_type.dart';
+import 'package:riada/src/features/marketplace/repository/marketplace_carousel_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 

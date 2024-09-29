@@ -1,5 +1,5 @@
-import 'package:template_flutter_app/src/design_system/v2/component/image/ds_image_type_v2.dart';
-import 'package:template_flutter_app/src/design_system/v2/graphical_chart/ds_border_radius_v2.dart';
+import 'package:riada/src/design_system/v2/component/image/ds_image_type_v2.dart';
+import 'package:riada/src/design_system/v2/graphical_chart/ds_border_radius_v2.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 

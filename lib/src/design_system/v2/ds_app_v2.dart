@@ -1,8 +1,8 @@
-import 'package:template_flutter_app/gen/fonts.gen.dart';
-import 'package:template_flutter_app/l10n/app_localizations.dart';
-import 'package:template_flutter_app/src/design_system/v2/ds_app_list_view_item.dart';
-import 'package:template_flutter_app/src/design_system/v2/graphical_chart/ds_color_v2.dart';
-import 'package:template_flutter_app/src/design_system/v2/graphical_chart/ds_theme_v2.dart';
+import 'package:riada/gen/fonts.gen.dart';
+import 'package:riada/l10n/app_localizations.dart';
+import 'package:riada/src/design_system/v2/ds_app_list_view_item.dart';
+import 'package:riada/src/design_system/v2/graphical_chart/ds_color_v2.dart';
+import 'package:riada/src/design_system/v2/graphical_chart/ds_theme_v2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 

@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:template_flutter_app/src/features/common/entity/json_converter/firestore_document_reference_json_converter.dart';
-import 'package:template_flutter_app/src/features/common/entity/json_converter/firestore_timestamp_json_converter.dart';
+import 'package:riada/src/features/common/entity/json_converter/firestore_document_reference_json_converter.dart';
+import 'package:riada/src/features/common/entity/json_converter/firestore_timestamp_json_converter.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'notification.g.dart';

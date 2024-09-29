@@ -1,7 +1,7 @@
-import 'package:template_flutter_app/src/factory/di.dart';
-import 'package:template_flutter_app/src/features/common/entity/google_place/place.dart';
-import 'package:template_flutter_app/src/features/common/presentation/common/cities_autocomplete_field/cities_autocomplete_field.dart';
-import 'package:template_flutter_app/src/features/common/repository/google_place_repository.dart';
+import 'package:riada/src/factory/di.dart';
+import 'package:riada/src/features/common/entity/google_place/place.dart';
+import 'package:riada/src/features/common/presentation/common/cities_autocomplete_field/cities_autocomplete_field.dart';
+import 'package:riada/src/features/common/repository/google_place_repository.dart';
 import 'package:flutter/material.dart';
 
 CitiesAutocompleteField initCitiesAutocompleteField({

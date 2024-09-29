@@ -1,13 +1,13 @@
-import 'package:template_flutter_app/gen/assets.gen.dart';
-import 'package:template_flutter_app/gen/fonts.gen.dart';
-import 'package:template_flutter_app/src/design_system/ds_icon_button.dart';
-import 'package:template_flutter_app/src/design_system/v2/component/buttons/ds_button_elevated_v2.dart';
-import 'package:template_flutter_app/src/design_system/v2/component/buttons/ds_button_outline_v2.dart';
-import 'package:template_flutter_app/src/design_system/v2/component/buttons/ds_button_section_v2.dart';
-import 'package:template_flutter_app/src/design_system/v2/component/buttons/ds_button_text_v2.dart';
-import 'package:template_flutter_app/src/design_system/v2/graphical_chart/ds_color_v2.dart';
-import 'package:template_flutter_app/src/design_system/v2/graphical_chart/ds_spacing_v2.dart';
-import 'package:template_flutter_app/src/utils/build_context_extension.dart';
+import 'package:riada/gen/assets.gen.dart';
+import 'package:riada/gen/fonts.gen.dart';
+import 'package:riada/src/design_system/ds_icon_button.dart';
+import 'package:riada/src/design_system/v2/component/buttons/ds_button_elevated_v2.dart';
+import 'package:riada/src/design_system/v2/component/buttons/ds_button_outline_v2.dart';
+import 'package:riada/src/design_system/v2/component/buttons/ds_button_section_v2.dart';
+import 'package:riada/src/design_system/v2/component/buttons/ds_button_text_v2.dart';
+import 'package:riada/src/design_system/v2/graphical_chart/ds_color_v2.dart';
+import 'package:riada/src/design_system/v2/graphical_chart/ds_spacing_v2.dart';
+import 'package:riada/src/utils/build_context_extension.dart';
 import 'package:flutter/material.dart';
 
 class DSButtonScreen extends StatelessWidget {

@@ -1,7 +1,7 @@
-import 'package:template_flutter_app/src/design_system/ds_size.dart';
-import 'package:template_flutter_app/src/design_system/v2/graphical_chart/ds_color_v2.dart';
-import 'package:template_flutter_app/src/design_system/v2/graphical_chart/ds_spacing_v2.dart';
-import 'package:template_flutter_app/src/utils/build_context_extension.dart';
+import 'package:riada/src/design_system/ds_size.dart';
+import 'package:riada/src/design_system/v2/graphical_chart/ds_color_v2.dart';
+import 'package:riada/src/design_system/v2/graphical_chart/ds_spacing_v2.dart';
+import 'package:riada/src/utils/build_context_extension.dart';
 import 'package:flutter/material.dart';
 
 class DSPlace extends StatelessWidget {

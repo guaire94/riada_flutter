@@ -1,11 +1,11 @@
 import 'dart:math';
 
-import 'package:template_flutter_app/src/design_system/ds_spacing.dart';
-import 'package:template_flutter_app/src/design_system/ds_text_field.dart';
-import 'package:template_flutter_app/src/features/common/entity/google_place/place.dart';
-import 'package:template_flutter_app/src/features/common/entity/google_place/suggestion.dart';
-import 'package:template_flutter_app/src/features/common/repository/google_place_repository.dart';
-import 'package:template_flutter_app/src/utils/build_context_extension.dart';
+import 'package:riada/src/design_system/ds_spacing.dart';
+import 'package:riada/src/design_system/ds_text_field.dart';
+import 'package:riada/src/features/common/entity/google_place/place.dart';
+import 'package:riada/src/features/common/entity/google_place/suggestion.dart';
+import 'package:riada/src/features/common/repository/google_place_repository.dart';
+import 'package:riada/src/utils/build_context_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:form_validator/form_validator.dart';
 

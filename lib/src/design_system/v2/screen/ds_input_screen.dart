@@ -1,19 +1,19 @@
-import 'package:template_flutter_app/gen/fonts.gen.dart';
-import 'package:template_flutter_app/src/design_system/datePicker/ds_date_picker_controller.dart';
-import 'package:template_flutter_app/src/design_system/datePicker/ds_date_picker_field.dart';
-import 'package:template_flutter_app/src/design_system/datePicker/ds_time_picker_controller.dart';
-import 'package:template_flutter_app/src/design_system/datePicker/ds_time_picker_field.dart';
-import 'package:template_flutter_app/src/design_system/datePicker/ds_year_picker_controller.dart';
-import 'package:template_flutter_app/src/design_system/datePicker/ds_year_picker_field.dart';
-import 'package:template_flutter_app/src/design_system/dropdown/ds_dropdown.dart';
-import 'package:template_flutter_app/src/design_system/ds_text_field.dart';
-import 'package:template_flutter_app/src/design_system/radioList/ds_radio_list.dart';
-import 'package:template_flutter_app/src/design_system/segment/ds_segment.dart';
-import 'package:template_flutter_app/src/design_system/segment/ds_segment_controller.dart';
-import 'package:template_flutter_app/src/design_system/segment/ds_segment_item.dart';
-import 'package:template_flutter_app/src/design_system/v2/graphical_chart/ds_color_v2.dart';
-import 'package:template_flutter_app/src/design_system/v2/graphical_chart/ds_spacing_v2.dart';
-import 'package:template_flutter_app/src/utils/build_context_extension.dart';
+import 'package:riada/gen/fonts.gen.dart';
+import 'package:riada/src/design_system/datePicker/ds_date_picker_controller.dart';
+import 'package:riada/src/design_system/datePicker/ds_date_picker_field.dart';
+import 'package:riada/src/design_system/datePicker/ds_time_picker_controller.dart';
+import 'package:riada/src/design_system/datePicker/ds_time_picker_field.dart';
+import 'package:riada/src/design_system/datePicker/ds_year_picker_controller.dart';
+import 'package:riada/src/design_system/datePicker/ds_year_picker_field.dart';
+import 'package:riada/src/design_system/dropdown/ds_dropdown.dart';
+import 'package:riada/src/design_system/ds_text_field.dart';
+import 'package:riada/src/design_system/radioList/ds_radio_list.dart';
+import 'package:riada/src/design_system/segment/ds_segment.dart';
+import 'package:riada/src/design_system/segment/ds_segment_controller.dart';
+import 'package:riada/src/design_system/segment/ds_segment_item.dart';
+import 'package:riada/src/design_system/v2/graphical_chart/ds_color_v2.dart';
+import 'package:riada/src/design_system/v2/graphical_chart/ds_spacing_v2.dart';
+import 'package:riada/src/utils/build_context_extension.dart';
 import 'package:flutter/material.dart';
 
 class DSInputScreen extends StatelessWidget {

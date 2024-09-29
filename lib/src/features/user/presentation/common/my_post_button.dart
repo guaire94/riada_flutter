@@ -1,6 +1,6 @@
-import 'package:template_flutter_app/src/design_system/ds_color.dart';
-import 'package:template_flutter_app/src/design_system/ds_spacing.dart';
-import 'package:template_flutter_app/src/utils/build_context_extension.dart';
+import 'package:riada/src/design_system/ds_color.dart';
+import 'package:riada/src/design_system/ds_spacing.dart';
+import 'package:riada/src/utils/build_context_extension.dart';
 import 'package:flutter/material.dart';
 
 class MyPostButton extends StatelessWidget {

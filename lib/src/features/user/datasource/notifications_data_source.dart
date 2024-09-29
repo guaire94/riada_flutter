@@ -1,17 +1,19 @@
 import 'dart:convert';
 
-import 'package:template_flutter_app/src/features/common/datasource/base_data_source.dart';
-import 'package:template_flutter_app/src/features/user/entity/notification.dart';
-import 'package:template_flutter_app/src/features/user/entity/notification_data.dart';
-import 'package:template_flutter_app/src/utils/random.dart';
+import 'package:riada/src/features/common/datasource/base_firestore_data_source.dart';
+import 'package:riada/src/features/user/entity/notification.dart';
+import 'package:riada/src/features/user/entity/notification_data.dart';
+import 'package:riada/src/utils/random.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable
-class NotificationsDataSource extends BaseDataSource {
+class NotificationsDataSource extends BaseFirestoreDataSource {
   FlutterLocalNotificationsPlugin _flutterLocalNotificationsPlugin =
       FlutterLocalNotificationsPlugin();
+
+  NotificationsDataSource({required super.envConfigurationDataSource});
 
   Future handleNotificationReceived(RemoteMessage message) async {
     final notificationData = NotificationData.fromJson(message.data);

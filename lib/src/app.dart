@@ -1,7 +1,7 @@
-import 'package:template_flutter_app/l10n/app_localizations.dart';
-import 'package:template_flutter_app/src/design_system/v2/graphical_chart/ds_theme_v2.dart';
-import 'package:template_flutter_app/src/router/routes.dart';
-import 'package:template_flutter_app/src/utils/constants.dart';
+import 'package:riada/l10n/app_localizations.dart';
+import 'package:riada/src/design_system/v2/graphical_chart/ds_theme_v2.dart';
+import 'package:riada/src/router/routes.dart';
+import 'package:riada/src/utils/constants.dart';
 import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';

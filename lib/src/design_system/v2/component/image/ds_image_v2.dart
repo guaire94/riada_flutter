@@ -1,8 +1,8 @@
 import 'dart:io';
 
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:template_flutter_app/src/design_system/ds_color.dart';
-import 'package:template_flutter_app/src/design_system/v2/component/image/ds_image_type_v2.dart';
+import 'package:riada/src/design_system/ds_color.dart';
+import 'package:riada/src/design_system/v2/component/image/ds_image_type_v2.dart';
 import 'package:flutter/material.dart';
 
 class DSImageV2 extends StatefulWidget {

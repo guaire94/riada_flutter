@@ -1,13 +1,13 @@
-import 'package:template_flutter_app/src/features/marketplace/presentation/carousel/item/marketplace_carousel_item.dart';
-import 'package:template_flutter_app/src/features/marketplace/presentation/carousel/item/marketplace_carousel_type.dart';
-import 'package:template_flutter_app/src/features/list/datasource/product_data_source.dart';
-import 'package:template_flutter_app/src/features/list/entity/product.dart';
+import 'package:riada/src/features/marketplace/presentation/carousel/item/marketplace_carousel_item.dart';
+import 'package:riada/src/features/marketplace/presentation/carousel/item/marketplace_carousel_type.dart';
+import 'package:riada/src/features/event/datasource/event_data_source.dart';
+import 'package:riada/src/features/event/entity/event.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable
 class MarketplaceCarouselRepository {
   //MARK: -  Dependency
-  final ProductDataSource _productDataSource;
+  final EventDataSource _eventDataSource;
 
   //MARK: - Properties
   List<MarketplaceCarouselItem> _items = [];
@@ -17,8 +17,8 @@ class MarketplaceCarouselRepository {
 
   //MARK: -  LifeCycle
   MarketplaceCarouselRepository({
-    required ProductDataSource productDataSource,
-  })  : _productDataSource = productDataSource,
+    required EventDataSource eventDataSource,
+  })  : _eventDataSource = eventDataSource,
         super();
 
   //MARK: - Public
@@ -27,17 +27,16 @@ class MarketplaceCarouselRepository {
   }) async {
     if (items.isEmpty) {
       switch (type) {
-        case MarketplaceCarouselType.list:
-          await _loadSecondHands();
+        case MarketplaceCarouselType.events:
+          await _loadEvents();
           break;
       }
     }
   }
 
   // MARK: - Private
-  Future _loadSecondHands() async {
-    List<Product> products =
-        await _productDataSource.getLatestProducts(limit: 5);
-    _items.addAll(products.map((e) => ProductMarketplaceItem(product: e)));
+  Future _loadEvents() async {
+    List<Event> events = await _eventDataSource.getEvents(limit: 5);
+    _items.addAll(events.map((e) => EventMarketplaceItem(event: e)));
   }
 }

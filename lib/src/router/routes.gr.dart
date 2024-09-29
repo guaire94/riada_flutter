@@ -10,27 +10,27 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i12;
 import 'package:flutter/material.dart' as _i13;
-import 'package:template_flutter_app/src/features/common/presentation/coming_soon/screen/coming_soon_screen.dart'
+import 'package:riada/src/features/common/presentation/coming_soon/screen/coming_soon_screen.dart'
     as _i2;
-import 'package:template_flutter_app/src/features/drawer/presentation/screen/drawer_screen.dart'
-    as _i4;
-import 'package:template_flutter_app/src/features/home/presentation/screen/home_screen.dart'
-    as _i6;
-import 'package:template_flutter_app/src/features/list/presentation/details/screen/details_screen.dart'
+import 'package:riada/src/features/drawer/presentation/screen/drawer_screen.dart'
     as _i3;
-import 'package:template_flutter_app/src/features/list/presentation/list/screen/list_screen.dart'
+import 'package:riada/src/features/event/presentation/details/screen/event_details_screen.dart'
+    as _i4;
+import 'package:riada/src/features/event/presentation/list/screen/event_list_screen.dart'
     as _i7;
-import 'package:template_flutter_app/src/features/marketplace/presentation/list/screen/marketplace_screen.dart'
+import 'package:riada/src/features/home/presentation/screen/home_screen.dart'
+    as _i6;
+import 'package:riada/src/features/marketplace/presentation/list/screen/marketplace_screen.dart'
     as _i8;
-import 'package:template_flutter_app/src/features/user/presentation/additional_profile_information/screen/additional_profile_information_screen.dart'
+import 'package:riada/src/features/user/presentation/additional_profile_information/screen/additional_profile_information_screen.dart'
     as _i1;
-import 'package:template_flutter_app/src/features/user/presentation/forget_password/screen/forget_password_screen.dart'
+import 'package:riada/src/features/user/presentation/forget_password/screen/forget_password_screen.dart'
     as _i5;
-import 'package:template_flutter_app/src/features/user/presentation/my_profile/screen/my_profile_screen.dart'
+import 'package:riada/src/features/user/presentation/my_profile/screen/my_profile_screen.dart'
     as _i9;
-import 'package:template_flutter_app/src/features/user/presentation/sign_up/screen/sign_up_screen.dart'
+import 'package:riada/src/features/user/presentation/sign_up/screen/sign_up_screen.dart'
     as _i10;
-import 'package:template_flutter_app/src/features/user/presentation/update_additional_profile_information/screen/update_additional_profile_information_screen.dart'
+import 'package:riada/src/features/user/presentation/update_additional_profile_information/screen/update_additional_profile_information_screen.dart'
     as _i11;
 
 abstract class $AppRouter extends _i12.RootStackRouter {
@@ -51,21 +51,21 @@ abstract class $AppRouter extends _i12.RootStackRouter {
         child: _i2.ComingSoonScreen(),
       );
     },
-    DetailsRoute.name: (routeData) {
-      final args = routeData.argsAs<DetailsRouteArgs>();
-      return _i12.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: _i12.WrappedRoute(
-            child: _i3.DetailsScreen(
-          key: args.key,
-          productId: args.productId,
-        )),
-      );
-    },
     DrawerRoute.name: (routeData) {
       return _i12.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i4.DrawerScreen(),
+        child: _i3.DrawerScreen(),
+      );
+    },
+    EventDetailsRoute.name: (routeData) {
+      final args = routeData.argsAs<EventDetailsRouteArgs>();
+      return _i12.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: _i12.WrappedRoute(
+            child: _i4.EventDetailsScreen(
+          key: args.key,
+          eventId: args.eventId,
+        )),
       );
     },
     ForgetPasswordRoute.name: (routeData) {
@@ -83,7 +83,7 @@ abstract class $AppRouter extends _i12.RootStackRouter {
     ListRoute.name: (routeData) {
       return _i12.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i12.WrappedRoute(child: const _i7.ListScreen()),
+        child: _i12.WrappedRoute(child: const _i7.EventListScreen()),
       );
     },
     MarketplaceRoute.name: (routeData) {
@@ -143,45 +143,7 @@ class ComingSoonRoute extends _i12.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i3.DetailsScreen]
-class DetailsRoute extends _i12.PageRouteInfo<DetailsRouteArgs> {
-  DetailsRoute({
-    _i13.Key? key,
-    required String productId,
-    List<_i12.PageRouteInfo>? children,
-  }) : super(
-          DetailsRoute.name,
-          args: DetailsRouteArgs(
-            key: key,
-            productId: productId,
-          ),
-          initialChildren: children,
-        );
-
-  static const String name = 'DetailsRoute';
-
-  static const _i12.PageInfo<DetailsRouteArgs> page =
-      _i12.PageInfo<DetailsRouteArgs>(name);
-}
-
-class DetailsRouteArgs {
-  const DetailsRouteArgs({
-    this.key,
-    required this.productId,
-  });
-
-  final _i13.Key? key;
-
-  final String productId;
-
-  @override
-  String toString() {
-    return 'DetailsRouteArgs{key: $key, productId: $productId}';
-  }
-}
-
-/// generated route for
-/// [_i4.DrawerScreen]
+/// [_i3.DrawerScreen]
 class DrawerRoute extends _i12.PageRouteInfo<void> {
   const DrawerRoute({List<_i12.PageRouteInfo>? children})
       : super(
@@ -192,6 +154,44 @@ class DrawerRoute extends _i12.PageRouteInfo<void> {
   static const String name = 'DrawerRoute';
 
   static const _i12.PageInfo<void> page = _i12.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i4.EventDetailsScreen]
+class EventDetailsRoute extends _i12.PageRouteInfo<EventDetailsRouteArgs> {
+  EventDetailsRoute({
+    _i13.Key? key,
+    required String eventId,
+    List<_i12.PageRouteInfo>? children,
+  }) : super(
+          EventDetailsRoute.name,
+          args: EventDetailsRouteArgs(
+            key: key,
+            eventId: eventId,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'EventDetailsRoute';
+
+  static const _i12.PageInfo<EventDetailsRouteArgs> page =
+      _i12.PageInfo<EventDetailsRouteArgs>(name);
+}
+
+class EventDetailsRouteArgs {
+  const EventDetailsRouteArgs({
+    this.key,
+    required this.eventId,
+  });
+
+  final _i13.Key? key;
+
+  final String eventId;
+
+  @override
+  String toString() {
+    return 'EventDetailsRouteArgs{key: $key, eventId: $eventId}';
+  }
 }
 
 /// generated route for

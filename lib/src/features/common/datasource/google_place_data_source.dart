@@ -1,10 +1,10 @@
 import 'dart:convert';
 import 'dart:ui';
 
-import 'package:template_flutter_app/src/features/common/datasource/exceptions/no_data_available_exception.dart';
-import 'package:template_flutter_app/src/features/common/datasource/local/env_configuration_data_source.dart';
-import 'package:template_flutter_app/src/features/common/entity/google_place/place.dart';
-import 'package:template_flutter_app/src/features/common/entity/google_place/suggestion.dart';
+import 'package:riada/src/features/common/datasource/exceptions/no_data_available_exception.dart';
+import 'package:riada/src/features/common/datasource/local/env_configuration_data_source.dart';
+import 'package:riada/src/features/common/entity/google_place/place.dart';
+import 'package:riada/src/features/common/entity/google_place/suggestion.dart';
 import 'package:http/http.dart';
 import 'package:injectable/injectable.dart';
 

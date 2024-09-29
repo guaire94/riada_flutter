@@ -1,4 +1,4 @@
-import 'package:template_flutter_app/src/design_system/segment/ds_segment_item.dart';
+import 'package:riada/src/design_system/segment/ds_segment_item.dart';
 
 class DSSegmentController {
   // MARK: - Properties

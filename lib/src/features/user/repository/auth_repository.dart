@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:template_flutter_app/src/features/user/datasource/apple_sign_in_data_source.dart';
-import 'package:template_flutter_app/src/features/user/datasource/auth_data_source.dart';
-import 'package:template_flutter_app/src/features/user/datasource/google_sign_in_data_source.dart';
-import 'package:template_flutter_app/src/features/user/entity/social_user.dart';
+import 'package:riada/src/features/user/datasource/apple_sign_in_data_source.dart';
+import 'package:riada/src/features/user/datasource/auth_data_source.dart';
+import 'package:riada/src/features/user/datasource/google_sign_in_data_source.dart';
+import 'package:riada/src/features/user/entity/social_user.dart';
 import 'package:firebase_auth/firebase_auth.dart' as Auth;
 import 'package:injectable/injectable.dart';
 
@@ -55,9 +55,5 @@ class AuthRepository {
     required String email,
   }) async {
     return _authDataSource.sendForgetPasswordEmail(email: email);
-  }
-
-  DocumentReference userReference(String userId) {
-    return _authDataSource.userReference(userId);
   }
 }

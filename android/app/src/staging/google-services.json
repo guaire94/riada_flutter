@@ -1,76 +1,56 @@
 {
   "project_info": {
-    "project_number": "649746975671",
-    "project_id": "template-staging",
-    "storage_bucket": "template-staging.appspot.com"
+    "project_number": "889872739996",
+    "project_id": "social-sport-c41f3",
+    "storage_bucket": "social-sport-c41f3.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:649746975671:android:a8f675fec43dce43ac39b1",
+        "mobilesdk_app_id": "1:889872739996:android:73400e2be8c7dc6f2ac759",
         "android_client_info": {
-          "package_name": "com.equi.finder.admin.app"
+          "package_name": "com.riada.app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "649746975671-dfuktvqes8d9djktues23aicg0m81c2f.apps.googleusercontent.com",
+          "client_id": "889872739996-hknjpqjnec0qmps67s9i89hlolu7s0l7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.riada.app",
+            "certificate_hash": "72c6a3bd718f9cfac4f17ae8a74b965a949742db"
+          }
+        },
+        {
+          "client_id": "889872739996-oa9jcv7pir4ifsnmgrv7dh26a221m4jk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.riada.app",
+            "certificate_hash": "4fb9a7757133fa132f206c12ded6eda950c726f3"
+          }
+        },
+        {
+          "client_id": "889872739996-id1s1hfnvk8s43bnccmfhj9tr1cmkrb2.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCV9_YOtlJvocNo3YELIptX7KE8sFFY6da"
+          "current_key": "AIzaSyDygrjZKRGBouKyQxibaQxSblS1HT3LqE4"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "649746975671-dfuktvqes8d9djktues23aicg0m81c2f.apps.googleusercontent.com",
+              "client_id": "889872739996-id1s1hfnvk8s43bnccmfhj9tr1cmkrb2.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "649746975671-c268lqh3ejkuqfjrqu0c2g02mjna1cpg.apps.googleusercontent.com",
+              "client_id": "889872739996-3svle3fdolegpku8216neitc5i1rqgpj.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.template.user.app"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:649746975671:android:ff9f01c1db6a0370ac39b1",
-        "android_client_info": {
-          "package_name": "com.template.user.app"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "649746975671-dfuktvqes8d9djktues23aicg0m81c2f.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCV9_YOtlJvocNo3YELIptX7KE8sFFY6da"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "649746975671-dfuktvqes8d9djktues23aicg0m81c2f.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "649746975671-c268lqh3ejkuqfjrqu0c2g02mjna1cpg.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.template.user.app"
+                "bundle_id": "com.socialSport.app.SocialSport"
               }
             }
           ]

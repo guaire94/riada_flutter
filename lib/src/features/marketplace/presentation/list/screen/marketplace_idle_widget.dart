@@ -1,14 +1,14 @@
-import 'package:template_flutter_app/src/design_system/v2/graphical_chart/ds_color_v2.dart';
-import 'package:template_flutter_app/src/design_system/v2/graphical_chart/ds_spacing_v2.dart';
-import 'package:template_flutter_app/src/factory/di.dart';
-import 'package:template_flutter_app/src/features/marketplace/event_bus/marketplace_scrolled_event.dart';
-import 'package:template_flutter_app/src/features/marketplace/presentation/carousel/bloc/marketplace_carousel_bloc.dart'
+import 'package:riada/src/design_system/v2/graphical_chart/ds_color_v2.dart';
+import 'package:riada/src/design_system/v2/graphical_chart/ds_spacing_v2.dart';
+import 'package:riada/src/factory/di.dart';
+import 'package:riada/src/features/marketplace/event_bus/marketplace_scrolled_event.dart';
+import 'package:riada/src/features/marketplace/presentation/carousel/bloc/marketplace_carousel_bloc.dart'
     as Carousel;
-import 'package:template_flutter_app/src/features/marketplace/presentation/carousel/item/marketplace_carousel_type.dart';
-import 'package:template_flutter_app/src/features/marketplace/presentation/carousel/screen/marketplace_carousel_screen.dart';
-import 'package:template_flutter_app/src/features/marketplace/presentation/list/bloc/marketplace_bloc.dart';
-import 'package:template_flutter_app/src/utils/app_event_bus.dart';
-import 'package:template_flutter_app/src/utils/build_context_extension.dart';
+import 'package:riada/src/features/marketplace/presentation/carousel/item/marketplace_carousel_type.dart';
+import 'package:riada/src/features/marketplace/presentation/carousel/screen/marketplace_carousel_screen.dart';
+import 'package:riada/src/features/marketplace/presentation/list/bloc/marketplace_bloc.dart';
+import 'package:riada/src/utils/app_event_bus.dart';
+import 'package:riada/src/utils/build_context_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -81,7 +81,7 @@ class _MarketplaceIdleWidgetState extends State<MarketplaceIdleWidget> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            _content(type: MarketplaceCarouselType.list),
+            _content(type: MarketplaceCarouselType.events),
             SizedBox(height: DSSpacingV2.m),
           ],
         ),

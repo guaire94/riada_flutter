@@ -1,6 +1,6 @@
-import 'package:template_flutter_app/src/features/common/datasource/google_place_data_source.dart';
-import 'package:template_flutter_app/src/features/common/entity/google_place/place.dart';
-import 'package:template_flutter_app/src/features/common/entity/google_place/suggestion.dart';
+import 'package:riada/src/features/common/datasource/google_place_data_source.dart';
+import 'package:riada/src/features/common/entity/google_place/place.dart';
+import 'package:riada/src/features/common/entity/google_place/suggestion.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable

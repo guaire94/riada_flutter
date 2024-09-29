@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:template_flutter_app/src/design_system/v2/component/appBar/ds_app_bar_v2.dart';
-import 'package:template_flutter_app/src/utils/build_context_extension.dart';
+import 'package:riada/src/design_system/v2/component/appBar/ds_app_bar_v2.dart';
+import 'package:riada/src/utils/build_context_extension.dart';
 import 'package:flutter/material.dart';
 
 @RoutePage()

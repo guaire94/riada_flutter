@@ -1,8 +1,8 @@
-import 'package:template_flutter_app/src/features/common/presentation/base/base_state.dart';
-import 'package:template_flutter_app/src/features/marketplace/presentation/carousel/bloc/marketplace_carousel_bloc.dart';
-import 'package:template_flutter_app/src/features/marketplace/presentation/carousel/item/marketplace_carousel_type.dart';
-import 'package:template_flutter_app/src/features/marketplace/presentation/carousel/screen/marketplace_carousel_idle_widget.dart';
-import 'package:template_flutter_app/src/features/marketplace/presentation/carousel/screen/marketplace_carousel_loading_widget.dart';
+import 'package:riada/src/features/common/presentation/base/base_state.dart';
+import 'package:riada/src/features/marketplace/presentation/carousel/bloc/marketplace_carousel_bloc.dart';
+import 'package:riada/src/features/marketplace/presentation/carousel/item/marketplace_carousel_type.dart';
+import 'package:riada/src/features/marketplace/presentation/carousel/screen/marketplace_carousel_idle_widget.dart';
+import 'package:riada/src/features/marketplace/presentation/carousel/screen/marketplace_carousel_loading_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

@@ -1,19 +1,11 @@
-import 'package:template_flutter_app/firebase/prod/firebase_options.dart';
-import 'package:template_flutter_app/src/app.dart';
-import 'package:template_flutter_app/src/factory/di.dart';
-import 'package:template_flutter_app/src/features/common/datasource/local/env_configuration_data_source.dart';
-import 'package:template_flutter_app/src/features/user/datasource/notifications_data_source.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-
-final notificationsDataSource = NotificationsDataSource();
-
-@pragma('vm:entry-point')
-Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
-  notificationsDataSource.handleNotificationReceived(message);
-}
+import 'package:riada/firebase/prod/firebase_options.dart';
+import 'package:riada/src/app.dart';
+import 'package:riada/src/factory/di.dart';
+import 'package:riada/src/features/common/datasource/local/env_configuration_data_source.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,11 +13,11 @@ Future<void> main() async {
   configureDependencies(env: EnvConfiguration.prod);
 
   await Firebase.initializeApp(
+    name: "Riada",
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
   FirebaseMessaging.instance.setAutoInitEnabled(false);
-  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
 
   // Get any initial links
   final PendingDynamicLinkData? initialDeepLink =

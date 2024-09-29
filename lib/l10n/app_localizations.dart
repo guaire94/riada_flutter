@@ -8,6 +8,8 @@ import 'package:intl/intl.dart' as intl;
 import 'app_localizations_en.dart';
 import 'app_localizations_fr.dart';
 
+// ignore_for_file: type=lint
+
 /// Callers can lookup localized strings with an instance of AppLocalizations
 /// returned by `AppLocalizations.of(context)`.
 ///
@@ -290,6 +292,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'We apologize, but your request cannot be processed at this time due to a technical error. Our team has been notified of the issue and is working to resolve it as soon as possible. Please try again later or contact our support team for assistance. Thank you for your patience and understanding.'**
   String get common_error_message;
+
+  /// No description provided for @common_empty_message.
+  ///
+  /// In en, this message translates to:
+  /// **'There is no data to display'**
+  String get common_empty_message;
 
   /// No description provided for @signup_title.
   ///

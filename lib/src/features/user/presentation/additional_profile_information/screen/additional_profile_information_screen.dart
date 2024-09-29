@@ -1,9 +1,9 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:template_flutter_app/src/factory/di.dart';
-import 'package:template_flutter_app/src/features/common/presentation/base/base_state.dart';
-import 'package:template_flutter_app/src/features/user/presentation/additional_profile_information/bloc/additional_profile_information_bloc.dart';
-import 'package:template_flutter_app/src/features/user/presentation/additional_profile_information/screen/additional_profile_information_idle_widget.dart';
-import 'package:template_flutter_app/src/utils/build_context_extension.dart';
+import 'package:riada/src/factory/di.dart';
+import 'package:riada/src/features/common/presentation/base/base_state.dart';
+import 'package:riada/src/features/user/presentation/additional_profile_information/bloc/additional_profile_information_bloc.dart';
+import 'package:riada/src/features/user/presentation/additional_profile_information/screen/additional_profile_information_idle_widget.dart';
+import 'package:riada/src/utils/build_context_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

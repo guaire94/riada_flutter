@@ -1,5 +1,5 @@
-import 'package:template_flutter_app/src/features/user/repository/user_repository.dart';
-import 'package:template_flutter_app/src/utils/constants.dart';
+import 'package:riada/src/features/user/repository/user_repository.dart';
+import 'package:riada/src/utils/constants.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable

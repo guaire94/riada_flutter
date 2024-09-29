@@ -1,4 +1,4 @@
-import 'package:template_flutter_app/src/features/common/entity/appointment/appointment_status.dart';
+import 'package:riada/src/features/common/entity/appointment/appointment_status.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 class AppointmentStatusJsonConverter

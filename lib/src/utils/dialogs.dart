@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:template_flutter_app/src/utils/build_context_extension.dart';
+import 'package:riada/src/utils/build_context_extension.dart';
 
 showMessageDialog({
   required BuildContext context,

@@ -1,8 +1,8 @@
-import 'package:template_flutter_app/gen/fonts.gen.dart';
-import 'package:template_flutter_app/src/design_system/v2/component/dsList/ds_list_item.dart';
-import 'package:template_flutter_app/src/design_system/v2/component/dsList/ds_list_view.dart';
-import 'package:template_flutter_app/src/design_system/v2/component/dsList/ds_list_view_type.dart';
-import 'package:template_flutter_app/src/design_system/v2/graphical_chart/ds_color_v2.dart';
+import 'package:riada/gen/fonts.gen.dart';
+import 'package:riada/src/design_system/v2/component/dsList/ds_list_item.dart';
+import 'package:riada/src/design_system/v2/component/dsList/ds_list_view.dart';
+import 'package:riada/src/design_system/v2/component/dsList/ds_list_view_type.dart';
+import 'package:riada/src/design_system/v2/graphical_chart/ds_color_v2.dart';
 import 'package:flutter/material.dart';
 
 class DSListLongGridScreen extends StatelessWidget {

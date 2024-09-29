@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:template_flutter_app/src/design_system/ds_color.dart';
-import 'package:template_flutter_app/src/design_system/ds_spacing.dart';
+import 'package:riada/src/design_system/ds_color.dart';
+import 'package:riada/src/design_system/ds_spacing.dart';
 
 class DSCircleIndicator extends StatelessWidget {
   final double _size;

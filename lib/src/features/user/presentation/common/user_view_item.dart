@@ -1,4 +1,4 @@
-import 'package:template_flutter_app/src/features/user/entity/user.dart';
+import 'package:riada/src/features/user/entity/user.dart';
 
 class UserViewItem {
   final User user;

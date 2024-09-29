@@ -1,5 +1,5 @@
-import 'package:template_flutter_app/src/features/user/datasource/exceptions/login_failed_exception.dart';
-import 'package:template_flutter_app/src/features/user/datasource/phone_number_sign_in_data_source.dart';
+import 'package:riada/src/features/user/datasource/exceptions/login_failed_exception.dart';
+import 'package:riada/src/features/user/datasource/phone_number_sign_in_data_source.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable

@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:template_flutter_app/src/design_system/v2/component/dsList/ds_list_view.dart';
-import 'package:template_flutter_app/src/features/marketplace/presentation/carousel/bloc/marketplace_carousel_bloc.dart';
-import 'package:template_flutter_app/src/features/marketplace/presentation/carousel/item/marketplace_carousel_type.dart';
+import 'package:riada/src/design_system/v2/component/dsList/ds_list_view.dart';
+import 'package:riada/src/features/marketplace/presentation/carousel/bloc/marketplace_carousel_bloc.dart';
+import 'package:riada/src/features/marketplace/presentation/carousel/item/marketplace_carousel_type.dart';
 import 'package:flutter/material.dart';
 
 class MarketplaceCarouselIdleWidget extends StatelessWidget {

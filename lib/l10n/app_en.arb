@@ -45,6 +45,8 @@
     "common_error_title": "Technical Error: Request Unable to Process",
     "common_error_message": "We apologize, but your request cannot be processed at this time due to a technical error. Our team has been notified of the issue and is working to resolve it as soon as possible. Please try again later or contact our support team for assistance. Thank you for your patience and understanding.",
 
+    "common_empty_message": "There is no data to display",
+
     "@_SIGNUP":{},
     "signup_title": "Profile",
     "signup_phone_number": "Phone number",

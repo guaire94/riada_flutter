@@ -1,4 +1,4 @@
-import 'package:template_flutter_app/src/features/user/entity/social_user.dart';
+import 'package:riada/src/features/user/entity/social_user.dart';
 
 class DidVerifyPhoneNumberEvent {
   final SocialUser user;

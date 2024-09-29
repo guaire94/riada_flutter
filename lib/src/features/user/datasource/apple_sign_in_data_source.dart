@@ -2,15 +2,14 @@ import 'dart:convert';
 import 'dart:math';
 
 import 'package:crypto/crypto.dart';
-import 'package:template_flutter_app/src/features/common/datasource/base_data_source.dart';
-import 'package:template_flutter_app/src/features/user/datasource/exceptions/login_failed_exception.dart';
-import 'package:template_flutter_app/src/features/user/entity/social_user.dart';
+import 'package:riada/src/features/user/datasource/exceptions/login_failed_exception.dart';
+import 'package:riada/src/features/user/entity/social_user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:injectable/injectable.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
 @injectable
-class AppleSignInDataSource extends BaseDataSource {
+class AppleSignInDataSource {
   Future<SocialUser> signIn() async {
     try {
       final rawNonce = _generateNonce();

@@ -1,12 +1,12 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:template_flutter_app/src/factory/di.dart';
-import 'package:template_flutter_app/src/features/common/presentation/base/base_state.dart';
-import 'package:template_flutter_app/src/features/common/presentation/common/loading_widget.dart';
-import 'package:template_flutter_app/src/features/user/presentation/sign_up/bloc/sign_up_bloc.dart';
-import 'package:template_flutter_app/src/features/user/presentation/sign_up/screen/sign_up_idle_widget.dart';
-import 'package:template_flutter_app/src/features/user/presentation/sign_up/screen/verify_phone_number_bottom_sheet_widget.dart';
-import 'package:template_flutter_app/src/router/routes.gr.dart';
-import 'package:template_flutter_app/src/utils/build_context_extension.dart';
+import 'package:riada/src/factory/di.dart';
+import 'package:riada/src/features/common/presentation/base/base_state.dart';
+import 'package:riada/src/features/common/presentation/common/loading_widget.dart';
+import 'package:riada/src/features/user/presentation/sign_up/bloc/sign_up_bloc.dart';
+import 'package:riada/src/features/user/presentation/sign_up/screen/sign_up_idle_widget.dart';
+import 'package:riada/src/features/user/presentation/sign_up/screen/verify_phone_number_bottom_sheet_widget.dart';
+import 'package:riada/src/router/routes.gr.dart';
+import 'package:riada/src/utils/build_context_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

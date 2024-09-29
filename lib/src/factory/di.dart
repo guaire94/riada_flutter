@@ -1,4 +1,4 @@
-import 'package:template_flutter_app/src/features/common/datasource/local/env_configuration_data_source.dart';
+import 'package:riada/src/features/common/datasource/local/env_configuration_data_source.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 

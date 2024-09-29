@@ -1,4 +1,4 @@
-import 'package:template_flutter_app/src/features/user/repository/auth_repository.dart';
+import 'package:riada/src/features/user/repository/auth_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 

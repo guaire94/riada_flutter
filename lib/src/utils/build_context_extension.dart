@@ -1,4 +1,4 @@
-import 'package:template_flutter_app/l10n/app_localizations.dart';
+import 'package:riada/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 extension LocalizedBuildContext on BuildContext {

@@ -1,8 +1,8 @@
-import 'package:template_flutter_app/src/features/user/datasource/exceptions/user_not_logged_exception.dart';
-import 'package:template_flutter_app/src/features/user/entity/user.dart';
-import 'package:template_flutter_app/src/features/user/event_bus/user_log_state_updated_event.dart';
-import 'package:template_flutter_app/src/features/user/repository/user_repository.dart';
-import 'package:template_flutter_app/src/utils/app_event_bus.dart';
+import 'package:riada/src/features/user/datasource/exceptions/user_not_logged_exception.dart';
+import 'package:riada/src/features/user/entity/user.dart';
+import 'package:riada/src/features/user/event_bus/user_log_state_updated_event.dart';
+import 'package:riada/src/features/user/repository/user_repository.dart';
+import 'package:riada/src/utils/app_event_bus.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 

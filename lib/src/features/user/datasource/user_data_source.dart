@@ -1,18 +1,20 @@
 import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:template_flutter_app/src/features/common/datasource/base_data_source.dart';
-import 'package:template_flutter_app/src/features/common/datasource/exceptions/no_data_available_exception.dart';
-import 'package:template_flutter_app/src/features/common/entity/json_converter/user_status_json_converter.dart';
-import 'package:template_flutter_app/src/features/user/entity/social_user.dart';
-import 'package:template_flutter_app/src/features/user/entity/user.dart';
-import 'package:template_flutter_app/src/features/user/entity/user_status.dart';
-import 'package:template_flutter_app/src/utils/file_extension.dart';
+import 'package:riada/src/features/common/datasource/base_firestore_data_source.dart';
+import 'package:riada/src/features/common/datasource/exceptions/no_data_available_exception.dart';
+import 'package:riada/src/features/common/entity/json_converter/user_status_json_converter.dart';
+import 'package:riada/src/features/user/entity/social_user.dart';
+import 'package:riada/src/features/user/entity/user.dart';
+import 'package:riada/src/features/user/entity/user_status.dart';
+import 'package:riada/src/utils/file_extension.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable
-class UserDataSource extends BaseDataSource {
+class UserDataSource extends BaseFirestoreDataSource {
+  UserDataSource({required super.envConfigurationDataSource});
+
   // MARK: Public
   Future<void> createUser({
     required SocialUser socialUser,

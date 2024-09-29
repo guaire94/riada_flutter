@@ -1,15 +1,15 @@
-import 'package:template_flutter_app/src/design_system/v2/ds_bottom_sheet_v2.dart';
-import 'package:template_flutter_app/src/design_system/v2/graphical_chart/ds_color_v2.dart';
-import 'package:template_flutter_app/src/design_system/v2/graphical_chart/ds_spacing_v2.dart';
-import 'package:template_flutter_app/src/design_system/v2/screen/ds_button_screen.dart';
-import 'package:template_flutter_app/src/design_system/v2/screen/ds_color_screen.dart';
-import 'package:template_flutter_app/src/design_system/v2/screen/ds_image_screen.dart';
-import 'package:template_flutter_app/src/design_system/v2/screen/ds_input_screen.dart';
-import 'package:template_flutter_app/src/design_system/v2/screen/ds_list_carousel_screen.dart';
-import 'package:template_flutter_app/src/design_system/v2/screen/ds_list_long_grid_screen.dart';
-import 'package:template_flutter_app/src/design_system/v2/screen/ds_list_small_grid_screen.dart';
-import 'package:template_flutter_app/src/design_system/v2/screen/ds_text_variation_screen.dart';
-import 'package:template_flutter_app/src/utils/build_context_extension.dart';
+import 'package:riada/src/design_system/v2/ds_bottom_sheet_v2.dart';
+import 'package:riada/src/design_system/v2/graphical_chart/ds_color_v2.dart';
+import 'package:riada/src/design_system/v2/graphical_chart/ds_spacing_v2.dart';
+import 'package:riada/src/design_system/v2/screen/ds_button_screen.dart';
+import 'package:riada/src/design_system/v2/screen/ds_color_screen.dart';
+import 'package:riada/src/design_system/v2/screen/ds_image_screen.dart';
+import 'package:riada/src/design_system/v2/screen/ds_input_screen.dart';
+import 'package:riada/src/design_system/v2/screen/ds_list_carousel_screen.dart';
+import 'package:riada/src/design_system/v2/screen/ds_list_long_grid_screen.dart';
+import 'package:riada/src/design_system/v2/screen/ds_list_small_grid_screen.dart';
+import 'package:riada/src/design_system/v2/screen/ds_text_variation_screen.dart';
+import 'package:riada/src/utils/build_context_extension.dart';
 import 'package:flutter/material.dart';
 
 enum DSAppListItem {

@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:template_flutter_app/src/utils/constants.dart';
-import 'package:template_flutter_app/src/utils/exceptions.dart';
+import 'package:riada/src/utils/constants.dart';
+import 'package:riada/src/utils/exceptions.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_image_compress/flutter_image_compress.dart';

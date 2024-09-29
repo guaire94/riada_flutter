@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:template_flutter_app/src/router/routes.gr.dart';
+import 'package:riada/src/router/routes.gr.dart';
 
 @AutoRouterConfig(
   replaceInRouteName: 'Screen,Route',
@@ -38,13 +38,13 @@ class AppRouter extends $AppRouter {
       path: "/UpdateAdditionalProfileInformation",
       page: UpdateAdditionalProfileInformationRoute.page,
     ),
+    // AutoRoute(
+    //   path: "/EventList",
+    //   page: EventListRoute.page,
+    // ),
     AutoRoute(
-      path: "/List",
-      page: ListRoute.page,
-    ),
-    AutoRoute(
-      path: "/Details",
-      page: DetailsRoute.page,
+      path: "/EventDetails",
+      page: EventDetailsRoute.page,
     ),
   ];
 }

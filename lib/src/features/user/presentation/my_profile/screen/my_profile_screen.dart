@@ -1,14 +1,14 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:template_flutter_app/src/design_system/v2/component/appBar/ds_app_bar_v2.dart';
-import 'package:template_flutter_app/src/design_system/v2/graphical_chart/ds_color_v2.dart';
-import 'package:template_flutter_app/src/design_system/v2/graphical_chart/ds_spacing_v2.dart';
-import 'package:template_flutter_app/src/factory/di.dart';
-import 'package:template_flutter_app/src/features/common/presentation/base/base_state.dart';
-import 'package:template_flutter_app/src/features/common/presentation/common/loading_widget.dart';
-import 'package:template_flutter_app/src/features/user/presentation/my_profile/bloc/my_profile_bloc.dart';
-import 'package:template_flutter_app/src/features/user/presentation/my_profile/screen/my_informations_widget.dart';
-import 'package:template_flutter_app/src/features/user/presentation/my_profile/screen/my_profile_list_view_item.dart';
-import 'package:template_flutter_app/src/utils/build_context_extension.dart';
+import 'package:riada/src/design_system/v2/component/appBar/ds_app_bar_v2.dart';
+import 'package:riada/src/design_system/v2/graphical_chart/ds_color_v2.dart';
+import 'package:riada/src/design_system/v2/graphical_chart/ds_spacing_v2.dart';
+import 'package:riada/src/factory/di.dart';
+import 'package:riada/src/features/common/presentation/base/base_state.dart';
+import 'package:riada/src/features/common/presentation/common/loading_widget.dart';
+import 'package:riada/src/features/user/presentation/my_profile/bloc/my_profile_bloc.dart';
+import 'package:riada/src/features/user/presentation/my_profile/screen/my_informations_widget.dart';
+import 'package:riada/src/features/user/presentation/my_profile/screen/my_profile_list_view_item.dart';
+import 'package:riada/src/utils/build_context_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
