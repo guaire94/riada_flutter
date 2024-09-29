@@ -97,9 +97,6 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i131.EnvConfigurationDataSource>(() =>
         _i131.EnvConfigurationDataSource(
             configuration: gh<_i131.EnvConfiguration>()));
-    gh.factory<_i1062.MarketplaceCarouselRepository>(() =>
-        _i1062.MarketplaceCarouselRepository(
-            productDataSource: gh<InvalidType>()));
     gh.factory<_i130.GooglePlaceDataSource>(() => _i130.GooglePlaceDataSource(
         configurationDataSource: gh<_i131.EnvConfigurationDataSource>()));
     gh.factory<_i898.NotificationsDataSource>(() =>
@@ -122,6 +119,9 @@ extension GetItInjectableX on _i174.GetIt {
           userDataSource: gh<_i795.UserDataSource>(),
           authDataSource: gh<_i1056.AuthDataSource>(),
         ));
+    gh.factory<_i1062.MarketplaceCarouselRepository>(() =>
+        _i1062.MarketplaceCarouselRepository(
+            eventDataSource: gh<_i1025.EventDataSource>()));
     gh.factory<_i162.EventRepository>(() =>
         _i162.EventRepository(eventDataSource: gh<_i1025.EventDataSource>()));
     gh.factory<_i38.ForgetPasswordBloc>(() =>

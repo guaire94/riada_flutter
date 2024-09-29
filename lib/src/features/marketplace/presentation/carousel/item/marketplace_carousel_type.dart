@@ -39,7 +39,7 @@ extension MarketplaceCarouselTypeExtensions on MarketplaceCarouselType {
   PageRouteInfo get seeAllPageRoute {
     switch (this) {
       case MarketplaceCarouselType.events:
-        return Eve();
+        return EventListRoute();
     }
   }
 }

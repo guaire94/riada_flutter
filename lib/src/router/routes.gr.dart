@@ -17,15 +17,15 @@ import 'package:riada/src/features/drawer/presentation/screen/drawer_screen.dart
 import 'package:riada/src/features/event/presentation/details/screen/event_details_screen.dart'
     as _i4;
 import 'package:riada/src/features/event/presentation/list/screen/event_list_screen.dart'
-    as _i7;
+    as _i5;
 import 'package:riada/src/features/home/presentation/screen/home_screen.dart'
-    as _i6;
+    as _i7;
 import 'package:riada/src/features/marketplace/presentation/list/screen/marketplace_screen.dart'
     as _i8;
 import 'package:riada/src/features/user/presentation/additional_profile_information/screen/additional_profile_information_screen.dart'
     as _i1;
 import 'package:riada/src/features/user/presentation/forget_password/screen/forget_password_screen.dart'
-    as _i5;
+    as _i6;
 import 'package:riada/src/features/user/presentation/my_profile/screen/my_profile_screen.dart'
     as _i9;
 import 'package:riada/src/features/user/presentation/sign_up/screen/sign_up_screen.dart'
@@ -68,22 +68,22 @@ abstract class $AppRouter extends _i12.RootStackRouter {
         )),
       );
     },
+    EventListRoute.name: (routeData) {
+      return _i12.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: _i12.WrappedRoute(child: const _i5.EventListScreen()),
+      );
+    },
     ForgetPasswordRoute.name: (routeData) {
       return _i12.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i12.WrappedRoute(child: const _i5.ForgetPasswordScreen()),
+        child: _i12.WrappedRoute(child: const _i6.ForgetPasswordScreen()),
       );
     },
     HomeRoute.name: (routeData) {
       return _i12.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i12.WrappedRoute(child: _i6.HomeScreen()),
-      );
-    },
-    ListRoute.name: (routeData) {
-      return _i12.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: _i12.WrappedRoute(child: const _i7.EventListScreen()),
+        child: _i12.WrappedRoute(child: _i7.HomeScreen()),
       );
     },
     MarketplaceRoute.name: (routeData) {
@@ -195,7 +195,21 @@ class EventDetailsRouteArgs {
 }
 
 /// generated route for
-/// [_i5.ForgetPasswordScreen]
+/// [_i5.EventListScreen]
+class EventListRoute extends _i12.PageRouteInfo<void> {
+  const EventListRoute({List<_i12.PageRouteInfo>? children})
+      : super(
+          EventListRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'EventListRoute';
+
+  static const _i12.PageInfo<void> page = _i12.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i6.ForgetPasswordScreen]
 class ForgetPasswordRoute extends _i12.PageRouteInfo<void> {
   const ForgetPasswordRoute({List<_i12.PageRouteInfo>? children})
       : super(
@@ -209,7 +223,7 @@ class ForgetPasswordRoute extends _i12.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i6.HomeScreen]
+/// [_i7.HomeScreen]
 class HomeRoute extends _i12.PageRouteInfo<void> {
   const HomeRoute({List<_i12.PageRouteInfo>? children})
       : super(
@@ -218,20 +232,6 @@ class HomeRoute extends _i12.PageRouteInfo<void> {
         );
 
   static const String name = 'HomeRoute';
-
-  static const _i12.PageInfo<void> page = _i12.PageInfo<void>(name);
-}
-
-/// generated route for
-/// [_i7.ListScreen]
-class ListRoute extends _i12.PageRouteInfo<void> {
-  const ListRoute({List<_i12.PageRouteInfo>? children})
-      : super(
-          ListRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'ListRoute';
 
   static const _i12.PageInfo<void> page = _i12.PageInfo<void>(name);
 }

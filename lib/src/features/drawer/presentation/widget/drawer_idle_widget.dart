@@ -46,10 +46,10 @@ class DrawerIdleWidget extends StatelessWidget {
                 SizedBox(height: DSSpacingV2.l),
                 CustomDrawerButton(
                   onPressed: () {
-                    context.router.navigate(ListRoute());
+                    context.router.navigate(EventListRoute());
                     _closeEndDrawer(context: context);
                   },
-                  image: Assets.images.icons.v2.horse,
+                  image: Assets.images.icons.v2.event,
                   text: context.l10N.drawer_list,
                 ),
               ],

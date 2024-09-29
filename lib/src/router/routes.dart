@@ -17,8 +17,8 @@ class AppRouter extends $AppRouter {
         initial: true,
       ),
       AutoRoute(
-        path: "List",
-        page: ListRoute.page,
+        path: "EventList",
+        page: EventListRoute.page,
       ),
     ]),
     CustomRoute(
@@ -38,10 +38,10 @@ class AppRouter extends $AppRouter {
       path: "/UpdateAdditionalProfileInformation",
       page: UpdateAdditionalProfileInformationRoute.page,
     ),
-    // AutoRoute(
-    //   path: "/EventList",
-    //   page: EventListRoute.page,
-    // ),
+    AutoRoute(
+      path: "/EventList",
+      page: EventListRoute.page,
+    ),
     AutoRoute(
       path: "/EventDetails",
       page: EventDetailsRoute.page,

@@ -104,7 +104,7 @@ class _HomeScreenState extends BaseState<HomeScreen, HomeBloc> {
         },
         routes: [
           MarketplaceRoute(),
-          ListRoute(),
+          EventListRoute(),
         ],
         endDrawer: Drawer(
           child: BlocProvider(
