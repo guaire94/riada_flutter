@@ -1,40 +1,40 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:json_annotation/json_annotation.dart';
 import 'package:riada/src/features/common/entity/json_converter/firestore_timestamp_json_converter.dart';
+import 'package:riada/src/features/common/entity/json_converter/geopoint_json_converter.dart';
 import 'package:riada/src/features/common/entity/json_converter/user_status_json_converter.dart';
 import 'package:riada/src/features/user/entity/user_status.dart';
 import 'package:riada/src/utils/constants.dart';
-import 'package:json_annotation/json_annotation.dart';
 
 part 'user.g.dart';
 
 @JsonSerializable()
 @FirestoreTimestampJsonConverter()
 @UserStatusJsonConverter()
+@GeoPointJsonConverter()
 class User {
   final String id;
-  final String name;
-  final String? email;
-  final String? phone;
-  final UserStatus status;
   final String avatar;
-  final String city;
-  final String country;
+  final String nickName;
+  final String? mail;
+  final String? phone;
+  final GeoPoint? location;
   final List<String> devices;
+  final List<String> favoritesSports;
   final Timestamp createdDate;
-  final Timestamp lastConnection;
+  final UserStatus? status;
 
   const User({
     required this.id,
-    required this.name,
-    required this.email,
-    required this.phone,
-    required this.status,
     required this.avatar,
-    required this.city,
-    required this.country,
+    required this.nickName,
+    required this.mail,
+    required this.phone,
+    required this.location,
     required this.devices,
+    required this.favoritesSports,
     required this.createdDate,
-    required this.lastConnection,
+    required this.status,
   });
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
@@ -47,30 +47,15 @@ class User {
   }) =>
       User(
         id: id,
-        name: "",
-        email: email,
+        avatar: TemplateConstants.defaultAvatar,
+        nickName: "",
+        mail: email,
         phone: phoneNumber,
-        status: UserStatus.signed,
-        avatar: TemplateConstants.defaultAvatar,
-        city: TemplateConstants.city,
-        country: TemplateConstants.country,
+        location: TemplateConstants.defaultCity.geoPoint,
         devices: devices,
+        favoritesSports: [],
         createdDate: Timestamp.now(),
-        lastConnection: Timestamp.now(),
-      );
-
-  factory User.empty({required String id}) => User(
-        id: id,
-        name: "",
-        email: "",
-        phone: "",
         status: UserStatus.signed,
-        avatar: TemplateConstants.defaultAvatar,
-        city: TemplateConstants.city,
-        country: TemplateConstants.country,
-        devices: [],
-        createdDate: Timestamp.now(),
-        lastConnection: Timestamp.now(),
       );
 
   Map<String, dynamic> toJson() => _$UserToJson(this);

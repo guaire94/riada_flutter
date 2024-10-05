@@ -23,13 +23,22 @@ class AppLocalizationsEn extends AppLocalizations {
   String get total => 'Total';
 
   @override
+  String get city_placeholder_dubai => 'Dubai';
+
+  @override
+  String get city_placeholder_abu_dhabi => 'Abu Dhabi';
+
+  @override
+  String get city_placeholder_sharjah => 'Sharjah';
+
+  @override
   String get drawer_home => 'Home';
 
   @override
   String get drawer_guest => 'Guest';
 
   @override
-  String get drawer_list => 'List';
+  String get drawer_events => 'Events';
 
   @override
   String get drawer_profile => 'My profile';
@@ -234,5 +243,5 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get marketplace_list_section_title => 'List';
+  String get marketplace_list_section_title => 'Events';
 }

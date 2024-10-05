@@ -7,6 +7,11 @@
     "form_price": "Prix (AED):",
     "total": "Total",
 
+    "@_CITY":{},
+    "city_placeholder_dubai": "Dubai",
+    "city_placeholder_abu_dhabi": "Abu Dhabi",
+    "city_placeholder_sharjah": "Sharjah",
+
     "@_DRAWER":{},
     "drawer_home": "Accueil",
     "drawer_guest": "Invité",

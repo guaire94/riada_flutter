@@ -5,10 +5,10 @@ abstract class EventListState {}
 class LoadingState extends EventListState {}
 
 class IdleState extends EventListState {
-  final List<Event> items;
+  final List<Event> events;
 
   IdleState({
-    required this.items,
+    required this.events,
   });
 }
 

@@ -13,7 +13,6 @@ Future<void> main() async {
   configureDependencies(env: EnvConfiguration.staging);
 
   await Firebase.initializeApp(
-    name: "Riada",
     options: DefaultFirebaseOptions.currentPlatform,
   );
 

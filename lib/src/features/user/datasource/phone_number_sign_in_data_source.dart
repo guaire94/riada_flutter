@@ -1,12 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart' as Auth;
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:injectable/injectable.dart';
 import 'package:riada/src/features/user/datasource/exceptions/invalid_phone_number_exception.dart';
 import 'package:riada/src/features/user/datasource/exceptions/login_failed_exception.dart';
 import 'package:riada/src/features/user/entity/social_user.dart';
 import 'package:riada/src/features/user/event_bus/did_receive_phone_numbe_code_event.dart';
 import 'package:riada/src/features/user/event_bus/did_verify_phone_number_event.dart';
 import 'package:riada/src/utils/app_event_bus.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_auth/firebase_auth.dart' as Auth;
-import 'package:injectable/injectable.dart';
 
 @injectable
 class PhoneNumberSignInDataSource {
@@ -41,11 +41,15 @@ class PhoneNumberSignInDataSource {
   }
 
   Future verifySmsCode(String smsCode) async {
-    PhoneAuthCredential credential = PhoneAuthProvider.credential(
-      verificationId: _verificationId,
-      smsCode: smsCode,
-    );
-    await _signIn(credential);
+    try {
+      PhoneAuthCredential credential = PhoneAuthProvider.credential(
+        verificationId: _verificationId,
+        smsCode: smsCode,
+      );
+      await _signIn(credential);
+    } catch (_) {
+      print("a");
+    }
   }
 
   Future _signIn(PhoneAuthCredential credential) async {

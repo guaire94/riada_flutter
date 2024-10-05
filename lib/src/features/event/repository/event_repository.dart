@@ -1,16 +1,13 @@
+import 'package:injectable/injectable.dart';
 import 'package:riada/src/features/common/datasource/exceptions/no_data_available_exception.dart';
-import 'package:riada/src/features/common/datasource/exceptions/no_more_data_available_exception.dart';
 import 'package:riada/src/features/event/datasource/event_data_source.dart';
 import 'package:riada/src/features/event/entity/event.dart';
-import 'package:injectable/injectable.dart';
+import 'package:riada/src/utils/city.dart';
 
 @injectable
 class EventRepository {
   // MARK: -  Dependency
   final EventDataSource _eventDataSource;
-
-  // MARK: - Properties
-  List<Event> _items = [];
 
   // MARK: -  LifeCycle
   EventRepository({
@@ -18,26 +15,23 @@ class EventRepository {
   })  : _eventDataSource = eventDataSource,
         super();
 
-  // MARK: - Public
-  List<Event> get items => _items;
-
-  Future loadMore() async {
-    final events = await _eventDataSource.getEvents(limit: 20);
+  Future<List<Event>> getNextNearestEvents({
+    required String sportId,
+    required City city,
+  }) async {
+    final events = await _eventDataSource.getNextNearestEvents(
+      sportId: sportId,
+      city: city,
+    );
 
     if (events.isEmpty) {
-      if (_items.isEmpty) throw NoDataAvailableException();
-
-      throw NoMoreDataAvailableException();
+      throw NoDataAvailableException();
     }
 
-    _items.addAll(events);
+    return events;
   }
 
   Future<Event> getEventFrom({required String eventId}) async {
     return _eventDataSource.getEventFrom(eventId: eventId);
-  }
-
-  reset() {
-    _items = [];
   }
 }

@@ -1,10 +1,9 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart' as Auth;
+import 'package:injectable/injectable.dart';
 import 'package:riada/src/features/user/datasource/apple_sign_in_data_source.dart';
 import 'package:riada/src/features/user/datasource/auth_data_source.dart';
 import 'package:riada/src/features/user/datasource/google_sign_in_data_source.dart';
 import 'package:riada/src/features/user/entity/social_user.dart';
-import 'package:firebase_auth/firebase_auth.dart' as Auth;
-import 'package:injectable/injectable.dart';
 
 @injectable
 class AuthRepository {

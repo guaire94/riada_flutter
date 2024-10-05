@@ -1,18 +1,15 @@
-import 'package:riada/src/features/common/datasource/exceptions/no_data_available_exception.dart';
-import 'package:riada/src/features/common/datasource/exceptions/no_more_data_available_exception.dart';
-import 'package:riada/src/features/event/entity/event.dart';
-import 'package:riada/src/features/event/repository/event_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
+import 'package:riada/src/features/common/datasource/exceptions/no_data_available_exception.dart';
+import 'package:riada/src/features/event/entity/event.dart';
+import 'package:riada/src/features/event/repository/event_repository.dart';
+import 'package:riada/src/utils/constants.dart';
 
 part 'event_list_event.dart';
 part 'event_list_state.dart';
 
 @injectable
 class EventListBloc extends Bloc<EventListEvent, EventListState> {
-  // MARK: Properties
-  final List _streams = [];
-
   // MARK: Dependencies
   final EventRepository _eventRepository;
 
@@ -23,32 +20,27 @@ class EventListBloc extends Bloc<EventListEvent, EventListState> {
         super(LoadingState()) {
     on<LoadEvent>((event, emit) async {
       try {
-        await _eventRepository.loadMore();
+        final events = await _eventRepository.getNextNearestEvents(
+          sportId: TemplateConstants.defaultSportId,
+          city: TemplateConstants.defaultCity,
+        );
         emit(IdleState(
-          items: _eventRepository.items,
+          events: events,
         ));
       } on NoDataAvailableException catch (_) {
-        _eventRepository.reset();
         emit(EmptyState());
-      } on NoMoreDataAvailableException catch (_) {
-        emit(IdleState(
-          items: _eventRepository.items,
-        ));
       } catch (_) {
-        _eventRepository.reset();
         emit(ErrorState());
       }
     });
 
     on<RefreshEvent>((event, emit) async {
-      _eventRepository.reset();
       add(LoadEvent());
     });
   }
 
   @override
   Future<void> close() {
-    _streams.forEach((stream) => stream.cancel());
     return super.close();
   }
 }

@@ -1,8 +1,8 @@
+import 'package:injectable/injectable.dart';
+import 'package:riada/src/features/event/datasource/event_data_source.dart';
 import 'package:riada/src/features/marketplace/presentation/carousel/item/marketplace_carousel_item.dart';
 import 'package:riada/src/features/marketplace/presentation/carousel/item/marketplace_carousel_type.dart';
-import 'package:riada/src/features/event/datasource/event_data_source.dart';
-import 'package:riada/src/features/event/entity/event.dart';
-import 'package:injectable/injectable.dart';
+import 'package:riada/src/utils/constants.dart';
 
 @injectable
 class MarketplaceCarouselRepository {
@@ -36,7 +36,10 @@ class MarketplaceCarouselRepository {
 
   // MARK: - Private
   Future _loadEvents() async {
-    List<Event> events = await _eventDataSource.getEvents(limit: 5);
+    final events = await _eventDataSource.getNextNearestEvents(
+      sportId: TemplateConstants.defaultSportId,
+      city: TemplateConstants.defaultCity,
+    );
     _items.addAll(events.map((e) => EventMarketplaceItem(event: e)));
   }
 }

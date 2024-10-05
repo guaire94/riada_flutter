@@ -1,5 +1,6 @@
 {
   "fr": [
+    "drawer_events",
     "common_empty_message"
   ]
 }

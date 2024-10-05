@@ -24,7 +24,8 @@ Event _$EventFromJson(Map<String, dynamic> json) => Event(
       sportEmoticon: json['sportEmoticon'] as String,
       sportId: json['sportId'] as String,
       sportName: json['sportName'] as String,
-      status: json['status'] as String,
+      status:
+          const EventStatusJsonConverter().fromJson(json['status'] as String),
     );
 
 Map<String, dynamic> _$EventToJson(Event instance) => <String, dynamic>{
@@ -44,5 +45,5 @@ Map<String, dynamic> _$EventToJson(Event instance) => <String, dynamic>{
       'sportEmoticon': instance.sportEmoticon,
       'sportId': instance.sportId,
       'sportName': instance.sportName,
-      'status': instance.status,
+      'status': const EventStatusJsonConverter().toJson(instance.status),
     };

@@ -1,13 +1,16 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:json_annotation/json_annotation.dart';
 import 'package:riada/src/features/common/entity/json_converter/firestore_timestamp_json_converter.dart';
 import 'package:riada/src/features/common/entity/json_converter/geopoint_json_converter.dart';
-import 'package:json_annotation/json_annotation.dart';
+import 'package:riada/src/features/event/entity/event_status.dart';
+import 'package:riada/src/features/event/entity/json_converter/event_status_json_converter.dart';
 
 part 'event.g.dart';
 
 @JsonSerializable()
 @FirestoreTimestampJsonConverter()
 @GeoPointJsonConverter()
+@EventStatusJsonConverter()
 class Event {
   final String id;
   final String title;
@@ -23,7 +26,7 @@ class Event {
   final String sportEmoticon;
   final String sportId;
   final String sportName;
-  final String status;
+  final EventStatus status;
 
   Event({
     required this.id,
@@ -62,7 +65,7 @@ class Event {
     String? sportEmoticon,
     String? sportId,
     String? sportName,
-    String? status,
+    EventStatus? status,
   }) {
     return Event(
       id: id ?? this.id,

@@ -1,15 +1,15 @@
 import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:injectable/injectable.dart';
 import 'package:riada/src/features/common/datasource/exceptions/no_data_available_exception.dart';
-import 'package:riada/src/features/common/entity/google_place/place.dart';
 import 'package:riada/src/features/user/datasource/auth_data_source.dart';
 import 'package:riada/src/features/user/datasource/exceptions/user_not_logged_exception.dart';
 import 'package:riada/src/features/user/datasource/user_data_source.dart';
 import 'package:riada/src/features/user/entity/social_user.dart';
 import 'package:riada/src/features/user/entity/user.dart';
 import 'package:riada/src/features/user/entity/user_status.dart';
-import 'package:injectable/injectable.dart';
+import 'package:riada/src/utils/city.dart';
 
 @injectable
 class UserRepository {
@@ -79,7 +79,6 @@ class UserRepository {
 
   Future updateAdditionalProfileInformation({
     required String name,
-    required Place place,
     required UserStatus status,
     required String? email,
     required String? phoneNumber,
@@ -89,8 +88,6 @@ class UserRepository {
     return _userDataSource.updateAdditionalProfileInformation(
       userId: _userId,
       name: name,
-      city: place.city,
-      country: place.country,
       status: status,
       email: email,
       phoneNumber: phoneNumber,
@@ -99,12 +96,11 @@ class UserRepository {
   }
 
   Future updateCity({
-    required Place place,
+    required City city,
   }) async {
     return _userDataSource.updateCity(
       userId: _userId,
-      city: place.city,
-      country: place.country,
+      city: city,
     );
   }
 

@@ -1,4 +1,6 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:riada/src/design_system/v2/component/appBar/ds_app_bar_v2.dart';
 import 'package:riada/src/design_system/v2/graphical_chart/ds_color_v2.dart';
 import 'package:riada/src/design_system/v2/graphical_chart/ds_spacing_v2.dart';
@@ -9,8 +11,6 @@ import 'package:riada/src/features/user/presentation/my_profile/bloc/my_profile_
 import 'package:riada/src/features/user/presentation/my_profile/screen/my_informations_widget.dart';
 import 'package:riada/src/features/user/presentation/my_profile/screen/my_profile_list_view_item.dart';
 import 'package:riada/src/utils/build_context_extension.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 @RoutePage()
 class MyProfileScreen extends StatefulWidget implements AutoRouteWrapper {
@@ -97,41 +97,42 @@ class _MyProfileScreenState extends BaseState<MyProfileScreen, MyProfileBloc>
 
   Widget _idleState({required IdleState state}) {
     return Scaffold(
-        appBar: DSAppBarV2(
-          title: context.l10N.my_profile_title,
-        ),
-        body: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: DSSpacingV2.xl),
-              MyInformationsWidget(user: state.user),
-              SizedBox(height: DSSpacingV2.xl),
-              Expanded(
-                child: ListView(
-                  children: [
-                    MyProfileListView(MyProfileListItem.information),
-                    MyProfileListView(MyProfileListItem.privacyPolicy),
-                    MyProfileListView(MyProfileListItem.cgv),
-                  ],
-                ),
+      appBar: DSAppBarV2(
+        title: context.l10N.my_profile_title,
+      ),
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: DSSpacingV2.xl),
+            MyInformationsWidget(user: state.user),
+            SizedBox(height: DSSpacingV2.xl),
+            Expanded(
+              child: ListView(
+                children: [
+                  MyProfileListView(MyProfileListItem.information),
+                  MyProfileListView(MyProfileListItem.privacyPolicy),
+                  MyProfileListView(MyProfileListItem.cgv),
+                ],
               ),
-            ],
+            ),
+          ],
+        ),
+      ),
+      floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: GestureDetector(
+        onTap: () {
+          bloc.add(LogoutEvent());
+        },
+        child: Text(
+          context.l10N.logout,
+          style: context.textTheme.bodyLarge?.copyWith(
+            color: DSColorV2.danger,
           ),
         ),
-        floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        floatingActionButton: GestureDetector(
-          onTap: () {
-            bloc.add(LogoutEvent());
-          },
-          child: Text(
-            context.l10N.logout,
-            style: context.textTheme.bodyLarge?.copyWith(
-              color: DSColorV2.danger,
-            ),
-          ),
-        ));
+      ),
+    );
   }
 
   @override

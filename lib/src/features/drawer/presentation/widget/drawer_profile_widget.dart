@@ -1,10 +1,10 @@
+import 'package:flutter/material.dart';
 import 'package:riada/src/design_system/v2/component/image/ds_image_type_v2.dart';
 import 'package:riada/src/design_system/v2/component/image/ds_image_v2.dart';
 import 'package:riada/src/design_system/v2/graphical_chart/ds_color_v2.dart';
 import 'package:riada/src/design_system/v2/graphical_chart/ds_spacing_v2.dart';
 import 'package:riada/src/features/user/entity/user.dart';
 import 'package:riada/src/utils/build_context_extension.dart';
-import 'package:flutter/material.dart';
 
 class DrawerProfileWidget extends StatelessWidget {
   // MARK: - Constants
@@ -48,7 +48,7 @@ class DrawerProfileWidget extends StatelessWidget {
         ),
         SizedBox(height: DSSpacingV2.xs),
         Text(
-          _user != null ? _user.name : context.l10N.drawer_guest,
+          _user != null ? _user.nickName : context.l10N.drawer_guest,
           style: context.textTheme.headlineLarge?.copyWith(
             color: DSColorV2.secondary,
           ),

@@ -1,12 +1,11 @@
 import 'dart:io';
 
-import 'package:riada/src/features/common/entity/google_place/place.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:injectable/injectable.dart';
 import 'package:riada/src/features/user/entity/user.dart';
 import 'package:riada/src/features/user/event_bus/user_log_state_updated_event.dart';
 import 'package:riada/src/features/user/repository/user_repository.dart';
 import 'package:riada/src/utils/app_event_bus.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:injectable/injectable.dart';
 
 part 'update_additional_profile_information_event.dart';
 part 'update_additional_profile_information_state.dart';
@@ -52,9 +51,6 @@ class UpdateAdditionalProfileInformationBloc extends Bloc<
         await _userRepository.updateProfilePicture(
           profile: event.imageProfile!,
         );
-      }
-      if (event.place != null) {
-        await _userRepository.updateCity(place: event.place!);
       }
       AppEventBus.instance.fire(UserLogStateUpdatedEvent());
       emit(SuccessState());

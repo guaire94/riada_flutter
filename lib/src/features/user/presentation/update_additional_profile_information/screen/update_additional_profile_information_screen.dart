@@ -1,6 +1,8 @@
 import 'dart:io';
 
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:riada/src/design_system/ds_image_picker_controller.dart';
 import 'package:riada/src/design_system/ds_text_field.dart';
 import 'package:riada/src/design_system/v2/component/appBar/ds_app_bar_v2.dart';
@@ -10,13 +12,9 @@ import 'package:riada/src/design_system/v2/component/image/ds_image_picker_v2.da
 import 'package:riada/src/design_system/v2/component/image/ds_image_type_v2.dart';
 import 'package:riada/src/design_system/v2/graphical_chart/ds_spacing_v2.dart';
 import 'package:riada/src/factory/di.dart';
-import 'package:riada/src/features/common/entity/google_place/place.dart';
 import 'package:riada/src/features/common/presentation/base/base_state.dart';
-import 'package:riada/src/features/common/presentation/common/cities_autocomplete_field/cities_autocomplete_field_factory.dart';
 import 'package:riada/src/features/user/presentation/update_additional_profile_information/bloc/update_additional_profile_information_bloc.dart';
 import 'package:riada/src/utils/build_context_extension.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 @RoutePage()
 class UpdateAdditionalProfileInformationScreen extends StatefulWidget
@@ -41,14 +39,11 @@ class UpdateAdditionalProfileInformationScreen extends StatefulWidget
 class _UpdateAdditionalProfileInformationScreenState extends BaseState<
     UpdateAdditionalProfileInformationScreen,
     UpdateAdditionalProfileInformationBloc> {
-  final TextEditingController _cityController = TextEditingController();
   final TextEditingController _textEmailController = TextEditingController();
   final TextEditingController _textPhoneNumberController =
       TextEditingController();
   final DSImagePickerController _profileImageController =
       DSImagePickerController();
-
-  Place? _city;
 
   @override
   void initState() {
@@ -135,10 +130,12 @@ class _UpdateAdditionalProfileInformationScreenState extends BaseState<
   }
 
   Widget _idleState({required IdleState state}) {
-    _textEmailController.text = state.user.email.toString();
-    _textPhoneNumberController.text = state.user.phone.toString();
+    if (state.user.mail != null)
+      _textEmailController.text = state.user.mail.toString();
+
+    if (state.user.phone != null)
+      _textPhoneNumberController.text = state.user.phone.toString();
     _profileImageController.imageUrl = state.user.avatar;
-    _cityController.text = state.user.city + ", " + state.user.country;
 
     return Scaffold(
       appBar: DSAppBarV2(
@@ -162,25 +159,18 @@ class _UpdateAdditionalProfileInformationScreenState extends BaseState<
                             controller: _profileImageController,
                           ),
                           SizedBox(height: DSSpacingV2.s),
-                          initCitiesAutocompleteField(
-                            label: context.l10N.city,
-                            controller: _cityController,
-                            onSelectionChanged: (place) {
-                              _city = place;
-                            },
-                          ),
-                          SizedBox(height: DSSpacingV2.s),
-                          DSTextField(
-                            controller: _textEmailController,
-                            label: context.l10N.email,
-                            readOnly: true,
-                          ),
-                          SizedBox(height: DSSpacingV2.s),
-                          DSTextField(
-                            controller: _textPhoneNumberController,
-                            label: context.l10N.phone,
-                            readOnly: true,
-                          ),
+                          if (_textEmailController.text.isNotEmpty)
+                            DSTextField(
+                              controller: _textEmailController,
+                              label: context.l10N.email,
+                              readOnly: true,
+                            ),
+                          if (_textPhoneNumberController.text.isNotEmpty)
+                            DSTextField(
+                              controller: _textPhoneNumberController,
+                              label: context.l10N.phone,
+                              readOnly: true,
+                            ),
                         ],
                       ),
                     ),
@@ -227,7 +217,6 @@ class _UpdateAdditionalProfileInformationScreenState extends BaseState<
     bloc.add(
       UpdateEvent(
         imageProfile: imageProfile,
-        place: _city,
       ),
     );
   }

@@ -6,11 +6,9 @@ class LoadEvent extends UpdateAdditionalProfileInformationEvent {}
 
 class UpdateEvent extends UpdateAdditionalProfileInformationEvent {
   final File? imageProfile;
-  final Place? place;
 
   UpdateEvent({
     required this.imageProfile,
-    required this.place,
   });
 }
 

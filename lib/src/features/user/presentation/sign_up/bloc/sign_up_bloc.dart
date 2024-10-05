@@ -1,3 +1,5 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:injectable/injectable.dart';
 import 'package:riada/src/features/user/datasource/exceptions/invalid_sms_code_exception.dart';
 import 'package:riada/src/features/user/entity/social_user.dart';
 import 'package:riada/src/features/user/entity/user_status.dart';
@@ -7,8 +9,6 @@ import 'package:riada/src/features/user/repository/auth_repository.dart';
 import 'package:riada/src/features/user/repository/phone_number_verification_repository.dart';
 import 'package:riada/src/features/user/repository/user_repository.dart';
 import 'package:riada/src/utils/app_event_bus.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:injectable/injectable.dart';
 
 part 'sign_up_event.dart';
 part 'sign_up_state.dart';

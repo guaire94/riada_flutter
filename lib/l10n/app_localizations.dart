@@ -119,6 +119,24 @@ abstract class AppLocalizations {
   /// **'Total'**
   String get total;
 
+  /// No description provided for @city_placeholder_dubai.
+  ///
+  /// In en, this message translates to:
+  /// **'Dubai'**
+  String get city_placeholder_dubai;
+
+  /// No description provided for @city_placeholder_abu_dhabi.
+  ///
+  /// In en, this message translates to:
+  /// **'Abu Dhabi'**
+  String get city_placeholder_abu_dhabi;
+
+  /// No description provided for @city_placeholder_sharjah.
+  ///
+  /// In en, this message translates to:
+  /// **'Sharjah'**
+  String get city_placeholder_sharjah;
+
   /// No description provided for @drawer_home.
   ///
   /// In en, this message translates to:
@@ -131,11 +149,11 @@ abstract class AppLocalizations {
   /// **'Guest'**
   String get drawer_guest;
 
-  /// No description provided for @drawer_list.
+  /// No description provided for @drawer_events.
   ///
   /// In en, this message translates to:
-  /// **'List'**
-  String get drawer_list;
+  /// **'Events'**
+  String get drawer_events;
 
   /// No description provided for @drawer_profile.
   ///
@@ -536,7 +554,7 @@ abstract class AppLocalizations {
   /// No description provided for @marketplace_list_section_title.
   ///
   /// In en, this message translates to:
-  /// **'List'**
+  /// **'Events'**
   String get marketplace_list_section_title;
 }
 

@@ -7,10 +7,15 @@
     "form_price": "Price (AED):",
     "total": "Total",
 
+    "@_CITY":{},
+    "city_placeholder_dubai": "Dubai",
+    "city_placeholder_abu_dhabi": "Abu Dhabi",
+    "city_placeholder_sharjah": "Sharjah",
+
     "@_DRAWER":{},
     "drawer_home": "Home",
     "drawer_guest": "Guest",
-    "drawer_list": "List",
+    "drawer_events": "Events",
     "drawer_profile": "My profile",
 
     "@_FORM":{},
@@ -103,5 +108,5 @@
     "@_MARKETPLACE":{},
     "marketplace_title_with_no_user": "Welcome!",
     "marketplace_title_with_user": "Welcome back, {user}!",
-    "marketplace_list_section_title": "List"
+    "marketplace_list_section_title": "Events"
 }

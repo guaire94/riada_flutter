@@ -5,13 +5,9 @@ abstract class AdditionalProfileInformationState {}
 class LoadingState extends AdditionalProfileInformationState {}
 
 class IdleState extends AdditionalProfileInformationState {
-  final bool shouldProvidePhoneNumber;
-  final bool shouldProvideEmail;
   final bool onSubmitLoading;
 
   IdleState({
-    required this.shouldProvidePhoneNumber,
-    required this.shouldProvideEmail,
     this.onSubmitLoading = false,
   });
 

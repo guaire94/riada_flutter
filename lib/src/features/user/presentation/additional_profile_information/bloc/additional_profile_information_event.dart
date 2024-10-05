@@ -9,13 +9,11 @@ class UpdateEvent extends AdditionalProfileInformationEvent {
   final File? imageProfile;
   final String? email;
   final String? phoneNumber;
-  final Place city;
 
   UpdateEvent({
     required this.username,
     required this.imageProfile,
     required this.email,
     required this.phoneNumber,
-    required this.city,
   });
 }

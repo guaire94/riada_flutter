@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
 import 'package:riada/gen/assets.gen.dart';
 import 'package:riada/src/design_system/v2/graphical_chart/ds_color_v2.dart';
 import 'package:riada/src/design_system/v2/graphical_chart/ds_spacing_v2.dart';
@@ -7,7 +8,6 @@ import 'package:riada/src/features/drawer/presentation/widget/drawer_profile_wid
 import 'package:riada/src/features/user/entity/user.dart';
 import 'package:riada/src/router/routes.gr.dart';
 import 'package:riada/src/utils/build_context_extension.dart';
-import 'package:flutter/material.dart';
 
 class DrawerIdleWidget extends StatelessWidget {
   // MARK: - Properties
@@ -50,7 +50,7 @@ class DrawerIdleWidget extends StatelessWidget {
                     _closeEndDrawer(context: context);
                   },
                   image: Assets.images.icons.v2.event,
-                  text: context.l10N.drawer_list,
+                  text: context.l10N.drawer_events,
                 ),
               ],
             ),

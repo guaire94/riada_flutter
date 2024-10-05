@@ -1,15 +1,16 @@
 import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:injectable/injectable.dart';
 import 'package:riada/src/features/common/datasource/base_firestore_data_source.dart';
 import 'package:riada/src/features/common/datasource/exceptions/no_data_available_exception.dart';
 import 'package:riada/src/features/common/entity/json_converter/user_status_json_converter.dart';
 import 'package:riada/src/features/user/entity/social_user.dart';
 import 'package:riada/src/features/user/entity/user.dart';
 import 'package:riada/src/features/user/entity/user_status.dart';
+import 'package:riada/src/utils/city.dart';
 import 'package:riada/src/utils/file_extension.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:injectable/injectable.dart';
 
 @injectable
 class UserDataSource extends BaseFirestoreDataSource {
@@ -60,20 +61,16 @@ class UserDataSource extends BaseFirestoreDataSource {
   Future<void> updateAdditionalProfileInformation({
     required String userId,
     required String name,
-    required String country,
-    required String city,
-    required UserStatus status,
+    required File? profile,
     required String? email,
     required String? phoneNumber,
-    required File? profile,
+    required UserStatus status,
   }) async {
     Map<String, String> map = {};
 
-    map["name"] = name;
+    map["nickName"] = name;
     map["status"] = UserStatusJsonConverter().toJson(status);
-    map["country"] = country;
-    map["city"] = city;
-    if (email != null && email.isNotEmpty) map["email"] = email;
+    if (email != null && email.isNotEmpty) map["mail"] = email;
     if (phoneNumber != null && phoneNumber.isEmpty == false)
       map["phone"] = phoneNumber;
     if (profile != null)
@@ -84,13 +81,11 @@ class UserDataSource extends BaseFirestoreDataSource {
 
   Future<void> updateCity({
     required String userId,
-    required String country,
-    required String city,
+    required City city,
   }) async {
-    Map<String, String> map = {};
+    Map<String, GeoPoint> map = {};
 
-    map["country"] = country;
-    map["city"] = city;
+    map["location"] = city.geoPoint;
 
     await userReference(userId).update(map);
   }
@@ -103,14 +98,6 @@ class UserDataSource extends BaseFirestoreDataSource {
 
     map["avatar"] = await profile.uploadImage(reference: userStorage(userId));
 
-    await userReference(userId).update(map);
-  }
-
-  Future<void> updateStripeAccountId({
-    required String userId,
-    required String stripeAccountId,
-  }) async {
-    Map<String, String> map = {"stripeAccountId": stripeAccountId};
     await userReference(userId).update(map);
   }
 

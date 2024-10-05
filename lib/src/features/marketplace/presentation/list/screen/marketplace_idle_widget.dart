@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:riada/src/design_system/v2/graphical_chart/ds_color_v2.dart';
 import 'package:riada/src/design_system/v2/graphical_chart/ds_spacing_v2.dart';
 import 'package:riada/src/factory/di.dart';
@@ -9,8 +11,6 @@ import 'package:riada/src/features/marketplace/presentation/carousel/screen/mark
 import 'package:riada/src/features/marketplace/presentation/list/bloc/marketplace_bloc.dart';
 import 'package:riada/src/utils/app_event_bus.dart';
 import 'package:riada/src/utils/build_context_extension.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MarketplaceIdleWidget extends StatefulWidget {
   // MARK: - Properties
@@ -95,7 +95,7 @@ class _MarketplaceIdleWidgetState extends State<MarketplaceIdleWidget> {
       text = context.l10N.marketplace_title_with_no_user;
     } else {
       text = context.l10N
-          .marketplace_title_with_user(widget._state.currentUser!.name);
+          .marketplace_title_with_user(widget._state.currentUser!.nickName);
     }
     return Positioned(
       top: DSSpacingV2.l,

@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
 import 'package:riada/src/design_system/v2/component/dsList/ds_list_view.dart';
 import 'package:riada/src/design_system/v2/component/dsList/ds_list_view_type.dart';
 import 'package:riada/src/features/event/presentation/common/item/event_list_item.dart';
 import 'package:riada/src/features/event/presentation/list/bloc/event_list_bloc.dart';
 import 'package:riada/src/router/routes.gr.dart';
-import 'package:flutter/material.dart';
 
 class ListIdleWidget extends StatefulWidget {
   // MARK: - Dependencies
@@ -46,7 +46,7 @@ class _ListIdleWidgetState extends State<ListIdleWidget> {
 
   // MARK: - Private
   List<EventListItem> _eventListItems() {
-    return widget._state.items
+    return widget._state.events
         .map(
           (event) => EventListItem(
             event: event,

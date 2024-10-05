@@ -8,34 +8,47 @@ part of 'user.dart';
 
 User _$UserFromJson(Map<String, dynamic> json) => User(
       id: json['id'] as String,
-      name: json['name'] as String,
-      email: json['email'] as String?,
-      phone: json['phone'] as String?,
-      status:
-          const UserStatusJsonConverter().fromJson(json['status'] as String),
       avatar: json['avatar'] as String,
-      city: json['city'] as String,
-      country: json['country'] as String,
+      nickName: json['nickName'] as String,
+      mail: json['mail'] as String?,
+      phone: json['phone'] as String?,
+      location: _$JsonConverterFromJson<GeoPoint, GeoPoint>(
+          json['location'], const GeoPointJsonConverter().fromJson),
       devices:
           (json['devices'] as List<dynamic>).map((e) => e as String).toList(),
+      favoritesSports: (json['favoritesSports'] as List<dynamic>)
+          .map((e) => e as String)
+          .toList(),
       createdDate: const FirestoreTimestampJsonConverter()
           .fromJson(json['createdDate'] as Timestamp),
-      lastConnection: const FirestoreTimestampJsonConverter()
-          .fromJson(json['lastConnection'] as Timestamp),
+      status: _$JsonConverterFromJson<String, UserStatus>(
+          json['status'], const UserStatusJsonConverter().fromJson),
     );
 
 Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
       'id': instance.id,
-      'name': instance.name,
-      'email': instance.email,
-      'phone': instance.phone,
-      'status': const UserStatusJsonConverter().toJson(instance.status),
       'avatar': instance.avatar,
-      'city': instance.city,
-      'country': instance.country,
+      'nickName': instance.nickName,
+      'mail': instance.mail,
+      'phone': instance.phone,
+      'location': _$JsonConverterToJson<GeoPoint, GeoPoint>(
+          instance.location, const GeoPointJsonConverter().toJson),
       'devices': instance.devices,
+      'favoritesSports': instance.favoritesSports,
       'createdDate':
           const FirestoreTimestampJsonConverter().toJson(instance.createdDate),
-      'lastConnection': const FirestoreTimestampJsonConverter()
-          .toJson(instance.lastConnection),
+      'status': _$JsonConverterToJson<String, UserStatus>(
+          instance.status, const UserStatusJsonConverter().toJson),
     };
+
+Value? _$JsonConverterFromJson<Json, Value>(
+  Object? json,
+  Value? Function(Json json) fromJson,
+) =>
+    json == null ? null : fromJson(json as Json);
+
+Json? _$JsonConverterToJson<Json, Value>(
+  Value? value,
+  Json? Function(Value value) toJson,
+) =>
+    value == null ? null : toJson(value);

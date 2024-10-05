@@ -1,20 +1,14 @@
+import 'package:flutter/material.dart';
+import 'package:form_validator/form_validator.dart';
 import 'package:riada/src/design_system/ds_image_picker_controller.dart';
-import 'package:riada/src/design_system/ds_phone_number_field.dart';
 import 'package:riada/src/design_system/ds_text_field.dart';
-import 'package:riada/src/design_system/segment/ds_segment.dart';
-import 'package:riada/src/design_system/segment/ds_segment_controller.dart';
 import 'package:riada/src/design_system/v2/component/appBar/ds_app_bar_v2.dart';
 import 'package:riada/src/design_system/v2/component/buttons/ds_button_elevated_v2.dart';
 import 'package:riada/src/design_system/v2/component/image/ds_image_picker_v2.dart';
 import 'package:riada/src/design_system/v2/component/image/ds_image_type_v2.dart';
-import 'package:riada/src/design_system/v2/graphical_chart/ds_color_v2.dart';
 import 'package:riada/src/design_system/v2/graphical_chart/ds_spacing_v2.dart';
-import 'package:riada/src/features/common/entity/google_place/place.dart';
-import 'package:riada/src/features/common/presentation/common/cities_autocomplete_field/cities_autocomplete_field_factory.dart';
 import 'package:riada/src/features/user/presentation/additional_profile_information/bloc/additional_profile_information_bloc.dart';
 import 'package:riada/src/utils/build_context_extension.dart';
-import 'package:flutter/material.dart';
-import 'package:form_validator/form_validator.dart';
 
 class AdditionalProfileInformationIdleWidget extends StatefulWidget {
   // MARK: - Dependencies
@@ -42,10 +36,6 @@ class _AdditionalProfileInformationIdleWidgetState
   final TextEditingController _emailController = TextEditingController();
   final DSImagePickerController _profileImageController =
       DSImagePickerController();
-  late DSSegmentController _userTypeController;
-  final TextEditingController _cityController = TextEditingController();
-
-  Place? _city;
 
   @override
   void initState() {
@@ -107,36 +97,6 @@ class _AdditionalProfileInformationIdleWidgetState
                                 .maxLength(30)
                                 .build(),
                           ),
-                          SizedBox(height: DSSpacingV2.s),
-                          if (widget.state.shouldProvideEmail)
-                            DSTextField(
-                              controller: _emailController,
-                              label: context.l10N.email,
-                              type: DSTextFieldType.email,
-                              validate: ValidationBuilder().email().build(),
-                            ),
-                          if (widget.state.shouldProvidePhoneNumber)
-                            DSPhoneNumberField(
-                              controller: _phoneController,
-                              color: DSColorV2.neutral70,
-                            ),
-                          SizedBox(height: DSSpacingV2.s),
-                          initCitiesAutocompleteField(
-                            label: context.l10N.city,
-                            controller: _cityController,
-                            onSelectionChanged: (place) {
-                              _city = place;
-                            },
-                          ),
-                          SizedBox(height: DSSpacingV2.s),
-                          DSSegment(
-                            controller: _userTypeController,
-                            title: context.l10N
-                                .additional_profile_information_label_you_are,
-                            onChanged: () {
-                              setState(() {});
-                            },
-                          ),
                         ],
                       ),
                     ),
@@ -160,14 +120,13 @@ class _AdditionalProfileInformationIdleWidgetState
   // MARK: - Private
 
   Future<void> _onPressSubmit() async {
-    if (_formKey.currentState?.validate() == true && _city != null) {
+    if (_formKey.currentState?.validate() == true) {
       widget.bloc.add(
         UpdateEvent(
           username: _userNameController.text,
           imageProfile: _profileImageController.image,
           email: _emailController.text,
           phoneNumber: _phoneController.text,
-          city: _city!,
         ),
       );
     }
