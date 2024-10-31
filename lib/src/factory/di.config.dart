@@ -88,6 +88,7 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i1056.AuthDataSource>(() => _i1056.AuthDataSource());
     gh.factory<_i500.GoogleSignInDataSource>(
         () => _i500.GoogleSignInDataSource());
+    gh.factory<_i766.GetCitiesUseCase>(() => _i766.GetCitiesUseCase());
     gh.factory<_i769.DistanceHelper>(() => _i769.DistanceHelper());
     gh.factory<_i807.AuthRepository>(() => _i807.AuthRepository(
           authDataSource: gh<_i1056.AuthDataSource>(),
@@ -134,8 +135,6 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i217.AdditionalProfileInformationBloc>(() =>
         _i217.AdditionalProfileInformationBloc(
             userRepository: gh<_i45.UserRepository>()));
-    gh.factory<_i766.GetCitiesUseCase>(() =>
-        _i766.GetCitiesUseCase(userRepository: gh<_i45.UserRepository>()));
     gh.factory<_i6.SignUpBloc>(() => _i6.SignUpBloc(
           authRepository: gh<_i807.AuthRepository>(),
           phoneNumberVerificationRepository:

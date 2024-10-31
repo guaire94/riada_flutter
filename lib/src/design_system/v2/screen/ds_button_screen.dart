@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:riada/gen/assets.gen.dart';
 import 'package:riada/gen/fonts.gen.dart';
 import 'package:riada/src/design_system/ds_icon_button.dart';
@@ -8,7 +9,6 @@ import 'package:riada/src/design_system/v2/component/buttons/ds_button_text_v2.d
 import 'package:riada/src/design_system/v2/graphical_chart/ds_color_v2.dart';
 import 'package:riada/src/design_system/v2/graphical_chart/ds_spacing_v2.dart';
 import 'package:riada/src/utils/build_context_extension.dart';
-import 'package:flutter/material.dart';
 
 class DSButtonScreen extends StatelessWidget {
   @override
@@ -111,29 +111,8 @@ class DSButtonScreen extends StatelessWidget {
                               DSButtonSectionV2(
                                 onPressed: () => {},
                                 type: DSButtonSectionType.small,
-                                image: Assets.images.icons.v2.horse,
-                                text: 'Horses',
-                              ),
-                              SizedBox(height: DSSpacingV2.xs),
-                              DSButtonSectionV2(
-                                onPressed: () => {},
-                                type: DSButtonSectionType.small,
-                                image: Assets.images.icons.v2.service,
-                                text: 'Services',
-                              ),
-                              SizedBox(height: DSSpacingV2.xs),
-                              DSButtonSectionV2(
-                                onPressed: () => {},
-                                type: DSButtonSectionType.small,
                                 image: Assets.images.icons.v2.event,
                                 text: 'Events',
-                              ),
-                              SizedBox(height: DSSpacingV2.xs),
-                              DSButtonSectionV2(
-                                onPressed: () => {},
-                                type: DSButtonSectionType.small,
-                                image: Assets.images.icons.v2.secondHand,
-                                text: 'Second hand',
                               ),
                               SizedBox(height: DSSpacingV2.xs),
                               DSButtonSectionV2(

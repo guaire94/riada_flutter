@@ -1,6 +1,10 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:riada/gen/assets.gen.dart';
 import 'package:riada/src/design_system/ds_home_app_bar.dart';
 import 'package:riada/src/design_system/v2/graphical_chart/ds_color_v2.dart';
+import 'package:riada/src/design_system/v2/graphical_chart/ds_spacing_v2.dart';
 import 'package:riada/src/factory/di.dart';
 import 'package:riada/src/features/common/presentation/base/base_state.dart';
 import 'package:riada/src/features/drawer/presentation/bloc/drawer_bloc.dart'
@@ -10,10 +14,9 @@ import 'package:riada/src/features/home/presentation/bloc/home_bloc.dart';
 import 'package:riada/src/features/marketplace/event_bus/marketplace_scrolled_event.dart';
 import 'package:riada/src/router/routes.gr.dart';
 import 'package:riada/src/utils/app_event_bus.dart';
+import 'package:riada/src/utils/build_context_extension.dart';
 import 'package:riada/src/utils/constants.dart';
 import 'package:riada/src/utils/deeplink_helper.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 @RoutePage()
 class HomeScreen extends StatefulWidget implements AutoRouteWrapper {
@@ -36,6 +39,9 @@ class HomeScreen extends StatefulWidget implements AutoRouteWrapper {
 class _HomeScreenState extends BaseState<HomeScreen, HomeBloc> {
   // MARK: - Properties
   Color _marketplaceAppBarColor = DSColorV2.neutral10;
+
+  // MARK: - Constants
+  static const double _logoSize = 100;
 
   // MARK: - LifeCycle
   @override
@@ -71,10 +77,25 @@ class _HomeScreenState extends BaseState<HomeScreen, HomeBloc> {
   ) {
     if (state is LaunchState) {
       return Scaffold(
-        backgroundColor: DSColorV2.secondary,
-        body: Center(
-          child: Text(
-            "Template Logo",
+        body: Container(
+          width: double.infinity,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                width: _logoSize,
+                height: _logoSize,
+                child: Assets.images.icons.v2.logo.image(),
+              ),
+              SizedBox(height: DSSpacingV2.s),
+              Text(
+                TemplateConstants.appName,
+                style: context.textTheme.displayLarge?.copyWith(
+                  color: DSColorV2.secondary,
+                ),
+              ),
+            ],
           ),
         ),
       );

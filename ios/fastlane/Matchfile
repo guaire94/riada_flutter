@@ -1,4 +1,4 @@
 storage_mode("git")
-git_url("git@github.com:EquiRace/template_certificates.git")
-app_identifier("com.template.user.app")
-username("template.application@gmail.com")
+git_url("git@github.com:guaire94/Riada-certificates.git")
+app_identifier("com.riada.app.riada")
+username("riada.application@gmail.com")

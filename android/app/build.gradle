@@ -44,11 +44,11 @@ android {
     flavorDimensions "env"
     productFlavors {
         staging {
-            resValue "string", "app_name", "Template Staging"
+            resValue "string", "app_name", "Riada Staging"
             dimension "env"
         }
         prod {
-            resValue "string", "app_name", "Template"
+            resValue "string", "app_name", "Riada"
             dimension "env"
         }
     }

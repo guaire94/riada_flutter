@@ -212,50 +212,21 @@ class $AssetsImagesIconsV2Gen {
   AssetGenImage get home =>
       const AssetGenImage('assets/images/icons/v2/home.png');
 
-  /// File path: assets/images/icons/v2/horse.png
-  AssetGenImage get horse =>
-      const AssetGenImage('assets/images/icons/v2/horse.png');
-
-  /// File path: assets/images/icons/v2/logo_circular.png
-  AssetGenImage get logoCircular =>
-      const AssetGenImage('assets/images/icons/v2/logo_circular.png');
-
-  /// File path: assets/images/icons/v2/second_hand.png
-  AssetGenImage get secondHand =>
-      const AssetGenImage('assets/images/icons/v2/second_hand.png');
-
-  /// File path: assets/images/icons/v2/service.png
-  AssetGenImage get service =>
-      const AssetGenImage('assets/images/icons/v2/service.png');
+  /// File path: assets/images/icons/v2/logo.png
+  AssetGenImage get logo =>
+      const AssetGenImage('assets/images/icons/v2/logo.png');
 
   /// File path: assets/images/icons/v2/setting.png
   AssetGenImage get setting =>
       const AssetGenImage('assets/images/icons/v2/setting.png');
-
-  /// File path: assets/images/icons/v2/sign_in_logo.png
-  AssetGenImage get signInLogo =>
-      const AssetGenImage('assets/images/icons/v2/sign_in_logo.png');
 
   /// File path: assets/images/icons/v2/success.png
   AssetGenImage get success =>
       const AssetGenImage('assets/images/icons/v2/success.png');
 
   /// List of all assets
-  List<dynamic> get values => [
-        add,
-        backButton,
-        drawer,
-        error,
-        event,
-        home,
-        horse,
-        logoCircular,
-        secondHand,
-        service,
-        setting,
-        signInLogo,
-        success
-      ];
+  List<dynamic> get values =>
+      [add, backButton, drawer, error, event, home, logo, setting, success];
 }
 
 class Assets {

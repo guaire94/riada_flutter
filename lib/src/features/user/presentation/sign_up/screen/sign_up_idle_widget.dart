@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/material.dart';
 import 'package:riada/gen/assets.gen.dart';
 import 'package:riada/src/design_system/ds_icon_button.dart';
 import 'package:riada/src/design_system/ds_phone_number_field.dart';
@@ -10,7 +11,6 @@ import 'package:riada/src/design_system/v2/graphical_chart/ds_spacing_v2.dart';
 import 'package:riada/src/features/user/presentation/sign_up/bloc/sign_up_bloc.dart';
 import 'package:riada/src/utils/build_context_extension.dart';
 import 'package:riada/src/utils/constants.dart';
-import 'package:flutter/material.dart';
 
 class SignUpIdleWidget extends StatelessWidget {
   // MARK: - Dependencies
@@ -21,6 +21,9 @@ class SignUpIdleWidget extends StatelessWidget {
 
   // MARK: - Properties
   final TextEditingController _phoneController = TextEditingController();
+
+  // MARK: - Constants
+  static const double _logoSize = 74;
 
   // MARK: - Life cycle
   SignUpIdleWidget({
@@ -57,7 +60,12 @@ class SignUpIdleWidget extends StatelessWidget {
                 padding: EdgeInsets.all(DSSpacingV2.s),
                 child: Column(
                   children: [
-                    Assets.images.icons.v2.signInLogo.image(),
+                    Container(
+                      width: _logoSize,
+                      height: _logoSize,
+                      child: Assets.images.icons.v2.logo.image(),
+                    ),
+                    SizedBox(height: DSSpacingV2.s),
                     Text(
                       TemplateConstants.appName,
                       style: context.textTheme.displayLarge?.copyWith(
@@ -66,8 +74,9 @@ class SignUpIdleWidget extends StatelessWidget {
                     ),
                     Spacer(),
                     Padding(
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: DSSpacingV2.l),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: DSSpacingV2.l,
+                      ),
                       child: DSPhoneNumberField(
                         controller: _phoneController,
                         color: DSColorV2.secondary30,

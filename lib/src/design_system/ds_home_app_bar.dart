@@ -1,8 +1,8 @@
+import 'package:flutter/material.dart';
 import 'package:riada/gen/assets.gen.dart';
 import 'package:riada/src/design_system/v2/graphical_chart/ds_color_v2.dart';
 import 'package:riada/src/design_system/v2/graphical_chart/ds_spacing_v2.dart';
 import 'package:riada/src/utils/build_context_extension.dart';
-import 'package:flutter/material.dart';
 
 class DSHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   // MARK: - Constants
@@ -47,7 +47,7 @@ class DSHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
               children: [
                 Container(
                   width: _logoWidth,
-                  child: Assets.images.icons.v2.logoCircular.image(),
+                  child: Assets.images.icons.v2.logo.image(),
                 ),
                 SizedBox(width: DSSpacingV2.xxs),
                 Text(

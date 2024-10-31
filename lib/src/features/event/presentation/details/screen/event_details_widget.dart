@@ -1,8 +1,8 @@
+import 'package:flutter/material.dart';
 import 'package:riada/src/design_system/v2/component/image/ds_image_type_v2.dart';
 import 'package:riada/src/design_system/v2/graphical_chart/ds_spacing_v2.dart';
 import 'package:riada/src/features/common/presentation/common/gallery_carousel/gallery_carousel.dart';
 import 'package:riada/src/features/event/entity/event.dart';
-import 'package:flutter/material.dart';
 
 class EventDetailsWidget extends StatelessWidget {
   // MARK: Dependencies
