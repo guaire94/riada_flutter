@@ -90,7 +90,7 @@ class _HomeScreenState extends BaseState<HomeScreen, HomeBloc> {
               ),
               SizedBox(height: DSSpacingV2.s),
               Text(
-                TemplateConstants.appName,
+                Constants.appName,
                 style: context.textTheme.displayLarge?.copyWith(
                   color: DSColorV2.secondary,
                 ),
@@ -116,7 +116,7 @@ class _HomeScreenState extends BaseState<HomeScreen, HomeBloc> {
           }
           return DSHomeAppBar(
             activeIndex: tabsRouter.activeIndex,
-            title: TemplateConstants.appName,
+            title: Constants.appName,
             color: color,
             onDrawerTapped: () {
               widget._scaffoldKey.currentState?.openEndDrawer();

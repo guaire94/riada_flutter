@@ -7,7 +7,7 @@ class ScreenUtilDimen {
   static const double heightOfDesignDraft = 812;
 }
 
-class TemplateConstants {
+class Constants {
   static const String appName = "Riada";
   static const String appStoreID = "X";
 

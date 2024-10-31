@@ -37,8 +37,8 @@ class MarketplaceCarouselRepository {
   // MARK: - Private
   Future _loadEvents() async {
     final events = await _eventDataSource.getNextNearestEvents(
-      sportId: TemplateConstants.defaultSportId,
-      city: TemplateConstants.defaultCity,
+      sportId: Constants.defaultSportId,
+      city: Constants.defaultCity,
     );
     _items.addAll(events.map((e) => EventMarketplaceItem(event: e)));
   }

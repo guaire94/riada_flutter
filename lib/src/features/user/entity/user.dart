@@ -47,11 +47,11 @@ class User {
   }) =>
       User(
         id: id,
-        avatar: TemplateConstants.defaultAvatar,
+        avatar: Constants.defaultAvatar,
         nickName: "",
         mail: email,
         phone: phoneNumber,
-        location: TemplateConstants.defaultCity.geoPoint,
+        location: Constants.defaultCity.geoPoint,
         devices: devices,
         favoritesSports: [],
         createdDate: Timestamp.now(),

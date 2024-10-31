@@ -1,11 +1,11 @@
 import 'dart:io';
 
-import 'package:riada/src/utils/constants.dart';
-import 'package:riada/src/utils/exceptions.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_image_compress/flutter_image_compress.dart';
 import 'package:path/path.dart';
+import 'package:riada/src/utils/constants.dart';
+import 'package:riada/src/utils/exceptions.dart';
 
 class FileCompressionException implements KlozyException {
   @override
@@ -41,9 +41,9 @@ extension FileExtension on File {
   Future<Uint8List> _compress() async {
     var result = await FlutterImageCompress.compressWithFile(
       this.absolute.path,
-      minWidth: TemplateConstants.imageMinWidth,
-      minHeight: TemplateConstants.imageMinHeight,
-      quality: TemplateConstants.imageQuality,
+      minWidth: Constants.imageMinWidth,
+      minHeight: Constants.imageMinHeight,
+      quality: Constants.imageQuality,
     );
     if (result == null) {
       throw FileCompressionException();

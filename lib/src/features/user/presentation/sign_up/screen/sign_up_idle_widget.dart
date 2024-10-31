@@ -67,7 +67,7 @@ class SignUpIdleWidget extends StatelessWidget {
                     ),
                     SizedBox(height: DSSpacingV2.s),
                     Text(
-                      TemplateConstants.appName,
+                      Constants.appName,
                       style: context.textTheme.displayLarge?.copyWith(
                         color: DSColorV2.secondary,
                       ),
