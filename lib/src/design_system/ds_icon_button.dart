@@ -1,8 +1,8 @@
+import 'package:flutter/material.dart';
 import 'package:riada/gen/assets.gen.dart';
 import 'package:riada/src/design_system/v2/graphical_chart/ds_border_radius_v2.dart';
 import 'package:riada/src/design_system/v2/graphical_chart/ds_color_v2.dart';
 import 'package:riada/src/design_system/v2/graphical_chart/ds_spacing_v2.dart';
-import 'package:flutter/material.dart';
 
 enum DSIconButtonType { apple, google }
 
@@ -10,9 +10,9 @@ extension DSIconButtonTypeExtension on DSIconButtonType {
   dynamic get image {
     switch (this) {
       case DSIconButtonType.apple:
-        return Assets.images.icons.apple.svg();
+        return Assets.icons.apple.svg();
       case DSIconButtonType.google:
-        return Assets.images.icons.google.svg();
+        return Assets.icons.google.svg();
     }
   }
 

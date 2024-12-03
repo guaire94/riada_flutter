@@ -1,9 +1,9 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
 import 'package:riada/gen/assets.gen.dart';
 import 'package:riada/src/design_system/v2/graphical_chart/ds_color_v2.dart';
 import 'package:riada/src/design_system/v2/graphical_chart/ds_spacing_v2.dart';
 import 'package:riada/src/utils/build_context_extension.dart';
-import 'package:flutter/material.dart';
 
 class DSAppBarV2 extends StatelessWidget implements PreferredSizeWidget {
   // MARK: - Privates
@@ -50,7 +50,7 @@ class DSAppBarV2 extends StatelessWidget implements PreferredSizeWidget {
             context.router.popForced();
           },
           child: Center(
-            child: Assets.images.icons.v2.backButton.svg(
+            child: Assets.icons.backButton.svg(
               width: _iconWidth,
               height: _iconHeight,
             ),

@@ -4,7 +4,7 @@ import 'package:riada/src/utils/city.dart';
 @injectable
 class GetCitiesUseCase {
   //MARK: - Public
-  Future<List<City>> call() async {
+  List<City> call() {
     return City.values;
   }
 }

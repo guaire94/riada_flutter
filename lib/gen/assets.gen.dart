@@ -12,226 +12,110 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart' as _svg;
 import 'package:vector_graphics/vector_graphics.dart' as _vg;
 
+class $AssetsIconsGen {
+  const $AssetsIconsGen();
+
+  /// File path: assets/icons/account.svg
+  SvgGenImage get account => const SvgGenImage('assets/icons/account.svg');
+
+  /// File path: assets/icons/add.png
+  AssetGenImage get add => const AssetGenImage('assets/icons/add.png');
+
+  /// File path: assets/icons/apple.svg
+  SvgGenImage get apple => const SvgGenImage('assets/icons/apple.svg');
+
+  /// File path: assets/icons/backButton.svg
+  SvgGenImage get backButton =>
+      const SvgGenImage('assets/icons/backButton.svg');
+
+  /// File path: assets/icons/error.png
+  AssetGenImage get error => const AssetGenImage('assets/icons/error.png');
+
+  /// File path: assets/icons/event.png
+  AssetGenImage get event => const AssetGenImage('assets/icons/event.png');
+
+  /// File path: assets/icons/google.svg
+  SvgGenImage get google => const SvgGenImage('assets/icons/google.svg');
+
+  /// File path: assets/icons/home.png
+  AssetGenImage get home => const AssetGenImage('assets/icons/home.png');
+
+  /// File path: assets/icons/setting.png
+  AssetGenImage get setting => const AssetGenImage('assets/icons/setting.png');
+
+  /// File path: assets/icons/success.png
+  AssetGenImage get success => const AssetGenImage('assets/icons/success.png');
+
+  /// List of all assets
+  List<dynamic> get values => [
+        account,
+        add,
+        apple,
+        backButton,
+        error,
+        event,
+        google,
+        home,
+        setting,
+        success
+      ];
+}
+
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
-  /// File path: assets/images/confirmed.svg
-  SvgGenImage get confirmed => const SvgGenImage('assets/images/confirmed.svg');
+  /// Directory path: assets/images/home
+  $AssetsImagesHomeGen get home => const $AssetsImagesHomeGen();
 
-  /// File path: assets/images/familyTreeFemale.png
-  AssetGenImage get familyTreeFemale =>
-      const AssetGenImage('assets/images/familyTreeFemale.png');
-
-  /// File path: assets/images/familyTreeMale.png
-  AssetGenImage get familyTreeMale =>
-      const AssetGenImage('assets/images/familyTreeMale.png');
-
-  /// Directory path: assets/images/icons
-  $AssetsImagesIconsGen get icons => const $AssetsImagesIconsGen();
-
-  /// File path: assets/images/logo.png
-  AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
+  /// Directory path: assets/images/logo
+  $AssetsImagesLogoGen get logo => const $AssetsImagesLogoGen();
 
   /// File path: assets/images/profileBackground.png
   AssetGenImage get profileBackground =>
       const AssetGenImage('assets/images/profileBackground.png');
 
   /// List of all assets
-  List<dynamic> get values =>
-      [confirmed, familyTreeFemale, familyTreeMale, logo, profileBackground];
+  List<AssetGenImage> get values => [profileBackground];
 }
 
-class $AssetsImagesIconsGen {
-  const $AssetsImagesIconsGen();
+class $AssetsImagesHomeGen {
+  const $AssetsImagesHomeGen();
 
-  /// File path: assets/images/icons/account.svg
-  SvgGenImage get account =>
-      const SvgGenImage('assets/images/icons/account.svg');
+  /// File path: assets/images/home/abudhabi.png
+  AssetGenImage get abudhabi =>
+      const AssetGenImage('assets/images/home/abudhabi.png');
 
-  /// File path: assets/images/icons/add.svg
-  SvgGenImage get add => const SvgGenImage('assets/images/icons/add.svg');
+  /// File path: assets/images/home/dubai.png
+  AssetGenImage get dubai =>
+      const AssetGenImage('assets/images/home/dubai.png');
 
-  /// File path: assets/images/icons/amex.svg
-  SvgGenImage get amex => const SvgGenImage('assets/images/icons/amex.svg');
-
-  /// File path: assets/images/icons/apple.svg
-  SvgGenImage get apple => const SvgGenImage('assets/images/icons/apple.svg');
-
-  /// File path: assets/images/icons/applePay.svg
-  SvgGenImage get applePay =>
-      const SvgGenImage('assets/images/icons/applePay.svg');
-
-  /// File path: assets/images/icons/backButton.svg
-  SvgGenImage get backButton =>
-      const SvgGenImage('assets/images/icons/backButton.svg');
-
-  /// File path: assets/images/icons/breed.svg
-  SvgGenImage get breed => const SvgGenImage('assets/images/icons/breed.svg');
-
-  /// File path: assets/images/icons/color.svg
-  SvgGenImage get color => const SvgGenImage('assets/images/icons/color.svg');
-
-  /// File path: assets/images/icons/creditCard.svg
-  SvgGenImage get creditCard =>
-      const SvgGenImage('assets/images/icons/creditCard.svg');
-
-  /// File path: assets/images/icons/events.png
-  AssetGenImage get events =>
-      const AssetGenImage('assets/images/icons/events.png');
-
-  /// File path: assets/images/icons/eventsActive.png
-  AssetGenImage get eventsActive =>
-      const AssetGenImage('assets/images/icons/eventsActive.png');
-
-  /// File path: assets/images/icons/filledCercle.png
-  AssetGenImage get filledCercle =>
-      const AssetGenImage('assets/images/icons/filledCercle.png');
-
-  /// File path: assets/images/icons/google.svg
-  SvgGenImage get google => const SvgGenImage('assets/images/icons/google.svg');
-
-  /// File path: assets/images/icons/googlePay.svg
-  SvgGenImage get googlePay =>
-      const SvgGenImage('assets/images/icons/googlePay.svg');
-
-  /// File path: assets/images/icons/havePaper.svg
-  SvgGenImage get havePaper =>
-      const SvgGenImage('assets/images/icons/havePaper.svg');
-
-  /// File path: assets/images/icons/home.png
-  AssetGenImage get home => const AssetGenImage('assets/images/icons/home.png');
-
-  /// File path: assets/images/icons/horse.svg
-  SvgGenImage get horse => const SvgGenImage('assets/images/icons/horse.svg');
-
-  /// File path: assets/images/icons/horses.png
-  AssetGenImage get horses =>
-      const AssetGenImage('assets/images/icons/horses.png');
-
-  /// File path: assets/images/icons/horsesActive.png
-  AssetGenImage get horsesActive =>
-      const AssetGenImage('assets/images/icons/horsesActive.png');
-
-  /// File path: assets/images/icons/level.svg
-  SvgGenImage get level => const SvgGenImage('assets/images/icons/level.svg');
-
-  /// File path: assets/images/icons/mastercard.svg
-  SvgGenImage get mastercard =>
-      const SvgGenImage('assets/images/icons/mastercard.svg');
-
-  /// File path: assets/images/icons/merchantType.svg
-  SvgGenImage get merchantType =>
-      const SvgGenImage('assets/images/icons/merchantType.svg');
-
-  /// File path: assets/images/icons/scan.svg
-  SvgGenImage get scan => const SvgGenImage('assets/images/icons/scan.svg');
-
-  /// File path: assets/images/icons/secondHand.png
-  AssetGenImage get secondHand =>
-      const AssetGenImage('assets/images/icons/secondHand.png');
-
-  /// File path: assets/images/icons/secondHandActive.png
-  AssetGenImage get secondHandActive =>
-      const AssetGenImage('assets/images/icons/secondHandActive.png');
-
-  /// File path: assets/images/icons/service.png
-  AssetGenImage get service =>
-      const AssetGenImage('assets/images/icons/service.png');
-
-  /// File path: assets/images/icons/serviceActive.png
-  AssetGenImage get serviceActive =>
-      const AssetGenImage('assets/images/icons/serviceActive.png');
-
-  /// File path: assets/images/icons/size.svg
-  SvgGenImage get size => const SvgGenImage('assets/images/icons/size.svg');
-
-  /// Directory path: assets/images/icons/v2
-  $AssetsImagesIconsV2Gen get v2 => const $AssetsImagesIconsV2Gen();
-
-  /// File path: assets/images/icons/visa.svg
-  SvgGenImage get visa => const SvgGenImage('assets/images/icons/visa.svg');
+  /// File path: assets/images/home/sharjah.png
+  AssetGenImage get sharjah =>
+      const AssetGenImage('assets/images/home/sharjah.png');
 
   /// List of all assets
-  List<dynamic> get values => [
-        account,
-        add,
-        amex,
-        apple,
-        applePay,
-        backButton,
-        breed,
-        color,
-        creditCard,
-        events,
-        eventsActive,
-        filledCercle,
-        google,
-        googlePay,
-        havePaper,
-        home,
-        horse,
-        horses,
-        horsesActive,
-        level,
-        mastercard,
-        merchantType,
-        scan,
-        secondHand,
-        secondHandActive,
-        service,
-        serviceActive,
-        size,
-        visa
-      ];
+  List<AssetGenImage> get values => [abudhabi, dubai, sharjah];
 }
 
-class $AssetsImagesIconsV2Gen {
-  const $AssetsImagesIconsV2Gen();
+class $AssetsImagesLogoGen {
+  const $AssetsImagesLogoGen();
 
-  /// File path: assets/images/icons/v2/add.png
-  AssetGenImage get add =>
-      const AssetGenImage('assets/images/icons/v2/add.png');
+  /// File path: assets/images/logo/circle.png
+  AssetGenImage get circle =>
+      const AssetGenImage('assets/images/logo/circle.png');
 
-  /// File path: assets/images/icons/v2/back_button.svg
-  SvgGenImage get backButton =>
-      const SvgGenImage('assets/images/icons/v2/back_button.svg');
-
-  /// File path: assets/images/icons/v2/drawer.svg
-  SvgGenImage get drawer =>
-      const SvgGenImage('assets/images/icons/v2/drawer.svg');
-
-  /// File path: assets/images/icons/v2/error.png
-  AssetGenImage get error =>
-      const AssetGenImage('assets/images/icons/v2/error.png');
-
-  /// File path: assets/images/icons/v2/event.png
-  AssetGenImage get event =>
-      const AssetGenImage('assets/images/icons/v2/event.png');
-
-  /// File path: assets/images/icons/v2/home.png
-  AssetGenImage get home =>
-      const AssetGenImage('assets/images/icons/v2/home.png');
-
-  /// File path: assets/images/icons/v2/logo.png
-  AssetGenImage get logo =>
-      const AssetGenImage('assets/images/icons/v2/logo.png');
-
-  /// File path: assets/images/icons/v2/setting.png
-  AssetGenImage get setting =>
-      const AssetGenImage('assets/images/icons/v2/setting.png');
-
-  /// File path: assets/images/icons/v2/success.png
-  AssetGenImage get success =>
-      const AssetGenImage('assets/images/icons/v2/success.png');
+  /// File path: assets/images/logo/square.png
+  AssetGenImage get square =>
+      const AssetGenImage('assets/images/logo/square.png');
 
   /// List of all assets
-  List<dynamic> get values =>
-      [add, backButton, drawer, error, event, home, logo, setting, success];
+  List<AssetGenImage> get values => [circle, square];
 }
 
 class Assets {
   Assets._();
 
+  static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
 }
 

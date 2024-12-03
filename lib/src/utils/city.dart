@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/widgets.dart';
+import 'package:riada/gen/assets.gen.dart';
 import 'package:riada/src/utils/build_context_extension.dart';
 
 enum City {
@@ -15,6 +16,17 @@ enum City {
         return context.l10N.city_placeholder_abu_dhabi;
       case City.sharjah:
         return context.l10N.city_placeholder_sharjah;
+    }
+  }
+
+  Image get background {
+    switch (this) {
+      case City.dubai:
+        return Assets.images.home.dubai.image(fit: BoxFit.fill);
+      case City.abuDhabi:
+        return Assets.images.home.abudhabi.image(fit: BoxFit.fill);
+      case City.sharjah:
+        return Assets.images.home.sharjah.image(fit: BoxFit.fill);
     }
   }
 

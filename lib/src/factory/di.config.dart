@@ -90,6 +90,8 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i500.GoogleSignInDataSource());
     gh.factory<_i766.GetCitiesUseCase>(() => _i766.GetCitiesUseCase());
     gh.factory<_i769.DistanceHelper>(() => _i769.DistanceHelper());
+    gh.factory<_i281.MarketplaceBloc>(() =>
+        _i281.MarketplaceBloc(getCitiesUseCase: gh<_i766.GetCitiesUseCase>()));
     gh.factory<_i807.AuthRepository>(() => _i807.AuthRepository(
           authDataSource: gh<_i1056.AuthDataSource>(),
           googleSignInDataSource: gh<_i500.GoogleSignInDataSource>(),
@@ -128,8 +130,6 @@ extension GetItInjectableX on _i174.GetIt {
             notificationsDataSource: gh<_i898.NotificationsDataSource>()));
     gh.factory<_i738.DrawerBloc>(
         () => _i738.DrawerBloc(userRepository: gh<_i45.UserRepository>()));
-    gh.factory<_i281.MarketplaceBloc>(
-        () => _i281.MarketplaceBloc(userRepository: gh<_i45.UserRepository>()));
     gh.factory<_i161.MyProfileBloc>(
         () => _i161.MyProfileBloc(userRepository: gh<_i45.UserRepository>()));
     gh.factory<_i217.AdditionalProfileInformationBloc>(() =>

@@ -1,9 +1,9 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
 import 'package:riada/gen/assets.gen.dart';
 import 'package:riada/src/design_system/ds_color.dart';
 import 'package:riada/src/design_system/ds_spacing.dart';
 import 'package:riada/src/utils/build_context_extension.dart';
-import 'package:flutter/material.dart';
 
 class DSAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? _title;
@@ -45,7 +45,7 @@ class DSAppBar extends StatelessWidget implements PreferredSizeWidget {
             if (_additionalBackAction != null) _additionalBackAction();
             context.router.popForced();
           },
-          child: Assets.images.icons.backButton.svg(),
+          child: Assets.icons.backButton.svg(),
         ),
       );
     }

@@ -1,13 +1,12 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:injectable/injectable.dart';
 import 'package:riada/src/features/user/datasource/exceptions/user_not_logged_exception.dart';
 import 'package:riada/src/features/user/entity/user.dart';
 import 'package:riada/src/features/user/entity/user_status.dart';
 import 'package:riada/src/features/user/event_bus/user_log_state_updated_event.dart';
-
 import 'package:riada/src/features/user/repository/notifications_repository.dart';
 import 'package:riada/src/features/user/repository/user_repository.dart';
 import 'package:riada/src/utils/app_event_bus.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:injectable/injectable.dart';
 
 part 'home_event.dart';
 part 'home_state.dart';
@@ -44,9 +43,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         _userRepository.updateConnectionDate();
         _userRepository.updateNotificationToken();
 
-        emit(IdleState(
-          currentUser: user,
-        ));
+        emit(IdleState());
         String? initialDeeplink =
             await _notificationsRepository.getInitialDeeplink();
         if (user.status == UserStatus.signed) {
@@ -67,8 +64,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
     on<ReloadEvent>((event, emit) async {
       try {
-        final User user = await _userRepository.getCurrentUser();
-
         await _notificationsRepository.requestPermission(
           onMessageTapped: (notification) {
             if (notification.deeplink != null) {
@@ -79,9 +74,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         _userRepository.updateConnectionDate();
         _userRepository.updateNotificationToken();
 
-        emit(IdleState(
-          currentUser: user,
-        ));
+        emit(IdleState());
       } on UserNotLoggedException catch (_) {
         emit(IdleState());
       } catch (e) {

@@ -1,6 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:riada/src/design_system/v2/graphical_chart/ds_border_radius_v2.dart';
 import 'package:riada/src/design_system/v2/graphical_chart/ds_color_v2.dart';
-import 'package:flutter/cupertino.dart';
 
 enum DSImageTypeV2 {
   fullScreen,
@@ -20,7 +20,7 @@ extension DSImageTypeV2Extension on DSImageTypeV2 {
       case DSImageTypeV2.fullScreen:
         return double.infinity;
       case DSImageTypeV2.xl:
-        return 280;
+        return 232;
       case DSImageTypeV2.l:
         return 184;
       case DSImageTypeV2.m:

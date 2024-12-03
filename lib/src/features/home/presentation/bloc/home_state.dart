@@ -4,13 +4,7 @@ abstract class HomeState {}
 
 class LaunchState extends HomeState {}
 
-class IdleState extends HomeState {
-  final User? currentUser;
-
-  IdleState({
-    this.currentUser = null,
-  });
-}
+class IdleState extends HomeState {}
 
 class ErrorState extends HomeState {}
 

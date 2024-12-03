@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:riada/src/factory/di.dart';
 import 'package:riada/src/features/common/presentation/base/base_state.dart';
 import 'package:riada/src/features/marketplace/presentation/list/bloc/marketplace_bloc.dart';
 import 'package:riada/src/features/marketplace/presentation/list/screen/marketplace_idle_widget.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 @RoutePage()
 class MarketplaceScreen extends StatefulWidget implements AutoRouteWrapper {
@@ -50,6 +50,9 @@ class _MarketplaceScreenState
     if (state is IdleState) {
       return MarketplaceIdleWidget(
         state: state,
+        onCityChange: (city) {
+          bloc.add(ChangeCityEvent(city));
+        },
       );
     }
 

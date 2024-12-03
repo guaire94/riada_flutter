@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:riada/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
+import 'package:riada/gen/assets.gen.dart';
 
 class BackButtonWidget extends StatelessWidget {
   // MARK: - Constants
@@ -17,7 +17,7 @@ class BackButtonWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(borderRadius),
       ),
       child: InkWell(
-        child: Assets.images.icons.backButton.svg(),
+        child: Assets.icons.backButton.svg(),
         onTap: () {
           context.router.popForced();
         },

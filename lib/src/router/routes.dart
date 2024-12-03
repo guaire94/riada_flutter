@@ -16,10 +16,6 @@ class AppRouter extends $AppRouter {
         page: MarketplaceRoute.page,
         initial: true,
       ),
-      AutoRoute(
-        path: "EventList",
-        page: EventListRoute.page,
-      ),
     ]),
     CustomRoute(
       path: "/SignUp",

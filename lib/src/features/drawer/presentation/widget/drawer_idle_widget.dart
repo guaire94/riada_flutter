@@ -40,7 +40,7 @@ class DrawerIdleWidget extends StatelessWidget {
                     context.router.navigate(MarketplaceRoute());
                     _closeEndDrawer(context: context);
                   },
-                  image: Assets.images.icons.v2.home,
+                  image: Assets.icons.home,
                   text: context.l10N.drawer_home,
                 ),
                 SizedBox(height: DSSpacingV2.l),
@@ -49,7 +49,7 @@ class DrawerIdleWidget extends StatelessWidget {
                     context.router.navigate(EventListRoute());
                     _closeEndDrawer(context: context);
                   },
-                  image: Assets.images.icons.v2.event,
+                  image: Assets.icons.event,
                   text: context.l10N.drawer_events,
                 ),
               ],
@@ -65,7 +65,7 @@ class DrawerIdleWidget extends StatelessWidget {
                     }
                     _closeEndDrawer(context: context);
                   },
-                  image: Assets.images.icons.v2.setting,
+                  image: Assets.icons.setting,
                   text: _user == null
                       ? context.l10N.login_title
                       : context.l10N.drawer_profile,

@@ -63,7 +63,7 @@ class SignUpIdleWidget extends StatelessWidget {
                     Container(
                       width: _logoSize,
                       height: _logoSize,
-                      child: Assets.images.icons.v2.logo.image(),
+                      child: Assets.images.logo.circle.image(),
                     ),
                     SizedBox(height: DSSpacingV2.s),
                     Text(

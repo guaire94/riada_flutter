@@ -11,9 +11,7 @@ import 'package:riada/src/features/drawer/presentation/bloc/drawer_bloc.dart'
     as DrawerBloc;
 import 'package:riada/src/features/drawer/presentation/screen/drawer_screen.dart';
 import 'package:riada/src/features/home/presentation/bloc/home_bloc.dart';
-import 'package:riada/src/features/marketplace/event_bus/marketplace_scrolled_event.dart';
 import 'package:riada/src/router/routes.gr.dart';
-import 'package:riada/src/utils/app_event_bus.dart';
 import 'package:riada/src/utils/build_context_extension.dart';
 import 'package:riada/src/utils/constants.dart';
 import 'package:riada/src/utils/deeplink_helper.dart';
@@ -37,9 +35,6 @@ class HomeScreen extends StatefulWidget implements AutoRouteWrapper {
 }
 
 class _HomeScreenState extends BaseState<HomeScreen, HomeBloc> {
-  // MARK: - Properties
-  Color _marketplaceAppBarColor = DSColorV2.neutral10;
-
   // MARK: - Constants
   static const double _logoSize = 100;
 
@@ -47,7 +42,6 @@ class _HomeScreenState extends BaseState<HomeScreen, HomeBloc> {
   @override
   void initState() {
     super.initState();
-    _registerMarketPlaceScrollListener();
     bloc.add(LoadEvent());
   }
 
@@ -86,7 +80,7 @@ class _HomeScreenState extends BaseState<HomeScreen, HomeBloc> {
               Container(
                 width: _logoSize,
                 height: _logoSize,
-                child: Assets.images.icons.v2.logo.image(),
+                child: Assets.images.logo.circle.image(),
               ),
               SizedBox(height: DSSpacingV2.s),
               Text(
@@ -102,38 +96,23 @@ class _HomeScreenState extends BaseState<HomeScreen, HomeBloc> {
     }
     if (state is IdleState) {
       return AutoTabsScaffold(
-        scaffoldKey: widget._scaffoldKey,
+        extendBodyBehindAppBar: true,
+        extendBody: true,
         appBarBuilder: (context, tabsRouter) {
-          Color color;
-          switch (tabsRouter.activeIndex) {
-            case 0:
-              color = _marketplaceAppBarColor;
-              break;
-
-            default:
-              color = Colors.white;
-              break;
-          }
           return DSHomeAppBar(
-            activeIndex: tabsRouter.activeIndex,
-            title: Constants.appName,
-            color: color,
             onDrawerTapped: () {
               widget._scaffoldKey.currentState?.openEndDrawer();
             },
           );
         },
-        routes: [
-          MarketplaceRoute(),
-          EventListRoute(),
-        ],
+        scaffoldKey: widget._scaffoldKey,
         endDrawer: Drawer(
           child: BlocProvider(
             create: (context) => getIt<DrawerBloc.DrawerBloc>(),
             child: DrawerScreen(),
           ),
         ),
-        endDrawerEnableOpenDragGesture: false,
+        endDrawerEnableOpenDragGesture: true,
       );
     }
 
@@ -159,18 +138,5 @@ class _HomeScreenState extends BaseState<HomeScreen, HomeBloc> {
   void dispose() {
     bloc.close();
     super.dispose();
-  }
-
-  // MARK: - Private
-  _registerMarketPlaceScrollListener() {
-    AppEventBus.instance.on<MarketplaceScrollerEvent>().listen((event) async {
-      setState(() {
-        if (event.inContainer) {
-          _marketplaceAppBarColor = DSColorV2.neutral10;
-        } else {
-          _marketplaceAppBarColor = Colors.white;
-        }
-      });
-    });
   }
 }

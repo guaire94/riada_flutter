@@ -88,7 +88,7 @@ class DSButtonScreen extends StatelessWidget {
                         DSButtonSectionV2(
                           onPressed: () => {},
                           type: DSButtonSectionType.medium,
-                          image: Assets.images.icons.v2.add,
+                          image: Assets.icons.add,
                           text: 'Vous avez un cheval à vendre ?',
                         ),
                         SizedBox(height: DSSpacingV2.m),
@@ -104,21 +104,21 @@ class DSButtonScreen extends StatelessWidget {
                               DSButtonSectionV2(
                                 onPressed: () => {},
                                 type: DSButtonSectionType.small,
-                                image: Assets.images.icons.v2.home,
+                                image: Assets.icons.home,
                                 text: 'Marketplace',
                               ),
                               SizedBox(height: DSSpacingV2.xs),
                               DSButtonSectionV2(
                                 onPressed: () => {},
                                 type: DSButtonSectionType.small,
-                                image: Assets.images.icons.v2.event,
+                                image: Assets.icons.event,
                                 text: 'Events',
                               ),
                               SizedBox(height: DSSpacingV2.xs),
                               DSButtonSectionV2(
                                 onPressed: () => {},
                                 type: DSButtonSectionType.small,
-                                image: Assets.images.icons.v2.setting,
+                                image: Assets.icons.setting,
                                 text: 'Setting',
                               ),
                             ],
