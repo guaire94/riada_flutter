@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:riada/src/design_system/v2/component/dsList/ds_list_item.dart';
 import 'package:riada/src/design_system/v2/component/dsList/ds_list_view_type.dart';
 import 'package:riada/src/design_system/v2/component/image/ds_image_type_v2.dart';
@@ -5,8 +6,6 @@ import 'package:riada/src/design_system/v2/component/image/ds_image_v2.dart';
 import 'package:riada/src/design_system/v2/graphical_chart/ds_color_v2.dart';
 import 'package:riada/src/design_system/v2/graphical_chart/ds_spacing_v2.dart';
 import 'package:riada/src/utils/build_context_extension.dart';
-import 'package:riada/src/utils/strings_extension.dart';
-import 'package:flutter/material.dart';
 
 class DSListViewItem extends StatelessWidget {
   // MARK: - Properties
@@ -69,7 +68,7 @@ class DSListViewItem extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          _item.title.trimAndCapitalize(),
+                          _item.title,
                           style: context.textTheme.titleLarge?.copyWith(
                             color: Colors.white,
                           ),
@@ -88,24 +87,9 @@ class DSListViewItem extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Icon(
-                    Icons.arrow_forward,
-                    color: Colors.white,
-                  ),
                 ],
               ),
             ),
-            if (_item.rightTopCornerText != null)
-              Positioned(
-                top: DSSpacingV2.s,
-                right: DSSpacingV2.m,
-                child: Text(
-                  _item.rightTopCornerText!,
-                  style: context.textTheme.bodyLarge?.copyWith(
-                    color: Colors.white,
-                  ),
-                ),
-              ),
           ],
         ),
       ),

@@ -1,5 +1,5 @@
-import 'package:riada/src/design_system/v2/component/image/ds_image_type_v2.dart';
 import 'package:flutter/widgets.dart';
+import 'package:riada/src/design_system/v2/component/image/ds_image_type_v2.dart';
 
 enum DSListViewType {
   smallGrid,
@@ -47,7 +47,7 @@ extension DSListViewTypeExtension on DSListViewType {
       case DSListViewType.largeCarousel:
       case DSListViewType.longCarousel:
       case DSListViewType.smallCarousel:
-        return true;
+        return false;
     }
   }
 

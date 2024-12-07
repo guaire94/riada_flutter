@@ -61,14 +61,14 @@ import 'package:riada/src/features/user/presentation/update_additional_profile_i
     as _i903;
 import 'package:riada/src/features/user/repository/auth_repository.dart'
     as _i807;
+import 'package:riada/src/features/user/repository/city_repository.dart'
+    as _i514;
 import 'package:riada/src/features/user/repository/notifications_repository.dart'
     as _i1070;
 import 'package:riada/src/features/user/repository/phone_number_verification_repository.dart'
     as _i372;
 import 'package:riada/src/features/user/repository/user_repository.dart'
     as _i45;
-import 'package:riada/src/features/user/usecase/get_cities_usecase.dart'
-    as _i766;
 
 extension GetItInjectableX on _i174.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -88,10 +88,10 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i1056.AuthDataSource>(() => _i1056.AuthDataSource());
     gh.factory<_i500.GoogleSignInDataSource>(
         () => _i500.GoogleSignInDataSource());
-    gh.factory<_i766.GetCitiesUseCase>(() => _i766.GetCitiesUseCase());
     gh.factory<_i769.DistanceHelper>(() => _i769.DistanceHelper());
+    gh.singleton<_i514.CityRepository>(() => _i514.CityRepository());
     gh.factory<_i281.MarketplaceBloc>(() =>
-        _i281.MarketplaceBloc(getCitiesUseCase: gh<_i766.GetCitiesUseCase>()));
+        _i281.MarketplaceBloc(cityRepository: gh<_i514.CityRepository>()));
     gh.factory<_i807.AuthRepository>(() => _i807.AuthRepository(
           authDataSource: gh<_i1056.AuthDataSource>(),
           googleSignInDataSource: gh<_i500.GoogleSignInDataSource>(),
@@ -145,9 +145,6 @@ extension GetItInjectableX on _i174.GetIt {
           envConfigurationDataSource: gh<_i131.EnvConfigurationDataSource>(),
           distanceHelper: gh<_i769.DistanceHelper>(),
         ));
-    gh.factory<_i1062.MarketplaceCarouselRepository>(() =>
-        _i1062.MarketplaceCarouselRepository(
-            eventDataSource: gh<_i1025.EventDataSource>()));
     gh.factory<_i162.EventRepository>(() =>
         _i162.EventRepository(eventDataSource: gh<_i1025.EventDataSource>()));
     gh.factory<_i835.HomeBloc>(() => _i835.HomeBloc(
@@ -158,6 +155,12 @@ extension GetItInjectableX on _i174.GetIt {
         _i560.EventDetailsBloc(eventRepository: gh<_i162.EventRepository>()));
     gh.factory<_i793.EventListBloc>(() =>
         _i793.EventListBloc(eventRepository: gh<_i162.EventRepository>()));
+    gh.factory<_i1062.MarketplaceCarouselRepository>(
+        () => _i1062.MarketplaceCarouselRepository(
+              eventDataSource: gh<_i1025.EventDataSource>(),
+              authDataSource: gh<_i1056.AuthDataSource>(),
+              cityRepository: gh<_i514.CityRepository>(),
+            ));
     gh.factory<_i876.MarketplaceCarouselBloc>(() =>
         _i876.MarketplaceCarouselBloc(
             marketplaceCarouselRepository:

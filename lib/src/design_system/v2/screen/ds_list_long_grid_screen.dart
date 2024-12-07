@@ -1,9 +1,9 @@
+import 'package:flutter/material.dart';
 import 'package:riada/gen/fonts.gen.dart';
 import 'package:riada/src/design_system/v2/component/dsList/ds_list_item.dart';
 import 'package:riada/src/design_system/v2/component/dsList/ds_list_view.dart';
 import 'package:riada/src/design_system/v2/component/dsList/ds_list_view_type.dart';
 import 'package:riada/src/design_system/v2/graphical_chart/ds_color_v2.dart';
-import 'package:flutter/material.dart';
 
 class DSListLongGridScreen extends StatelessWidget {
   @override
@@ -15,7 +15,6 @@ class DSListLongGridScreen extends StatelessWidget {
         title: "Event $index",
         subtitle: "Dubai",
         image: "https://picsum.photos/${136 + index}/${300 + index}",
-        rightTopCornerText: "22/03/2024",
       ),
     );
     return Scaffold(
@@ -50,14 +49,11 @@ class DSListItemExample implements DSListItem {
   String subtitle;
   @override
   String image;
-  @override
-  String? rightTopCornerText;
 
   DSListItemExample({
     required this.id,
     required this.title,
     required this.subtitle,
     required this.image,
-    this.rightTopCornerText,
   });
 }

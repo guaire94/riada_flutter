@@ -1,26 +1,22 @@
+import 'package:flutter/material.dart';
 import 'package:riada/src/design_system/v2/component/dsList/ds_list_item.dart';
 import 'package:riada/src/features/event/entity/event.dart';
+import 'package:riada/src/features/event/entity/related_event.dart';
+import 'package:riada/src/utils/build_context_extension.dart';
 import 'package:riada/src/utils/timestamp_extension.dart';
-import 'package:flutter/material.dart';
 
 abstract class MarketplaceCarouselItem {
   String get id;
-  String get title;
+  late String Function(BuildContext) title;
   String get subtitle;
   String get image;
-  DateTime? get date;
 
   DSListItem listItem(BuildContext context) {
-    String? rightTopCornerText;
-    if (date != null) {
-      rightTopCornerText = date!.dateDescription;
-    }
     return _DSListItem(
       id: id,
-      title: title,
+      title: title(context),
       subtitle: subtitle,
       image: image,
-      rightTopCornerText: rightTopCornerText,
     );
   }
 }
@@ -36,16 +32,68 @@ class EventMarketplaceItem extends MarketplaceCarouselItem {
   String get id => event.id;
 
   @override
-  String get title => event.title;
+  late String Function(BuildContext) title = (BuildContext context) {
+    return context.l10N.marketplace_event_title(
+      event.sportEmoticon,
+      event.title,
+    );
+  };
 
   @override
-  String get subtitle => event.description;
+  String get subtitle => event.date.dateDescription;
 
   @override
-  DateTime? get date => null;
+  String get image => "https://picsum.photos/600/300";
+}
+
+class ParticipateEventMarketplaceItem extends MarketplaceCarouselItem {
+  final RelatedEvent event;
+
+  ParticipateEventMarketplaceItem({
+    required this.event,
+  });
 
   @override
-  String get image => "https://picsum.photos/700/300";
+  String get id => event.eventId;
+
+  @override
+  late String Function(BuildContext) title = (BuildContext context) {
+    return context.l10N.marketplace_calendar_event_participation_title(
+      event.sportEmoticon,
+      event.title,
+    );
+  };
+
+  @override
+  String get subtitle => event.date.dateDescription;
+
+  @override
+  String get image => "https://picsum.photos/600/300";
+}
+
+class OrganizeEventMarketplaceItem extends MarketplaceCarouselItem {
+  final RelatedEvent event;
+
+  OrganizeEventMarketplaceItem({
+    required this.event,
+  });
+
+  @override
+  String get id => event.eventId;
+
+  @override
+  late String Function(BuildContext) title = (BuildContext context) {
+    return context.l10N.marketplace_calendar_event_organize_title(
+      event.sportEmoticon,
+      event.title,
+    );
+  };
+
+  @override
+  String get subtitle => event.date.dateDescription;
+
+  @override
+  String get image => "https://picsum.photos/600/300";
 }
 
 class _DSListItem implements DSListItem {
@@ -58,14 +106,10 @@ class _DSListItem implements DSListItem {
   @override
   String image;
 
-  @override
-  String? rightTopCornerText;
-
   _DSListItem({
     required this.id,
     required this.title,
     required this.subtitle,
     required this.image,
-    this.rightTopCornerText,
   });
 }

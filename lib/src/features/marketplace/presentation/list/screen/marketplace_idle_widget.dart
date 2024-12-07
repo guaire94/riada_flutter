@@ -8,7 +8,7 @@ import 'package:riada/src/features/common/presentation/common/city_selector/city
 import 'package:riada/src/features/marketplace/presentation/carousel/bloc/marketplace_carousel_bloc.dart'
     as Carousel;
 import 'package:riada/src/features/marketplace/presentation/carousel/item/marketplace_carousel_type.dart';
-import 'package:riada/src/features/marketplace/presentation/carousel/screen/marketplace_carousel_screen.dart';
+import 'package:riada/src/features/marketplace/presentation/carousel/screen/marketplace_carousel_widget.dart';
 import 'package:riada/src/features/marketplace/presentation/list/bloc/marketplace_bloc.dart';
 import 'package:riada/src/utils/city.dart';
 
@@ -33,20 +33,11 @@ class MarketplaceIdleWidget extends StatefulWidget {
 class _MarketplaceIdleWidgetState extends State<MarketplaceIdleWidget> {
   // MARK: - Constants
   static final double _citySelectorHeight = 40;
-  static final double _offset = 72;
-  double _mainRadius = 20;
-  bool _inContainer = false;
 
   // MARK: - Properties
   final ScrollController _scrollController = ScrollController();
 
   // MARK: - Life cycle
-  @override
-  void initState() {
-    _scrollController.addListener(_handleControllerNotification);
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -54,11 +45,15 @@ class _MarketplaceIdleWidgetState extends State<MarketplaceIdleWidget> {
       child: SingleChildScrollView(
         controller: _scrollController,
         child: Container(
-          // height: _contentHeight + _offset,
+          height: DSImageTypeV2.xl.height +
+              MarketplaceCarouselType.calendar.height +
+              DSSpacingV2.m +
+              DSSpacingV2.m,
           child: Stack(
             children: [
               _cityBackground(),
               _citySelector(),
+              _mainContent(),
             ],
           ),
         ),
@@ -100,25 +95,19 @@ class _MarketplaceIdleWidgetState extends State<MarketplaceIdleWidget> {
 
   Widget _mainContent() {
     return Positioned(
-      top: _offset,
+      top: DSImageTypeV2.xl.height,
       right: 0.0,
       left: 0.0,
-      child: Container(
-        clipBehavior: Clip.hardEdge,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(_mainRadius),
-            topRight: Radius.circular(_mainRadius),
-          ),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            _content(type: MarketplaceCarouselType.events),
-            SizedBox(height: DSSpacingV2.m),
-          ],
-        ),
+      height: MarketplaceCarouselType.calendar.height +
+          DSSpacingV2.m +
+          DSSpacingV2.m,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          SizedBox(height: DSSpacingV2.m),
+          _content(type: MarketplaceCarouselType.calendar),
+          SizedBox(height: DSSpacingV2.m),
+        ],
       ),
     );
   }
@@ -128,21 +117,5 @@ class _MarketplaceIdleWidgetState extends State<MarketplaceIdleWidget> {
       create: (context) => getIt<Carousel.MarketplaceCarouselBloc>(),
       child: MarketplaceCarouselWidget(type: type),
     );
-  }
-
-  void _handleControllerNotification() {
-    if (_scrollController.position.pixels < _offset) {
-      if (!_inContainer) {
-        _inContainer = true;
-        setState(() {
-          _mainRadius = 20;
-        });
-      }
-    } else if (_inContainer) {
-      _inContainer = false;
-      setState(() {
-        _mainRadius = 0;
-      });
-    }
   }
 }

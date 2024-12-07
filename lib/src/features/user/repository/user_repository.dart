@@ -23,6 +23,7 @@ class UserRepository {
         _authDataSource = authDataSource,
         super();
 
+  // MARK: - Public
   Future<User> getCurrentUser() async {
     final userRef = getCurrentUserReference();
 
@@ -113,14 +114,6 @@ class UserRepository {
     );
   }
 
-  String get _userId {
-    final authUser = _authDataSource.getUser();
-
-    if (authUser == null) throw NoDataAvailableException();
-
-    return authUser.uid;
-  }
-
   Future signOut() async {
     await _authDataSource.signOut();
   }
@@ -132,5 +125,14 @@ class UserRepository {
   Future<void> desactiveAccount() async {
     await _userDataSource.desactiveAccount(userId: _userId);
     await signOut();
+  }
+
+  // MARK: - Private
+  String get _userId {
+    final authUser = _authDataSource.getUser();
+
+    if (authUser == null) throw NoDataAvailableException();
+
+    return authUser.uid;
   }
 }

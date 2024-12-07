@@ -23,7 +23,6 @@ extension FirebaseRootPathExtension on EnvConfigurationDataSource {
   }
 }
 
-
 extension APIKeysExtensions on EnvConfigurationDataSource {
   String get googleMapsApiKey {
     switch (_configuration) {

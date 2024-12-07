@@ -551,11 +551,35 @@ abstract class AppLocalizations {
   /// **'Welcome back, {user}!'**
   String marketplace_title_with_user(Object user);
 
-  /// No description provided for @marketplace_list_section_title.
+  /// No description provided for @marketplace_calendar_title.
   ///
   /// In en, this message translates to:
-  /// **'Events'**
-  String get marketplace_list_section_title;
+  /// **'Calendar'**
+  String get marketplace_calendar_title;
+
+  /// No description provided for @marketplace_calendar_event_participation_title.
+  ///
+  /// In en, this message translates to:
+  /// **'{sportEmoticon} - Participation to {title}'**
+  String marketplace_calendar_event_participation_title(Object sportEmoticon, Object title);
+
+  /// No description provided for @marketplace_calendar_event_organize_title.
+  ///
+  /// In en, this message translates to:
+  /// **'{sportEmoticon} - Organize {title}'**
+  String marketplace_calendar_event_organize_title(Object sportEmoticon, Object title);
+
+  /// No description provided for @marketplace_upcoming_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Upcoming'**
+  String get marketplace_upcoming_title;
+
+  /// No description provided for @marketplace_event_title.
+  ///
+  /// In en, this message translates to:
+  /// **'{sportEmoticon} - {title}'**
+  String marketplace_event_title(Object sportEmoticon, Object title);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

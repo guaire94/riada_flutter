@@ -1,10 +1,10 @@
+import 'package:flutter/material.dart';
 import 'package:riada/src/design_system/v2/component/buttons/ds_button_text_v2.dart';
 import 'package:riada/src/design_system/v2/component/dsList/ds_list_item.dart';
 import 'package:riada/src/design_system/v2/component/dsList/ds_list_view_item.dart';
 import 'package:riada/src/design_system/v2/component/dsList/ds_list_view_type.dart';
 import 'package:riada/src/design_system/v2/graphical_chart/ds_spacing_v2.dart';
 import 'package:riada/src/utils/build_context_extension.dart';
-import 'package:flutter/material.dart';
 
 class DSListView extends StatelessWidget {
   // MARK: - Properties
@@ -71,7 +71,7 @@ class DSListView extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(height: DSSpacingV2.s),
+        SizedBox(height: DSSpacingV2.xxs),
         Expanded(
           child: content,
         )

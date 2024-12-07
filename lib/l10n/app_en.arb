@@ -108,5 +108,9 @@
     "@_MARKETPLACE":{},
     "marketplace_title_with_no_user": "Welcome!",
     "marketplace_title_with_user": "Welcome back, {user}!",
-    "marketplace_list_section_title": "Events"
+    "marketplace_calendar_title": "Calendar",
+    "marketplace_calendar_event_participation_title": "{sportEmoticon} - Participation to {title}",
+    "marketplace_calendar_event_organize_title": "{sportEmoticon} - Organize {title}",
+    "marketplace_upcoming_title": "Upcoming",
+    "marketplace_event_title": "{sportEmoticon} - {title}"
 }

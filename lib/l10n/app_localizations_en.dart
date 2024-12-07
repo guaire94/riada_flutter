@@ -243,5 +243,23 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get marketplace_list_section_title => 'Events';
+  String get marketplace_calendar_title => 'Calendar';
+
+  @override
+  String marketplace_calendar_event_participation_title(Object sportEmoticon, Object title) {
+    return '$sportEmoticon - Participation to $title';
+  }
+
+  @override
+  String marketplace_calendar_event_organize_title(Object sportEmoticon, Object title) {
+    return '$sportEmoticon - Organize $title';
+  }
+
+  @override
+  String get marketplace_upcoming_title => 'Upcoming';
+
+  @override
+  String marketplace_event_title(Object sportEmoticon, Object title) {
+    return '$sportEmoticon - $title';
+  }
 }

@@ -16,11 +16,9 @@ class EventRepository {
         super();
 
   Future<List<Event>> getNextNearestEvents({
-    required String sportId,
     required City city,
   }) async {
     final events = await _eventDataSource.getNextNearestEvents(
-      sportId: sportId,
       city: city,
     );
 

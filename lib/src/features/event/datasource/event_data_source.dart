@@ -3,6 +3,7 @@ import 'package:injectable/injectable.dart';
 import 'package:riada/src/features/common/datasource/base_firestore_data_source.dart';
 import 'package:riada/src/features/common/datasource/exceptions/no_data_available_exception.dart';
 import 'package:riada/src/features/event/entity/event.dart';
+import 'package:riada/src/features/event/entity/related_event.dart';
 import 'package:riada/src/features/event/helper/distance_helper.dart';
 import 'package:riada/src/utils/city.dart';
 
@@ -18,8 +19,45 @@ class EventDataSource extends BaseFirestoreDataSource {
   });
 
   // MARK: - Public
+  Future<List<RelatedEvent>> getNextEventParticipations(String userId) async {
+    try {
+      Query query = await userParticipateEventCollection(userId)
+          .where("date", isGreaterThan: DateTime.now());
+
+      final querySnapshot = await query.get();
+      return querySnapshot.docs.map((event) {
+        final data = event.data() as Map<String, dynamic>?;
+        if (data == null) {
+          throw NoDataAvailableException();
+        }
+        data["id"] = event.id;
+        return RelatedEvent.fromJson(data);
+      }).toList();
+    } catch (_) {
+      return [];
+    }
+  }
+
+  Future<List<RelatedEvent>> getNextEventOrganizations(String userId) async {
+    try {
+      Query query = await userOrganizeEventCollection(userId)
+          .where("date", isGreaterThan: DateTime.now());
+
+      final querySnapshot = await query.get();
+      return querySnapshot.docs.map((event) {
+        final data = event.data() as Map<String, dynamic>?;
+        if (data == null) {
+          throw NoDataAvailableException();
+        }
+        data["id"] = event.id;
+        return RelatedEvent.fromJson(data);
+      }).toList();
+    } catch (_) {
+      return [];
+    }
+  }
+
   Future<List<Event>> getNextNearestEvents({
-    required String sportId,
     required City city,
   }) async {
     try {
@@ -32,8 +70,8 @@ class EventDataSource extends BaseFirestoreDataSource {
           .orderBy("placeCoordinate")
           .where("placeCoordinate", isGreaterThan: lesserGeoPoint)
           .where("placeCoordinate", isLessThan: greaterGeoPoint)
-          .where("sportId", isEqualTo: sportId)
-          .where("isPrivate", isEqualTo: false);
+          .where("isPrivate", isEqualTo: false)
+          .where("date", isGreaterThan: DateTime.now());
 
       final querySnapshot = await query.get();
       print(querySnapshot);

@@ -52,10 +52,14 @@ class UserDataSource extends BaseFirestoreDataSource {
   }
 
   Future<void> updateNotificationToken({required String userId}) async {
-    final token = await FirebaseMessaging.instance.getToken();
-    userReference(userId).update({
-      "devices": FieldValue.arrayUnion([token]),
-    });
+    try {
+      final token = await FirebaseMessaging.instance.getToken();
+      userReference(userId).update({
+        "devices": FieldValue.arrayUnion([token]),
+      });
+    } catch (_) {
+      return;
+    }
   }
 
   Future<void> updateAdditionalProfileInformation({

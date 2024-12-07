@@ -21,7 +21,6 @@ class EventListBloc extends Bloc<EventListEvent, EventListState> {
     on<LoadEvent>((event, emit) async {
       try {
         final events = await _eventRepository.getNextNearestEvents(
-          sportId: Constants.defaultSportId,
           city: Constants.defaultCity,
         );
         emit(IdleState(
