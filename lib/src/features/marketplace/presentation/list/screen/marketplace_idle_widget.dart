@@ -33,6 +33,10 @@ class MarketplaceIdleWidget extends StatefulWidget {
 class _MarketplaceIdleWidgetState extends State<MarketplaceIdleWidget> {
   // MARK: - Constants
   static final double _citySelectorHeight = 40;
+  final List<MarketplaceCarouselType> contentSections = [
+    MarketplaceCarouselType.calendar,
+    MarketplaceCarouselType.upcoming,
+  ];
 
   // MARK: - Properties
   final ScrollController _scrollController = ScrollController();
@@ -45,10 +49,7 @@ class _MarketplaceIdleWidgetState extends State<MarketplaceIdleWidget> {
       child: SingleChildScrollView(
         controller: _scrollController,
         child: Container(
-          height: DSImageTypeV2.xl.height +
-              MarketplaceCarouselType.calendar.height +
-              DSSpacingV2.m +
-              DSSpacingV2.m,
+          height: DSImageTypeV2.xl.height + _heightContent(),
           child: Stack(
             children: [
               _cityBackground(),
@@ -98,24 +99,25 @@ class _MarketplaceIdleWidgetState extends State<MarketplaceIdleWidget> {
       top: DSImageTypeV2.xl.height,
       right: 0.0,
       left: 0.0,
-      height: MarketplaceCarouselType.calendar.height +
-          DSSpacingV2.m +
-          DSSpacingV2.m,
+      height: DSSpacingV2.m + _heightContent(),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           SizedBox(height: DSSpacingV2.m),
-          _content(type: MarketplaceCarouselType.calendar),
-          SizedBox(height: DSSpacingV2.m),
+          ...contentSections.map((s) => _sectionContent(type: s))
         ],
       ),
     );
   }
 
-  Widget _content({required MarketplaceCarouselType type}) {
+  Widget _sectionContent({required MarketplaceCarouselType type}) {
     return BlocProvider(
       create: (context) => getIt<Carousel.MarketplaceCarouselBloc>(),
       child: MarketplaceCarouselWidget(type: type),
     );
+  }
+
+  double _heightContent() {
+    return contentSections.map((s) => s.height).reduce((a, b) => a + b);
   }
 }

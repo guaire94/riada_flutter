@@ -74,7 +74,6 @@ class EventDataSource extends BaseFirestoreDataSource {
           .where("date", isGreaterThan: DateTime.now());
 
       final querySnapshot = await query.get();
-      print(querySnapshot);
       return querySnapshot.docs.map((event) {
         final data = event.data() as Map<String, dynamic>?;
         if (data == null) {

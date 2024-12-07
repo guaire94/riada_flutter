@@ -6,12 +6,13 @@ extension TimestampExtension on Timestamp {
     return Jiffy.parse(this.toDate().toString()).fromNow();
   }
 
-  String get dateDescription {
-    return Jiffy.parse(this.toDate().toString()).format(pattern: "EEEE d MMMM");
+  String get dateAndHourDescription {
+    return Jiffy.parse(this.toDate().toString())
+        .format(pattern: "EEEE d MMMM - HH:MM");
   }
 
   String get shortDateDescription {
-    return Jiffy.parse(this.toDate().toString()).format(pattern: "yyyy/MM/dd");
+    return Jiffy.parse(this.toDate().toString()).format(pattern: "EEEE d MMM");
   }
 
   String get timeDescription {

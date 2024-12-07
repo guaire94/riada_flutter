@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:riada/src/design_system/v2/component/dsList/ds_list_view_type.dart';
 import 'package:riada/src/router/routes.gr.dart';
+import 'package:riada/src/utils/build_context_extension.dart';
 
 enum MarketplaceCarouselType {
   calendar,
@@ -30,9 +31,9 @@ extension MarketplaceCarouselTypeExtensions on MarketplaceCarouselType {
   String title(BuildContext context) {
     switch (this) {
       case MarketplaceCarouselType.calendar:
-        return "Calendar";
+        return context.l10N.marketplace_calendar_title;
       case MarketplaceCarouselType.upcoming:
-        return "Upcoming events";
+        return context.l10N.marketplace_upcoming_title;
     }
   }
 

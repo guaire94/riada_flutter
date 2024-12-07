@@ -40,7 +40,7 @@ class EventMarketplaceItem extends MarketplaceCarouselItem {
   };
 
   @override
-  String get subtitle => event.date.dateDescription;
+  String get subtitle => event.date.shortDateDescription;
 
   @override
   String get image => "https://picsum.photos/600/300";
@@ -65,7 +65,7 @@ class ParticipateEventMarketplaceItem extends MarketplaceCarouselItem {
   };
 
   @override
-  String get subtitle => event.date.dateDescription;
+  String get subtitle => event.date.dateAndHourDescription;
 
   @override
   String get image => "https://picsum.photos/600/300";
@@ -90,7 +90,7 @@ class OrganizeEventMarketplaceItem extends MarketplaceCarouselItem {
   };
 
   @override
-  String get subtitle => event.date.dateDescription;
+  String get subtitle => event.date.dateAndHourDescription;
 
   @override
   String get image => "https://picsum.photos/600/300";
