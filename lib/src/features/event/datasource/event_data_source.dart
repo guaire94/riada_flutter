@@ -4,6 +4,7 @@ import 'package:riada/src/features/common/datasource/base_firestore_data_source.
 import 'package:riada/src/features/common/datasource/exceptions/no_data_available_exception.dart';
 import 'package:riada/src/features/event/entity/event.dart';
 import 'package:riada/src/features/event/entity/related_event.dart';
+import 'package:riada/src/features/event/entity/sport.dart';
 import 'package:riada/src/features/event/helper/distance_helper.dart';
 import 'package:riada/src/utils/city.dart';
 
@@ -59,6 +60,7 @@ class EventDataSource extends BaseFirestoreDataSource {
 
   Future<List<Event>> getNextNearestEvents({
     required City city,
+    Sport? sport,
   }) async {
     try {
       final lesserGeoPoint =
@@ -72,6 +74,10 @@ class EventDataSource extends BaseFirestoreDataSource {
           .where("placeCoordinate", isLessThan: greaterGeoPoint)
           .where("isPrivate", isEqualTo: false)
           .where("date", isGreaterThan: DateTime.now());
+
+      if (sport != null) {
+        query.where("sportId", isEqualTo: sport.id);
+      }
 
       final querySnapshot = await query.get();
       return querySnapshot.docs.map((event) {

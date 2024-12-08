@@ -7,16 +7,12 @@ import 'package:riada/src/utils/build_context_extension.dart';
 enum MarketplaceCarouselType {
   calendar,
   upcoming,
+  soccer,
 }
 
 extension MarketplaceCarouselTypeExtensions on MarketplaceCarouselType {
   double get height {
-    switch (this) {
-      case MarketplaceCarouselType.calendar:
-        return DSListViewType.longCarousel.height;
-      case MarketplaceCarouselType.upcoming:
-        return DSListViewType.smallCarousel.height;
-    }
+    return listType.height;
   }
 
   DSListViewType get listType {
@@ -24,6 +20,8 @@ extension MarketplaceCarouselTypeExtensions on MarketplaceCarouselType {
       case MarketplaceCarouselType.calendar:
         return DSListViewType.longCarousel;
       case MarketplaceCarouselType.upcoming:
+        return DSListViewType.smallCarousel;
+      case MarketplaceCarouselType.soccer:
         return DSListViewType.smallCarousel;
     }
   }
@@ -34,6 +32,8 @@ extension MarketplaceCarouselTypeExtensions on MarketplaceCarouselType {
         return context.l10N.marketplace_calendar_title;
       case MarketplaceCarouselType.upcoming:
         return context.l10N.marketplace_upcoming_title;
+      case MarketplaceCarouselType.soccer:
+        return context.l10N.marketplace_soccer_title;
     }
   }
 
@@ -41,6 +41,7 @@ extension MarketplaceCarouselTypeExtensions on MarketplaceCarouselType {
     switch (this) {
       case MarketplaceCarouselType.calendar:
       case MarketplaceCarouselType.upcoming:
+      case MarketplaceCarouselType.soccer:
         return EventDetailsRoute(eventId: id);
     }
   }
@@ -49,6 +50,7 @@ extension MarketplaceCarouselTypeExtensions on MarketplaceCarouselType {
     switch (this) {
       case MarketplaceCarouselType.calendar:
       case MarketplaceCarouselType.upcoming:
+      case MarketplaceCarouselType.soccer:
         return EventListRoute();
     }
   }

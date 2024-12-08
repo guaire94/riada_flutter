@@ -109,5 +109,6 @@
     "marketplace_calendar_event_participation_title": "{sportEmoticon} - Participation à {title}",
     "marketplace_calendar_event_organize_title": "{sportEmoticon} - Organise {title}",
     "marketplace_upcoming_title": "À venir",
-    "marketplace_event_title": "{sportEmoticon} - {title}"
+    "marketplace_event_title": "{sportEmoticon} - {title}",
+    "marketplace_soccer_title": "Football"
 }

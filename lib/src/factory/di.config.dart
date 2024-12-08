@@ -16,8 +16,12 @@ import 'package:riada/src/features/common/datasource/google_place_data_source.da
     as _i130;
 import 'package:riada/src/features/common/datasource/local/env_configuration_data_source.dart'
     as _i131;
+import 'package:riada/src/features/common/datasource/sport_data_source.dart'
+    as _i684;
 import 'package:riada/src/features/common/repository/google_place_repository.dart'
     as _i497;
+import 'package:riada/src/features/common/repository/sport_repository.dart'
+    as _i987;
 import 'package:riada/src/features/drawer/presentation/bloc/drawer_bloc.dart'
     as _i738;
 import 'package:riada/src/features/event/datasource/event_data_source.dart'
@@ -110,6 +114,8 @@ extension GetItInjectableX on _i174.GetIt {
         envConfigurationDataSource: gh<_i131.EnvConfigurationDataSource>()));
     gh.factory<_i28.BaseFirestoreDataSource>(() => _i28.BaseFirestoreDataSource(
         envConfigurationDataSource: gh<_i131.EnvConfigurationDataSource>()));
+    gh.factory<_i684.SportDataSource>(() => _i684.SportDataSource(
+        envConfigurationDataSource: gh<_i131.EnvConfigurationDataSource>()));
     gh.factory<_i372.PhoneNumberVerificationRepository>(() =>
         _i372.PhoneNumberVerificationRepository(
             phoneNumberSignInDataSource:
@@ -135,6 +141,8 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i217.AdditionalProfileInformationBloc>(() =>
         _i217.AdditionalProfileInformationBloc(
             userRepository: gh<_i45.UserRepository>()));
+    gh.singleton<_i987.SportRepository>(
+        () => _i987.SportRepository(gh<_i684.SportDataSource>()));
     gh.factory<_i6.SignUpBloc>(() => _i6.SignUpBloc(
           authRepository: gh<_i807.AuthRepository>(),
           phoneNumberVerificationRepository:
@@ -145,22 +153,24 @@ extension GetItInjectableX on _i174.GetIt {
           envConfigurationDataSource: gh<_i131.EnvConfigurationDataSource>(),
           distanceHelper: gh<_i769.DistanceHelper>(),
         ));
-    gh.factory<_i162.EventRepository>(() =>
-        _i162.EventRepository(eventDataSource: gh<_i1025.EventDataSource>()));
     gh.factory<_i835.HomeBloc>(() => _i835.HomeBloc(
           userRepository: gh<_i45.UserRepository>(),
           notificationsRepository: gh<_i1070.NotificationsRepository>(),
+          sportRepository: gh<_i987.SportRepository>(),
         ));
-    gh.factory<_i560.EventDetailsBloc>(() =>
-        _i560.EventDetailsBloc(eventRepository: gh<_i162.EventRepository>()));
-    gh.factory<_i793.EventListBloc>(() =>
-        _i793.EventListBloc(eventRepository: gh<_i162.EventRepository>()));
     gh.factory<_i1062.MarketplaceCarouselRepository>(
         () => _i1062.MarketplaceCarouselRepository(
               eventDataSource: gh<_i1025.EventDataSource>(),
               authDataSource: gh<_i1056.AuthDataSource>(),
               cityRepository: gh<_i514.CityRepository>(),
+              sportRepository: gh<_i987.SportRepository>(),
             ));
+    gh.factory<_i162.EventRepository>(() =>
+        _i162.EventRepository(eventDataSource: gh<_i1025.EventDataSource>()));
+    gh.factory<_i560.EventDetailsBloc>(() =>
+        _i560.EventDetailsBloc(eventRepository: gh<_i162.EventRepository>()));
+    gh.factory<_i793.EventListBloc>(() =>
+        _i793.EventListBloc(eventRepository: gh<_i162.EventRepository>()));
     gh.factory<_i876.MarketplaceCarouselBloc>(() =>
         _i876.MarketplaceCarouselBloc(
             marketplaceCarouselRepository:

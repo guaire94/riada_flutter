@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
+import 'package:riada/src/features/common/repository/sport_repository.dart';
 import 'package:riada/src/features/user/datasource/exceptions/user_not_logged_exception.dart';
 import 'package:riada/src/features/user/entity/user.dart';
 import 'package:riada/src/features/user/entity/user_status.dart';
@@ -20,18 +21,22 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   // MARK: Dependency
   final UserRepository _userRepository;
   final NotificationsRepository _notificationsRepository;
+  final SportRepository _sportRepository;
 
   // MARk: LifeCycle
   HomeBloc({
     required UserRepository userRepository,
     required NotificationsRepository notificationsRepository,
+    required SportRepository sportRepository,
   })  : _userRepository = userRepository,
         _notificationsRepository = notificationsRepository,
+        _sportRepository = sportRepository,
         super(LaunchState()) {
     on<LoadEvent>((event, emit) async {
       await Future.delayed(_launchStateDuration);
       try {
         final User user = await _userRepository.getCurrentUser();
+        await _sportRepository.fetchAllSports();
 
         await _notificationsRepository.requestPermission(
           onMessageTapped: (notification) {

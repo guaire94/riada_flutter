@@ -580,6 +580,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{sportEmoticon} - {title}'**
   String marketplace_event_title(Object sportEmoticon, Object title);
+
+  /// No description provided for @marketplace_soccer_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Football'**
+  String get marketplace_soccer_title;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

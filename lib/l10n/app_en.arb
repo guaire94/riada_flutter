@@ -112,5 +112,6 @@
     "marketplace_calendar_event_participation_title": "{sportEmoticon} - Participation to {title}",
     "marketplace_calendar_event_organize_title": "{sportEmoticon} - Organize {title}",
     "marketplace_upcoming_title": "Upcoming",
-    "marketplace_event_title": "{sportEmoticon} - {title}"
+    "marketplace_event_title": "{sportEmoticon} - {title}",
+    "marketplace_soccer_title": "Football"
 }

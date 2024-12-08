@@ -1,4 +1,5 @@
 import 'package:injectable/injectable.dart';
+import 'package:riada/src/features/common/repository/sport_repository.dart';
 import 'package:riada/src/features/event/datasource/event_data_source.dart';
 import 'package:riada/src/features/marketplace/presentation/carousel/item/marketplace_carousel_item.dart';
 import 'package:riada/src/features/marketplace/presentation/carousel/item/marketplace_carousel_type.dart';
@@ -12,15 +13,18 @@ class MarketplaceCarouselRepository {
   final EventDataSource _eventDataSource;
   final AuthDataSource _authDataSource;
   final CityRepository _cityRepository;
+  final SportRepository _sportRepository;
 
   //MARK: -  LifeCycle
   MarketplaceCarouselRepository({
     required EventDataSource eventDataSource,
     required AuthDataSource authDataSource,
     required CityRepository cityRepository,
+    required SportRepository sportRepository,
   })  : _eventDataSource = eventDataSource,
         _authDataSource = authDataSource,
         _cityRepository = cityRepository,
+        _sportRepository = sportRepository,
         super();
 
   //MARK: - Public
@@ -32,6 +36,8 @@ class MarketplaceCarouselRepository {
         return _loadCalendarEvents();
       case MarketplaceCarouselType.upcoming:
         return _loadUpcomingEvents();
+      case MarketplaceCarouselType.soccer:
+        return _loadSoccerEvents();
     }
   }
 
@@ -60,6 +66,21 @@ class MarketplaceCarouselRepository {
       city: _cityRepository.selectedCity,
     );
     return events.map((e) => EventMarketplaceItem(event: e)).toList();
+  }
+
+  Future<List<MarketplaceCarouselItem>> _loadSoccerEvents() async {
+    try {
+      final sport = _sportRepository.sports.firstWhere(
+        (e) => e.name == 'SPORT_SOCCER',
+      );
+      final events = await _eventDataSource.getNextNearestEvents(
+        city: _cityRepository.selectedCity,
+        sport: sport,
+      );
+      return events.map((e) => EventMarketplaceItem(event: e)).toList();
+    } catch (_) {
+      return [];
+    }
   }
 
   String get _userId {

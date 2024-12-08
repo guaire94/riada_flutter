@@ -262,4 +262,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String marketplace_event_title(Object sportEmoticon, Object title) {
     return '$sportEmoticon - $title';
   }
+
+  @override
+  String get marketplace_soccer_title => 'Football';
 }

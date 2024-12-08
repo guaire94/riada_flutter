@@ -5,7 +5,7 @@ class DSColorV2 {
   static const Color neutral70 = Color(0xFFCDD1D6);
   static const Color neutral35 = Color(0xFFECEFF3);
   static const Color neutral10 = Color(0xFFF3F0EC);
-  static const Color primary = Color(0xFFA55A3C);
+  static const Color primary = Color(0xFF0E0E2C);
   static const Color secondary = Color(0xFF4A4A68);
   static const Color success = Color(0xFF00A36D);
   static const Color danger = Color(0xFFE23939);

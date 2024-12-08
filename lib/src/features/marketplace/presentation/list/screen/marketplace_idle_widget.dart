@@ -36,6 +36,7 @@ class _MarketplaceIdleWidgetState extends State<MarketplaceIdleWidget> {
   final List<MarketplaceCarouselType> contentSections = [
     MarketplaceCarouselType.calendar,
     MarketplaceCarouselType.upcoming,
+    MarketplaceCarouselType.soccer,
   ];
 
   // MARK: - Properties
@@ -44,18 +45,27 @@ class _MarketplaceIdleWidgetState extends State<MarketplaceIdleWidget> {
   // MARK: - Life cycle
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: DSColorV2.neutral10,
-      child: SingleChildScrollView(
-        controller: _scrollController,
-        child: Container(
-          height: DSImageTypeV2.xl.height + _heightContent(),
-          child: Stack(
-            children: [
-              _cityBackground(),
-              _citySelector(),
-              _mainContent(),
-            ],
+    return Scaffold(
+      backgroundColor: DSColorV2.neutral10,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Define the action to be performed when the button is pressed
+        },
+        child: Icon(Icons.add),
+      ),
+      body: Container(
+        color: DSColorV2.neutral10,
+        child: SingleChildScrollView(
+          controller: _scrollController,
+          child: Container(
+            height: DSImageTypeV2.xl.height + _heightContent(),
+            child: Stack(
+              children: [
+                _cityBackground(),
+                _citySelector(),
+                _mainContent(),
+              ],
+            ),
           ),
         ),
       ),
