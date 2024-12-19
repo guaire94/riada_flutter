@@ -11,21 +11,21 @@
 import 'package:auto_route/auto_route.dart' as _i12;
 import 'package:flutter/material.dart' as _i13;
 import 'package:riada/src/features/common/presentation/coming_soon/screen/coming_soon_screen.dart'
-    as _i2;
-import 'package:riada/src/features/drawer/presentation/screen/drawer_screen.dart'
     as _i3;
-import 'package:riada/src/features/event/presentation/details/screen/event_details_screen.dart'
+import 'package:riada/src/features/drawer/presentation/screen/drawer_screen.dart'
     as _i4;
-import 'package:riada/src/features/event/presentation/list/screen/event_list_screen.dart'
+import 'package:riada/src/features/event/presentation/add/screen/add_event_screen.dart'
+    as _i1;
+import 'package:riada/src/features/event/presentation/details/screen/event_details_screen.dart'
     as _i5;
+import 'package:riada/src/features/event/presentation/list/screen/event_list_screen.dart'
+    as _i6;
 import 'package:riada/src/features/home/presentation/screen/home_screen.dart'
     as _i7;
 import 'package:riada/src/features/marketplace/presentation/list/screen/marketplace_screen.dart'
     as _i8;
 import 'package:riada/src/features/user/presentation/additional_profile_information/screen/additional_profile_information_screen.dart'
-    as _i1;
-import 'package:riada/src/features/user/presentation/forget_password/screen/forget_password_screen.dart'
-    as _i6;
+    as _i2;
 import 'package:riada/src/features/user/presentation/my_profile/screen/my_profile_screen.dart'
     as _i9;
 import 'package:riada/src/features/user/presentation/sign_up/screen/sign_up_screen.dart'
@@ -38,23 +38,29 @@ abstract class $AppRouter extends _i12.RootStackRouter {
 
   @override
   final Map<String, _i12.PageFactory> pagesMap = {
+    AddEventRoute.name: (routeData) {
+      return _i12.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: _i12.WrappedRoute(child: const _i1.AddEventScreen()),
+      );
+    },
     AdditionalProfileInformationRoute.name: (routeData) {
       return _i12.AutoRoutePage<dynamic>(
         routeData: routeData,
         child:
-            _i12.WrappedRoute(child: _i1.AdditionalProfileInformationScreen()),
+            _i12.WrappedRoute(child: _i2.AdditionalProfileInformationScreen()),
       );
     },
     ComingSoonRoute.name: (routeData) {
       return _i12.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i2.ComingSoonScreen(),
+        child: _i3.ComingSoonScreen(),
       );
     },
     DrawerRoute.name: (routeData) {
       return _i12.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i3.DrawerScreen(),
+        child: _i4.DrawerScreen(),
       );
     },
     EventDetailsRoute.name: (routeData) {
@@ -62,7 +68,7 @@ abstract class $AppRouter extends _i12.RootStackRouter {
       return _i12.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i12.WrappedRoute(
-            child: _i4.EventDetailsScreen(
+            child: _i5.EventDetailsScreen(
           key: args.key,
           eventId: args.eventId,
         )),
@@ -71,13 +77,7 @@ abstract class $AppRouter extends _i12.RootStackRouter {
     EventListRoute.name: (routeData) {
       return _i12.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i12.WrappedRoute(child: const _i5.EventListScreen()),
-      );
-    },
-    ForgetPasswordRoute.name: (routeData) {
-      return _i12.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: _i12.WrappedRoute(child: const _i6.ForgetPasswordScreen()),
+        child: _i12.WrappedRoute(child: const _i6.EventListScreen()),
       );
     },
     HomeRoute.name: (routeData) {
@@ -115,7 +115,21 @@ abstract class $AppRouter extends _i12.RootStackRouter {
 }
 
 /// generated route for
-/// [_i1.AdditionalProfileInformationScreen]
+/// [_i1.AddEventScreen]
+class AddEventRoute extends _i12.PageRouteInfo<void> {
+  const AddEventRoute({List<_i12.PageRouteInfo>? children})
+      : super(
+          AddEventRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'AddEventRoute';
+
+  static const _i12.PageInfo<void> page = _i12.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i2.AdditionalProfileInformationScreen]
 class AdditionalProfileInformationRoute extends _i12.PageRouteInfo<void> {
   const AdditionalProfileInformationRoute({List<_i12.PageRouteInfo>? children})
       : super(
@@ -129,7 +143,7 @@ class AdditionalProfileInformationRoute extends _i12.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i2.ComingSoonScreen]
+/// [_i3.ComingSoonScreen]
 class ComingSoonRoute extends _i12.PageRouteInfo<void> {
   const ComingSoonRoute({List<_i12.PageRouteInfo>? children})
       : super(
@@ -143,7 +157,7 @@ class ComingSoonRoute extends _i12.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i3.DrawerScreen]
+/// [_i4.DrawerScreen]
 class DrawerRoute extends _i12.PageRouteInfo<void> {
   const DrawerRoute({List<_i12.PageRouteInfo>? children})
       : super(
@@ -157,7 +171,7 @@ class DrawerRoute extends _i12.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i4.EventDetailsScreen]
+/// [_i5.EventDetailsScreen]
 class EventDetailsRoute extends _i12.PageRouteInfo<EventDetailsRouteArgs> {
   EventDetailsRoute({
     _i13.Key? key,
@@ -195,7 +209,7 @@ class EventDetailsRouteArgs {
 }
 
 /// generated route for
-/// [_i5.EventListScreen]
+/// [_i6.EventListScreen]
 class EventListRoute extends _i12.PageRouteInfo<void> {
   const EventListRoute({List<_i12.PageRouteInfo>? children})
       : super(
@@ -204,20 +218,6 @@ class EventListRoute extends _i12.PageRouteInfo<void> {
         );
 
   static const String name = 'EventListRoute';
-
-  static const _i12.PageInfo<void> page = _i12.PageInfo<void>(name);
-}
-
-/// generated route for
-/// [_i6.ForgetPasswordScreen]
-class ForgetPasswordRoute extends _i12.PageRouteInfo<void> {
-  const ForgetPasswordRoute({List<_i12.PageRouteInfo>? children})
-      : super(
-          ForgetPasswordRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'ForgetPasswordRoute';
 
   static const _i12.PageInfo<void> page = _i12.PageInfo<void>(name);
 }

@@ -29,7 +29,6 @@ class AppRouter extends $AppRouter {
     ),
     AutoRoute(path: "/MyProfile", page: MyProfileRoute.page),
     AutoRoute(path: "/ComingSoon", page: ComingSoonRoute.page),
-    AutoRoute(path: "/ForgetPassword", page: ForgetPasswordRoute.page),
     AutoRoute(
       path: "/UpdateAdditionalProfileInformation",
       page: UpdateAdditionalProfileInformationRoute.page,
@@ -41,6 +40,10 @@ class AppRouter extends $AppRouter {
     AutoRoute(
       path: "/EventDetails",
       page: EventDetailsRoute.page,
+    ),
+    AutoRoute(
+      path: "/AddEvent",
+      page: AddEventRoute.page,
     ),
   ];
 }

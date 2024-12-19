@@ -7,7 +7,8 @@ class DSSpacingV2 {
   static const double l = 24;
   static const double xl = 32;
   static const double xxl = 40;
-  static const double xxxl = 68;
+  static const double xxxl = 48;
+  static const double xxxxl = 56;
 
   static const double floatButtonInset = 92;
 }

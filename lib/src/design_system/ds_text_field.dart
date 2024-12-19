@@ -1,12 +1,10 @@
-import 'package:riada/src/design_system/v2/graphical_chart/ds_border_radius_v2.dart';
-import 'package:riada/src/design_system/v2/graphical_chart/ds_color_v2.dart';
-import 'package:riada/src/utils/build_context_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:form_validator/form_validator.dart';
-
-import 'ds_border_radius.dart';
-import 'ds_spacing.dart';
+import 'package:riada/src/design_system/v2/graphical_chart/ds_border_radius_v2.dart';
+import 'package:riada/src/design_system/v2/graphical_chart/ds_color_v2.dart';
+import 'package:riada/src/design_system/v2/graphical_chart/ds_spacing_v2.dart';
+import 'package:riada/src/utils/build_context_extension.dart';
 
 enum DSTextFieldType { text, number, smsCode, email, multiline }
 
@@ -88,7 +86,17 @@ class DSTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      width: double.infinity,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(DSBorderRadiusV2.input),
+        color: DSColorV2.accent,
+      ),
+      padding: EdgeInsets.only(
+        bottom: DSSpacingV2.xs,
+        left: DSSpacingV2.s,
+        right: DSSpacingV2.s,
+      ),
       child: TextFormField(
         style: context.textTheme.bodyLarge?.copyWith(
           color: DSColorV2.secondary,
@@ -105,28 +113,10 @@ class DSTextField extends StatelessWidget {
         focusNode: _focusNode,
         cursorColor: DSColorV2.secondary,
         decoration: InputDecoration(
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(DSBorderRadiusV2.input),
-            borderSide: const BorderSide(color: DSColorV2.neutral70),
-          ),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(DSBorderRadius.input),
-            borderSide: const BorderSide(color: DSColorV2.neutral70),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(DSBorderRadius.input),
-            borderSide: const BorderSide(color: DSColorV2.neutral70),
-          ),
-          labelStyle: context.textTheme.bodyLarge?.copyWith(
-            color: DSColorV2.secondary,
-          ),
+          border: InputBorder.none,
           hintText: _hintText,
           errorText: _errorText,
           labelText: _label,
-          contentPadding: EdgeInsets.symmetric(
-            horizontal: DSSpacing.sizeL,
-            vertical: DSSpacing.sizeXs,
-          ),
           alignLabelWithHint: true,
         ),
         readOnly: _readOnly,

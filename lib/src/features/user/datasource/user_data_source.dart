@@ -20,16 +20,22 @@ class UserDataSource extends BaseFirestoreDataSource {
   Future<void> createUser({
     required SocialUser socialUser,
   }) async {
-    final token = await FirebaseMessaging.instance.getToken();
-    final user = User.toDefault(
-      id: socialUser.userId,
-      email: socialUser.email,
-      phoneNumber: socialUser.phoneNumber,
-      devices: [if (token != null) token],
-    );
-    await userReference(socialUser.userId).set(
-      user.toJson(),
-    );
+    try {
+      final token = (Platform.isIOS
+          ? await FirebaseMessaging.instance.getAPNSToken()
+          : await FirebaseMessaging.instance.getToken());
+      final user = User.toDefault(
+        id: socialUser.userId,
+        email: socialUser.email,
+        phoneNumber: socialUser.phoneNumber,
+        devices: [if (token != null) token],
+      );
+      await userReference(socialUser.userId).set(
+        user.toJson(),
+      );
+    } catch (e) {
+      print(e);
+    }
   }
 
   Future<User> getUserByReference({
@@ -53,7 +59,9 @@ class UserDataSource extends BaseFirestoreDataSource {
 
   Future<void> updateNotificationToken({required String userId}) async {
     try {
-      final token = await FirebaseMessaging.instance.getToken();
+      final token = (Platform.isIOS
+          ? await FirebaseMessaging.instance.getAPNSToken()
+          : await FirebaseMessaging.instance.getToken());
       userReference(userId).update({
         "devices": FieldValue.arrayUnion([token]),
       });

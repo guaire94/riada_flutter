@@ -1,10 +1,10 @@
+import 'package:flutter/material.dart';
+import 'package:form_validator/form_validator.dart';
 import 'package:riada/src/design_system/datePicker/ds_time_picker_controller.dart';
 import 'package:riada/src/design_system/v2/graphical_chart/ds_border_radius_v2.dart';
 import 'package:riada/src/design_system/v2/graphical_chart/ds_color_v2.dart';
 import 'package:riada/src/design_system/v2/graphical_chart/ds_spacing_v2.dart';
 import 'package:riada/src/utils/build_context_extension.dart';
-import 'package:flutter/material.dart';
-import 'package:form_validator/form_validator.dart';
 
 class DSTimePickerTextField extends StatefulWidget {
   // MARK: Dependencies
@@ -46,17 +46,21 @@ class DSTimePickerTextField extends StatefulWidget {
 }
 
 class _DSTimePickerTextFieldState extends State<DSTimePickerTextField> {
-  // MARK: Constants
-  final double _width = 105;
-
   // MARK: Properties
   final TextEditingController _controller = TextEditingController();
 
   // MARK: LifeCycle
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: _width,
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(DSBorderRadiusV2.input),
+        color: DSColorV2.accent,
+      ),
+      padding: EdgeInsets.symmetric(
+        vertical: DSSpacingV2.xxxs,
+        horizontal: DSSpacingV2.s,
+      ),
       child: TextFormField(
         enabled: widget._enabled,
         style: context.textTheme.bodyLarge?.copyWith(
@@ -70,25 +74,9 @@ class _DSTimePickerTextFieldState extends State<DSTimePickerTextField> {
         obscureText: widget._obscureText,
         focusNode: widget._focusNode,
         decoration: InputDecoration(
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(DSBorderRadiusV2.input),
-            borderSide: const BorderSide(color: DSColorV2.neutral70),
-          ),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(DSBorderRadiusV2.input),
-            borderSide: const BorderSide(color: DSColorV2.neutral70),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(DSBorderRadiusV2.input),
-            borderSide: const BorderSide(color: DSColorV2.neutral70),
-          ),
           hintText: widget._hintText,
           errorText: widget._errorText,
           labelText: widget._label,
-          contentPadding: EdgeInsets.symmetric(
-            horizontal: DSSpacingV2.l,
-            vertical: DSSpacingV2.xs,
-          ),
           labelStyle: context.textTheme.bodyLarge?.copyWith(
             color: DSColorV2.secondary,
           ),

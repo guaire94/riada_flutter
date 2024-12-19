@@ -7,9 +7,7 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String price(Object price) {
-    return 'AED $price';
-  }
+  String get price => 'Price';
 
   @override
   String range_price(Object highPrice, Object lowPrice) {
@@ -44,6 +42,27 @@ class AppLocalizationsEn extends AppLocalizations {
   String get drawer_profile => 'My profile';
 
   @override
+  String get soccer => 'Soccer';
+
+  @override
+  String get basketball => 'Basketball';
+
+  @override
+  String get footvolley => 'Footvolley';
+
+  @override
+  String get volleyball => 'Volleyball';
+
+  @override
+  String get tennis => 'Tennis';
+
+  @override
+  String get golf => 'Golf';
+
+  @override
+  String get padel => 'Padel';
+
+  @override
   String get full_name => 'Full name';
 
   @override
@@ -59,7 +78,25 @@ class AppLocalizationsEn extends AppLocalizations {
   String get field_required_error_message => 'The field is required';
 
   @override
-  String get size_required_error_message => 'Select at least one size';
+  String get title => 'Title';
+
+  @override
+  String get description => 'Description';
+
+  @override
+  String get date => 'Date';
+
+  @override
+  String get hour => 'Hour';
+
+  @override
+  String get is_private => 'Private';
+
+  @override
+  String get organizer_is_participating => 'I will participate';
+
+  @override
+  String get place => 'Place';
 
   @override
   String get follow => 'Follow';
@@ -111,6 +148,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get cancel => 'Cancel';
+
+  @override
+  String get add_event => 'Add an event';
 
   @override
   String get common_error_title => 'Technical Error: Request Unable to Process';

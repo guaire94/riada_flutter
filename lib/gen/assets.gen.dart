@@ -21,12 +21,27 @@ class $AssetsIconsGen {
   /// File path: assets/icons/add.png
   AssetGenImage get add => const AssetGenImage('assets/icons/add.png');
 
+  /// File path: assets/icons/add_photo.png
+  AssetGenImage get addPhoto =>
+      const AssetGenImage('assets/icons/add_photo.png');
+
   /// File path: assets/icons/apple.svg
   SvgGenImage get apple => const SvgGenImage('assets/icons/apple.svg');
 
-  /// File path: assets/icons/backButton.svg
-  SvgGenImage get backButton =>
-      const SvgGenImage('assets/icons/backButton.svg');
+  /// File path: assets/icons/back.png
+  AssetGenImage get back => const AssetGenImage('assets/icons/back.png');
+
+  /// File path: assets/icons/back_dark.png
+  AssetGenImage get backDark =>
+      const AssetGenImage('assets/icons/back_dark.png');
+
+  /// File path: assets/icons/back_modal.png
+  AssetGenImage get backModal =>
+      const AssetGenImage('assets/icons/back_modal.png');
+
+  /// File path: assets/icons/back_modal_dark.png
+  AssetGenImage get backModalDark =>
+      const AssetGenImage('assets/icons/back_modal_dark.png');
 
   /// File path: assets/icons/error.png
   AssetGenImage get error => const AssetGenImage('assets/icons/error.png');
@@ -50,8 +65,12 @@ class $AssetsIconsGen {
   List<dynamic> get values => [
         account,
         add,
+        addPhoto,
         apple,
-        backButton,
+        back,
+        backDark,
+        backModal,
+        backModalDark,
         error,
         event,
         google,

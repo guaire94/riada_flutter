@@ -57,7 +57,7 @@ class GooglePlaceDataSource {
     }
   }
 
-  Future<Place> getPlaceDetailFromId(String placeId) async {
+  Future<Place> getPlaceDetailFromId(String placeId, String placeName) async {
     final apiKey = _configurationDataSource.googleMapsApiKey;
     final request =
         '$_detailsBaseUrl?place_id=$placeId&fields=address_component%2Cgeometry%2Cformatted_address&key=$apiKey';
@@ -65,7 +65,8 @@ class GooglePlaceDataSource {
 
     if (response.statusCode == 200) {
       final result = json.decode(response.body);
-      return Place.fromJson(result);
+
+      return Place.fromJson(placeId, placeName, result);
     } else {
       throw NoDataAvailableException();
     }

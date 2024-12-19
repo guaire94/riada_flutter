@@ -16,14 +16,17 @@ class MarketplaceIdleWidget extends StatefulWidget {
   // MARK: - Properties
   final IdleState _state;
   final void Function(City?) _onCityChange;
+  final VoidCallback _onAdd;
 
   // MARK: - Life cycle
   const MarketplaceIdleWidget({
     Key? key,
     required IdleState state,
     required void Function(City?) onCityChange,
+    required VoidCallback onAdd,
   })  : _state = state,
         _onCityChange = onCityChange,
+        _onAdd = onAdd,
         super(key: key);
 
   @override
@@ -39,24 +42,18 @@ class _MarketplaceIdleWidgetState extends State<MarketplaceIdleWidget> {
     MarketplaceCarouselType.soccer,
   ];
 
-  // MARK: - Properties
-  final ScrollController _scrollController = ScrollController();
-
   // MARK: - Life cycle
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: DSColorV2.neutral10,
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // Define the action to be performed when the button is pressed
-        },
+        onPressed: widget._onAdd,
         child: Icon(Icons.add),
       ),
       body: Container(
         color: DSColorV2.neutral10,
         child: SingleChildScrollView(
-          controller: _scrollController,
           child: Container(
             height: DSImageTypeV2.xl.height + _heightContent(),
             child: Stack(
@@ -73,7 +70,6 @@ class _MarketplaceIdleWidgetState extends State<MarketplaceIdleWidget> {
   }
 
   // MARK: - Private
-
   Widget _cityBackground() {
     return Positioned(
       child: Container(

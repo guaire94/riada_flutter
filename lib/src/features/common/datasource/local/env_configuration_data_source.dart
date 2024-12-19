@@ -27,9 +27,9 @@ extension APIKeysExtensions on EnvConfigurationDataSource {
   String get googleMapsApiKey {
     switch (_configuration) {
       case EnvConfiguration.staging:
-        return 'GMAPS_STAGING';
+        return 'AIzaSyDTIlQBgK72dpao2XPISx1U60psDeshcGc';
       case EnvConfiguration.prod:
-        return 'GMAPS_PROD';
+        return 'AIzaSyDTIlQBgK72dpao2XPISx1U60psDeshcGc';
     }
   }
 

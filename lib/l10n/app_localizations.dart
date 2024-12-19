@@ -98,8 +98,8 @@ abstract class AppLocalizations {
   /// No description provided for @price.
   ///
   /// In en, this message translates to:
-  /// **'AED {price}'**
-  String price(Object price);
+  /// **'Price'**
+  String get price;
 
   /// No description provided for @range_price.
   ///
@@ -161,6 +161,48 @@ abstract class AppLocalizations {
   /// **'My profile'**
   String get drawer_profile;
 
+  /// No description provided for @soccer.
+  ///
+  /// In en, this message translates to:
+  /// **'Soccer'**
+  String get soccer;
+
+  /// No description provided for @basketball.
+  ///
+  /// In en, this message translates to:
+  /// **'Basketball'**
+  String get basketball;
+
+  /// No description provided for @footvolley.
+  ///
+  /// In en, this message translates to:
+  /// **'Footvolley'**
+  String get footvolley;
+
+  /// No description provided for @volleyball.
+  ///
+  /// In en, this message translates to:
+  /// **'Volleyball'**
+  String get volleyball;
+
+  /// No description provided for @tennis.
+  ///
+  /// In en, this message translates to:
+  /// **'Tennis'**
+  String get tennis;
+
+  /// No description provided for @golf.
+  ///
+  /// In en, this message translates to:
+  /// **'Golf'**
+  String get golf;
+
+  /// No description provided for @padel.
+  ///
+  /// In en, this message translates to:
+  /// **'Padel'**
+  String get padel;
+
   /// No description provided for @full_name.
   ///
   /// In en, this message translates to:
@@ -191,11 +233,47 @@ abstract class AppLocalizations {
   /// **'The field is required'**
   String get field_required_error_message;
 
-  /// No description provided for @size_required_error_message.
+  /// No description provided for @title.
   ///
   /// In en, this message translates to:
-  /// **'Select at least one size'**
-  String get size_required_error_message;
+  /// **'Title'**
+  String get title;
+
+  /// No description provided for @description.
+  ///
+  /// In en, this message translates to:
+  /// **'Description'**
+  String get description;
+
+  /// No description provided for @date.
+  ///
+  /// In en, this message translates to:
+  /// **'Date'**
+  String get date;
+
+  /// No description provided for @hour.
+  ///
+  /// In en, this message translates to:
+  /// **'Hour'**
+  String get hour;
+
+  /// No description provided for @is_private.
+  ///
+  /// In en, this message translates to:
+  /// **'Private'**
+  String get is_private;
+
+  /// No description provided for @organizer_is_participating.
+  ///
+  /// In en, this message translates to:
+  /// **'I will participate'**
+  String get organizer_is_participating;
+
+  /// No description provided for @place.
+  ///
+  /// In en, this message translates to:
+  /// **'Place'**
+  String get place;
 
   /// No description provided for @follow.
   ///
@@ -298,6 +376,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Cancel'**
   String get cancel;
+
+  /// No description provided for @add_event.
+  ///
+  /// In en, this message translates to:
+  /// **'Add an event'**
+  String get add_event;
 
   /// No description provided for @common_error_title.
   ///

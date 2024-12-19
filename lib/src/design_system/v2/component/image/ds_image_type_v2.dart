@@ -91,8 +91,10 @@ extension DSImageTypeV2Extension on DSImageTypeV2 {
     }
   }
 
-  BorderRadius get borderRadius {
+  BorderRadius? get borderRadius {
     switch (this) {
+      case DSImageTypeV2.xl:
+        return null;
       case DSImageTypeV2.avatar:
         return BorderRadius.circular(DSBorderRadiusV2.input);
       default:

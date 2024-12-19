@@ -27,6 +27,8 @@ import 'package:riada/src/features/drawer/presentation/bloc/drawer_bloc.dart'
 import 'package:riada/src/features/event/datasource/event_data_source.dart'
     as _i1025;
 import 'package:riada/src/features/event/helper/distance_helper.dart' as _i769;
+import 'package:riada/src/features/event/presentation/add/bloc/add_event_bloc.dart'
+    as _i697;
 import 'package:riada/src/features/event/presentation/details/bloc/event_details_bloc.dart'
     as _i560;
 import 'package:riada/src/features/event/presentation/list/bloc/event_list_bloc.dart'
@@ -55,8 +57,6 @@ import 'package:riada/src/features/user/datasource/user_data_source.dart'
     as _i795;
 import 'package:riada/src/features/user/presentation/additional_profile_information/bloc/additional_profile_information_bloc.dart'
     as _i217;
-import 'package:riada/src/features/user/presentation/forget_password/bloc/forget_password_bloc.dart'
-    as _i38;
 import 'package:riada/src/features/user/presentation/my_profile/bloc/my_profile_bloc.dart'
     as _i161;
 import 'package:riada/src/features/user/presentation/sign_up/bloc/sign_up_bloc.dart'
@@ -87,15 +87,13 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i926.AppleSignInDataSource>(
         () => _i926.AppleSignInDataSource());
-    gh.factory<_i488.PhoneNumberSignInDataSource>(
-        () => _i488.PhoneNumberSignInDataSource());
     gh.factory<_i1056.AuthDataSource>(() => _i1056.AuthDataSource());
     gh.factory<_i500.GoogleSignInDataSource>(
         () => _i500.GoogleSignInDataSource());
     gh.factory<_i769.DistanceHelper>(() => _i769.DistanceHelper());
+    gh.singleton<_i488.PhoneNumberSignInDataSource>(
+        () => _i488.PhoneNumberSignInDataSource());
     gh.singleton<_i514.CityRepository>(() => _i514.CityRepository());
-    gh.factory<_i281.MarketplaceBloc>(() =>
-        _i281.MarketplaceBloc(cityRepository: gh<_i514.CityRepository>()));
     gh.factory<_i807.AuthRepository>(() => _i807.AuthRepository(
           authDataSource: gh<_i1056.AuthDataSource>(),
           googleSignInDataSource: gh<_i500.GoogleSignInDataSource>(),
@@ -126,8 +124,6 @@ extension GetItInjectableX on _i174.GetIt {
           userDataSource: gh<_i795.UserDataSource>(),
           authDataSource: gh<_i1056.AuthDataSource>(),
         ));
-    gh.factory<_i38.ForgetPasswordBloc>(() =>
-        _i38.ForgetPasswordBloc(authRepository: gh<_i807.AuthRepository>()));
     gh.factory<_i903.UpdateAdditionalProfileInformationBloc>(() =>
         _i903.UpdateAdditionalProfileInformationBloc(
             gh<_i45.UserRepository>()));
@@ -153,6 +149,10 @@ extension GetItInjectableX on _i174.GetIt {
           envConfigurationDataSource: gh<_i131.EnvConfigurationDataSource>(),
           distanceHelper: gh<_i769.DistanceHelper>(),
         ));
+    gh.factory<_i281.MarketplaceBloc>(() => _i281.MarketplaceBloc(
+          cityRepository: gh<_i514.CityRepository>(),
+          userRepository: gh<_i45.UserRepository>(),
+        ));
     gh.factory<_i835.HomeBloc>(() => _i835.HomeBloc(
           userRepository: gh<_i45.UserRepository>(),
           notificationsRepository: gh<_i1070.NotificationsRepository>(),
@@ -171,6 +171,10 @@ extension GetItInjectableX on _i174.GetIt {
         _i560.EventDetailsBloc(eventRepository: gh<_i162.EventRepository>()));
     gh.factory<_i793.EventListBloc>(() =>
         _i793.EventListBloc(eventRepository: gh<_i162.EventRepository>()));
+    gh.factory<_i697.AddEventBloc>(() => _i697.AddEventBloc(
+          sportRepository: gh<_i987.SportRepository>(),
+          eventRepository: gh<_i162.EventRepository>(),
+        ));
     gh.factory<_i876.MarketplaceCarouselBloc>(() =>
         _i876.MarketplaceCarouselBloc(
             marketplaceCarouselRepository:

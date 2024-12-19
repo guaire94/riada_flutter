@@ -35,8 +35,8 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<LoadEvent>((event, emit) async {
       await Future.delayed(_launchStateDuration);
       try {
-        final User user = await _userRepository.getCurrentUser();
         await _sportRepository.fetchAllSports();
+        final User user = await _userRepository.getCurrentUser();
 
         await _notificationsRepository.requestPermission(
           onMessageTapped: (notification) {
@@ -45,12 +45,12 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
             }
           },
         );
-        _userRepository.updateConnectionDate();
-        _userRepository.updateNotificationToken();
 
         emit(IdleState());
         String? initialDeeplink =
             await _notificationsRepository.getInitialDeeplink();
+        await _userRepository.updateConnectionDate();
+        await _userRepository.updateNotificationToken();
         if (user.status == UserStatus.signed) {
           emit(FinaliseSignUpState());
           return;
@@ -76,8 +76,8 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
             }
           },
         );
-        _userRepository.updateConnectionDate();
-        _userRepository.updateNotificationToken();
+        await _userRepository.updateConnectionDate();
+        await _userRepository.updateNotificationToken();
 
         emit(IdleState());
       } on UserNotLoggedException catch (_) {

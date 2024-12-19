@@ -131,7 +131,7 @@ class UserRepository {
   String get _userId {
     final authUser = _authDataSource.getUser();
 
-    if (authUser == null) throw NoDataAvailableException();
+    if (authUser == null) throw UserNotLoggedException();
 
     return authUser.uid;
   }

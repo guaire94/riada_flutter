@@ -62,8 +62,7 @@ class CitiesAutocompleteField extends StatelessWidget {
 
   // MARK: - Private
   void _onSelected(Suggestion suggestion) async {
-    final place =
-        await _googlePlaceRepository.getPlaceDetailFromId(suggestion.placeId);
+    final place = await _googlePlaceRepository.getPlaceDetailFromId(suggestion);
     _onSelectionChanged(place);
   }
 

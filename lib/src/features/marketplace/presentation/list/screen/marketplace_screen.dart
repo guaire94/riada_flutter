@@ -5,6 +5,7 @@ import 'package:riada/src/factory/di.dart';
 import 'package:riada/src/features/common/presentation/base/base_state.dart';
 import 'package:riada/src/features/marketplace/presentation/list/bloc/marketplace_bloc.dart';
 import 'package:riada/src/features/marketplace/presentation/list/screen/marketplace_idle_widget.dart';
+import 'package:riada/src/router/routes.gr.dart';
 
 @RoutePage()
 class MarketplaceScreen extends StatefulWidget implements AutoRouteWrapper {
@@ -52,6 +53,13 @@ class _MarketplaceScreenState
         state: state,
         onCityChange: (city) {
           bloc.add(ChangeCityEvent(city));
+        },
+        onAdd: () {
+          if (state.shouldLoginBeforeAddingEvent) {
+            context.pushRoute(const SignUpRoute());
+          } else {
+            context.pushRoute(const AddEventRoute());
+          }
         },
       );
     }

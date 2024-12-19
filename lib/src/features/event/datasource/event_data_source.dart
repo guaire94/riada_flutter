@@ -101,4 +101,10 @@ class EventDataSource extends BaseFirestoreDataSource {
     }
     return Event.fromJson(data);
   }
+
+  Future add({required Event event}) async {
+    // TODO: Add to event collection
+    // TODO: Add organizer to event
+    // TODO: Add related event to user
+  }
 }

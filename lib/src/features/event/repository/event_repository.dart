@@ -32,4 +32,8 @@ class EventRepository {
   Future<Event> getEventFrom({required String eventId}) async {
     return _eventDataSource.getEventFrom(eventId: eventId);
   }
+
+  Future add({required Event event}) async {
+    return _eventDataSource.add(event: event);
+  }
 }

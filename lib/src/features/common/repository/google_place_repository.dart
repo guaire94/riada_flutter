@@ -18,7 +18,10 @@ class GooglePlaceRepository {
     return _dataSource.fetchAddresses(input);
   }
 
-  Future<Place> getPlaceDetailFromId(String placeId) async {
-    return _dataSource.getPlaceDetailFromId(placeId);
+  Future<Place> getPlaceDetailFromId(Suggestion suggestion) async {
+    return _dataSource.getPlaceDetailFromId(
+      suggestion.placeId,
+      suggestion.description,
+    );
   }
 }

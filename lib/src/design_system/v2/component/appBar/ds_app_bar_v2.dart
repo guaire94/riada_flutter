@@ -7,8 +7,7 @@ import 'package:riada/src/utils/build_context_extension.dart';
 
 class DSAppBarV2 extends StatelessWidget implements PreferredSizeWidget {
   // MARK: - Privates
-  static const double _iconHeight = 24;
-  static const double _iconWidth = 16;
+  static const double _iconSize = 32;
 
   // MARK: - Properties
   final String? _title;
@@ -50,9 +49,9 @@ class DSAppBarV2 extends StatelessWidget implements PreferredSizeWidget {
             context.router.popForced();
           },
           child: Center(
-            child: Assets.icons.backButton.svg(
-              width: _iconWidth,
-              height: _iconHeight,
+            child: Assets.icons.backModalDark.image(
+              width: _iconSize,
+              height: _iconSize,
             ),
           ),
         ),

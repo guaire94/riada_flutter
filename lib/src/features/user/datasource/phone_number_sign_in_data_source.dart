@@ -8,7 +8,7 @@ import 'package:riada/src/features/user/event_bus/did_receive_phone_numbe_code_e
 import 'package:riada/src/features/user/event_bus/did_verify_phone_number_event.dart';
 import 'package:riada/src/utils/app_event_bus.dart';
 
-@injectable
+@singleton
 class PhoneNumberSignInDataSource {
   late String _verificationId;
   late String _phoneNumber;
@@ -41,6 +41,8 @@ class PhoneNumberSignInDataSource {
   }
 
   Future verifySmsCode(String smsCode) async {
+    if (_phoneNumber.isEmpty) throw LoginFailedException();
+
     try {
       PhoneAuthCredential credential = PhoneAuthProvider.credential(
         verificationId: _verificationId,
@@ -48,7 +50,7 @@ class PhoneNumberSignInDataSource {
       );
       await _signIn(credential);
     } catch (_) {
-      print("a");
+      rethrow;
     }
   }
 
