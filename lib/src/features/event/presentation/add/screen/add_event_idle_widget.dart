@@ -16,7 +16,6 @@ import 'package:riada/src/features/common/entity/google_place/place.dart';
 import 'package:riada/src/features/common/presentation/common/addresses_autocomplete_field/addresses_autocomplete_field_factory.dart';
 import 'package:riada/src/features/common/presentation/common/sport_selector/sport_cover_selector.dart';
 import 'package:riada/src/features/common/presentation/common/sport_selector/sport_selector_widget.dart';
-import 'package:riada/src/features/event/entity/sport.dart';
 import 'package:riada/src/features/event/presentation/add/bloc/add_event_bloc.dart';
 import 'package:riada/src/utils/build_context_extension.dart';
 import 'package:riada/src/utils/timestamp_extension.dart';
@@ -24,17 +23,14 @@ import 'package:riada/src/utils/timestamp_extension.dart';
 class AddEventIdleWidget extends StatefulWidget {
   // MARK: - Properties
   final IdleState _state;
-  final void Function(Sport) _onSportChange;
-  final void Function(String) _onSportCoverChange;
+  final AddEventBloc _bloc;
 
   AddEventIdleWidget({
     Key? key,
     required IdleState state,
-    required void Function(Sport) onSportChange,
-    required void Function(String) onSportCoverChange,
+    required AddEventBloc bloc,
   })  : _state = state,
-        _onSportChange = onSportChange,
-        _onSportCoverChange = onSportCoverChange,
+        _bloc = bloc,
         super(key: key);
 
   @override
@@ -61,8 +57,8 @@ class _AddEventIdleWidgetState extends State<AddEventIdleWidget> {
 
   final DSTimePickerController _timePickerController = DSTimePickerController();
 
-  bool isPrivate = false;
-  bool organizerIsParticipating = true;
+  bool _isPrivate = false;
+  bool _organizerIsParticipating = true;
 
   Place? _place;
 
@@ -109,7 +105,9 @@ class _AddEventIdleWidgetState extends State<AddEventIdleWidget> {
           SportCoverSelector.showSportCoverSelectionBottomSheet(
               context: context,
               selectedSport: widget._state.selectedSport,
-              onCoverChange: widget._onSportCoverChange);
+              onCoverChange: (cover) {
+                widget._bloc.add(ChangeSportCoverEvent(cover));
+              });
         },
         child: Container(
           height: DSImageTypeV2.xl.height,
@@ -134,7 +132,9 @@ class _AddEventIdleWidgetState extends State<AddEventIdleWidget> {
           SportSelectorWidget(
             selectedSport: widget._state.selectedSport,
             sports: widget._state.sports,
-            onSportChange: widget._onSportChange,
+            onSportChange: (sport) {
+              widget._bloc.add(ChangeSportEvent(sport));
+            },
           ),
           if (widget._state.selectedSport.covers.length > 1)
             GestureDetector(
@@ -142,7 +142,9 @@ class _AddEventIdleWidgetState extends State<AddEventIdleWidget> {
                 SportCoverSelector.showSportCoverSelectionBottomSheet(
                     context: context,
                     selectedSport: widget._state.selectedSport,
-                    onCoverChange: widget._onSportCoverChange);
+                    onCoverChange: (cover) {
+                      widget._bloc.add(ChangeSportCoverEvent(cover));
+                    });
               },
               child: Assets.icons.addPhoto.image(),
             ),
@@ -223,22 +225,22 @@ class _AddEventIdleWidgetState extends State<AddEventIdleWidget> {
               SizedBox(height: DSSpacingV2.l),
               DSBooleanField(
                 label: context.l10N.is_private,
-                value: isPrivate,
+                value: _isPrivate,
                 onChanged: (value) {
                   if (value != null)
                     setState(() {
-                      isPrivate = value;
+                      _isPrivate = value;
                     });
                 },
               ),
               SizedBox(height: DSSpacingV2.l),
               DSBooleanField(
                 label: context.l10N.organizer_is_participating,
-                value: organizerIsParticipating,
+                value: _organizerIsParticipating,
                 onChanged: (value) {
                   if (value != null)
                     setState(() {
-                      organizerIsParticipating = value;
+                      _organizerIsParticipating = value;
                     });
                 },
               ),
@@ -265,16 +267,18 @@ class _AddEventIdleWidgetState extends State<AddEventIdleWidget> {
 
   Future _onPressSubmit({required BuildContext context}) async {
     if (_formKey.currentState?.validate() == true && _place != null) {
-      // widget._bloc.add(
-      //   SubmitEvent(
-      //     _titleController.text,
-      //     _place!,
-      //     _datePickerController.date!,
-      //     _timePickerController.time!,
-      //     _descriptionController.text,
-      //     eventType.type,
-      //   ),
-      // );
+      widget._bloc.add(
+        SubmitEvent(
+          _titleController.text,
+          _descriptionController.text,
+          _place!,
+          _datePickerController.date!,
+          _timePickerController.time!,
+          _priceController.text,
+          _isPrivate,
+          _organizerIsParticipating,
+        ),
+      );
     }
   }
 }

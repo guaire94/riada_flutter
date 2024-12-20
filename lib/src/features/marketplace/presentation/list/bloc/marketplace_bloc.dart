@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
+import 'package:riada/src/features/event/event_bus/event_added_event.dart';
 import 'package:riada/src/features/user/event_bus/user_log_state_updated_event.dart';
 import 'package:riada/src/features/user/repository/city_repository.dart';
 import 'package:riada/src/features/user/repository/user_repository.dart';
@@ -40,6 +41,11 @@ class MarketplaceBloc extends Bloc<MarketplaceEvent, MarketplaceState> {
     _streams.add(AppEventBus.instance
         .on<UserLogStateUpdatedEvent>()
         .listen((event) async {
+      add(LoadEvent());
+    }));
+
+    _streams
+        .add(AppEventBus.instance.on<EventAddedEvent>().listen((event) async {
       add(LoadEvent());
     }));
   }

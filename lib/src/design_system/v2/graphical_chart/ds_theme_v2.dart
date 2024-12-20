@@ -1,8 +1,8 @@
+import 'package:flutter/material.dart';
 import 'package:riada/gen/fonts.gen.dart';
 import 'package:riada/src/design_system/ds_spacing.dart';
 import 'package:riada/src/design_system/v2/graphical_chart/ds_color_v2.dart';
 import 'package:riada/src/design_system/v2/graphical_chart/ds_font_v2.dart';
-import 'package:flutter/material.dart';
 
 ThemeData dsThemeV2() {
   return ThemeData(
@@ -18,7 +18,7 @@ ThemeData dsThemeV2() {
       background: DSColorV2.primary,
       onBackground: Colors.white,
       surface: DSColorV2.primary,
-      onSurface: Colors.white,
+      onSurface: DSColorV2.primary,
       brightness: Brightness.light,
     ),
     textTheme: const TextTheme(

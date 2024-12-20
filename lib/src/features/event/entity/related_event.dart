@@ -1,13 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:riada/src/features/common/entity/json_converter/firestore_timestamp_json_converter.dart';
-import 'package:riada/src/features/common/entity/json_converter/geopoint_json_converter.dart';
 
 part 'related_event.g.dart';
 
 @JsonSerializable()
 @FirestoreTimestampJsonConverter()
-@GeoPointJsonConverter()
 class RelatedEvent {
   final String? id;
   final String eventId;

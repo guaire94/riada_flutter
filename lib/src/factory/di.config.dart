@@ -145,10 +145,6 @@ extension GetItInjectableX on _i174.GetIt {
               gh<_i372.PhoneNumberVerificationRepository>(),
           userRepository: gh<_i45.UserRepository>(),
         ));
-    gh.factory<_i1025.EventDataSource>(() => _i1025.EventDataSource(
-          envConfigurationDataSource: gh<_i131.EnvConfigurationDataSource>(),
-          distanceHelper: gh<_i769.DistanceHelper>(),
-        ));
     gh.factory<_i281.MarketplaceBloc>(() => _i281.MarketplaceBloc(
           cityRepository: gh<_i514.CityRepository>(),
           userRepository: gh<_i45.UserRepository>(),
@@ -158,13 +154,11 @@ extension GetItInjectableX on _i174.GetIt {
           notificationsRepository: gh<_i1070.NotificationsRepository>(),
           sportRepository: gh<_i987.SportRepository>(),
         ));
-    gh.factory<_i1062.MarketplaceCarouselRepository>(
-        () => _i1062.MarketplaceCarouselRepository(
-              eventDataSource: gh<_i1025.EventDataSource>(),
-              authDataSource: gh<_i1056.AuthDataSource>(),
-              cityRepository: gh<_i514.CityRepository>(),
-              sportRepository: gh<_i987.SportRepository>(),
-            ));
+    gh.factory<_i1025.EventDataSource>(() => _i1025.EventDataSource(
+          envConfigurationDataSource: gh<_i131.EnvConfigurationDataSource>(),
+          distanceHelper: gh<_i769.DistanceHelper>(),
+          userRepository: gh<_i45.UserRepository>(),
+        ));
     gh.factory<_i162.EventRepository>(() =>
         _i162.EventRepository(eventDataSource: gh<_i1025.EventDataSource>()));
     gh.factory<_i560.EventDetailsBloc>(() =>
@@ -175,6 +169,13 @@ extension GetItInjectableX on _i174.GetIt {
           sportRepository: gh<_i987.SportRepository>(),
           eventRepository: gh<_i162.EventRepository>(),
         ));
+    gh.factory<_i1062.MarketplaceCarouselRepository>(
+        () => _i1062.MarketplaceCarouselRepository(
+              eventDataSource: gh<_i1025.EventDataSource>(),
+              authDataSource: gh<_i1056.AuthDataSource>(),
+              cityRepository: gh<_i514.CityRepository>(),
+              sportRepository: gh<_i987.SportRepository>(),
+            ));
     gh.factory<_i876.MarketplaceCarouselBloc>(() =>
         _i876.MarketplaceCarouselBloc(
             marketplaceCarouselRepository:

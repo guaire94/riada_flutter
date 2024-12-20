@@ -6,18 +6,22 @@ import 'package:riada/src/features/event/entity/event.dart';
 import 'package:riada/src/features/event/entity/related_event.dart';
 import 'package:riada/src/features/event/entity/sport.dart';
 import 'package:riada/src/features/event/helper/distance_helper.dart';
+import 'package:riada/src/features/user/datasource/exceptions/user_not_logged_exception.dart';
+import 'package:riada/src/features/user/repository/user_repository.dart';
 import 'package:riada/src/utils/city.dart';
 
 @injectable
 class EventDataSource extends BaseFirestoreDataSource {
   // MARK: - Dependencies
   final DistanceHelper distanceHelper;
+  final UserRepository userRepository;
 
   // MARK: - LifeCycle
   EventDataSource({
     required super.envConfigurationDataSource,
     required this.distanceHelper,
-  });
+    required this.userRepository,
+  }) : super();
 
   // MARK: - Public
   Future<List<RelatedEvent>> getNextEventParticipations(String userId) async {
@@ -103,8 +107,31 @@ class EventDataSource extends BaseFirestoreDataSource {
   }
 
   Future add({required Event event}) async {
-    // TODO: Add to event collection
-    // TODO: Add organizer to event
-    // TODO: Add related event to user
+    try {
+      final user = await userRepository.getCurrentUser();
+      await eventCollection().add(event.toJson());
+      await eventOrganizerReference(
+        eventId: event.id,
+        organizerId: user.id,
+      ).set(user.toRelated().toJson());
+      await userOrganizeEventCollection(user.id)
+          .add(event.toRelated().toJson());
+    } catch (_) {
+      throw UserNotLoggedException();
+    }
+  }
+
+  Future participate({required Event event}) async {
+    try {
+      final user = await userRepository.getCurrentUser();
+      await eventParticipantReference(
+        eventId: event.id,
+        participantId: user.id,
+      ).set(user.toRelated().toJson());
+      await userParticipateEventCollection(user.id)
+          .add(event.toRelated().toJson());
+    } catch (_) {
+      throw UserNotLoggedException();
+    }
   }
 }

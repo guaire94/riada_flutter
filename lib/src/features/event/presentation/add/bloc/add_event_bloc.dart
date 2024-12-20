@@ -1,11 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 import 'package:riada/src/features/common/entity/google_place/place.dart';
 import 'package:riada/src/features/common/repository/sport_repository.dart';
 import 'package:riada/src/features/event/entity/event.dart';
 import 'package:riada/src/features/event/entity/sport.dart';
+import 'package:riada/src/features/event/event_bus/event_added_event.dart';
 import 'package:riada/src/features/event/repository/event_repository.dart';
+import 'package:riada/src/utils/app_event_bus.dart';
 
 part 'add_event_event.dart';
 part 'add_event_state.dart';
@@ -72,15 +75,24 @@ class AddEventBloc extends Bloc<AddEventEvent, AddEventState> {
           cover: _selectedCover,
           title: event.title,
           description: event.description,
-          price: event.price,
+          price: double.parse(event.price),
           place: event.place,
-          date: Timestamp.fromDate(event.date),
+          date: Timestamp.fromDate(
+            DateTime(
+              event.date.year,
+              event.date.month,
+              event.date.day,
+              event.time.hour,
+              event.time.minute,
+            ),
+          ),
           isPrivate: event.isPrivate,
         );
-        _eventRepository.add(event: eventModel);
-        if (event.organizerIsParticipate) {
-          // TODO: add participation
-        }
+        _eventRepository.add(
+          event: eventModel,
+          isOrganizerParticipate: event.organizerIsParticipate,
+        );
+        AppEventBus.instance.fire(EventAddedEvent());
         emit(SuccessState());
       } catch (_) {
         emit(ErrorState());

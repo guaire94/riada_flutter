@@ -33,7 +33,11 @@ class EventRepository {
     return _eventDataSource.getEventFrom(eventId: eventId);
   }
 
-  Future add({required Event event}) async {
-    return _eventDataSource.add(event: event);
+  Future add(
+      {required Event event, required bool isOrganizerParticipate}) async {
+    await _eventDataSource.add(event: event);
+    if (isOrganizerParticipate) {
+      await _eventDataSource.participate(event: event);
+    }
   }
 }

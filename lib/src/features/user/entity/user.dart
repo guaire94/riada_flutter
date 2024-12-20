@@ -3,6 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:riada/src/features/common/entity/json_converter/firestore_timestamp_json_converter.dart';
 import 'package:riada/src/features/common/entity/json_converter/geopoint_json_converter.dart';
 import 'package:riada/src/features/common/entity/json_converter/user_status_json_converter.dart';
+import 'package:riada/src/features/user/entity/related_user.dart';
 import 'package:riada/src/features/user/entity/user_status.dart';
 import 'package:riada/src/utils/constants.dart';
 
@@ -59,4 +60,12 @@ class User {
       );
 
   Map<String, dynamic> toJson() => _$UserToJson(this);
+
+  RelatedUser toRelated() {
+    return RelatedUser(
+      userId: id,
+      userNickName: nickName,
+      userAvatar: avatar,
+    );
+  }
 }

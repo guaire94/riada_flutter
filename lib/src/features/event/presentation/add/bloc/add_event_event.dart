@@ -20,8 +20,9 @@ class SubmitEvent extends AddEventEvent {
   final String title;
   final String description;
   final DateTime date;
+  final TimeOfDay time;
   final Place place;
-  final double price;
+  final String price;
   final bool isPrivate;
   final bool organizerIsParticipate;
 
@@ -30,6 +31,7 @@ class SubmitEvent extends AddEventEvent {
     this.description,
     this.place,
     this.date,
+    this.time,
     this.price,
     this.isPrivate,
     this.organizerIsParticipate,

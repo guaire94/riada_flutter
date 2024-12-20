@@ -1,1 +1,1 @@
-class ProductAddedEvent {}
+class EventAddedEvent {}

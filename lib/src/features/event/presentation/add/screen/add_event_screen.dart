@@ -52,7 +52,7 @@ class _AddEventScreenState extends BaseState<AddEventScreen, AddEventBloc> {
   Function(BuildContext, AddEventState) _onStateChangeListener() {
     return (context, state) {
       if (state is SuccessState) {
-        // TODO: home redirection
+        context.router.popForced();
       }
     };
   }
@@ -64,12 +64,7 @@ class _AddEventScreenState extends BaseState<AddEventScreen, AddEventBloc> {
     if (state is IdleState) {
       return AddEventIdleWidget(
         state: state,
-        onSportChange: (sport) {
-          bloc.add(ChangeSportEvent(sport));
-        },
-        onSportCoverChange: (cover) {
-          bloc.add(ChangeSportCoverEvent(cover));
-        },
+        bloc: bloc,
       );
     }
 
